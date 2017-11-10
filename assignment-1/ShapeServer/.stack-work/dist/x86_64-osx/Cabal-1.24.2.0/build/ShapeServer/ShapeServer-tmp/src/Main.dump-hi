@@ -1,0 +1,120 @@
+
+==================== FINAL INTERFACE ====================
+2017-11-10 14:53:23.703279 UTC
+
+interface main@main:Main 8002
+  interface hash: 4a0308f826167d949d7ae119f788ebce
+  ABI hash: b8356a7833c16a21ec3f31cebac88eb0
+  export-list hash: ecb8d72dacabd7dac3660633ba8e1f42
+  orphan hash: 693e9af84d3dfcc71e640e005bdc5e2e
+  flag hash: a93c2af58ecf2acf42161c8ad3fcfd95
+  sig of: Nothing
+  used TH splices: False
+  where
+exports:
+  Main.exampleDrawing
+  Main.main
+module dependencies: Ansi Render Shapes
+package dependencies: base-4.9.1.0* ghc-prim-0.5.0.0
+                      integer-gmp-1.0.0.1
+orphans: base-4.9.1.0:GHC.Base base-4.9.1.0:GHC.Float
+family instance modules: base-4.9.1.0:Control.Applicative
+                         base-4.9.1.0:Data.Either base-4.9.1.0:Data.Functor.Const
+                         base-4.9.1.0:Data.Monoid base-4.9.1.0:Data.Type.Equality
+                         base-4.9.1.0:GHC.Generics base-4.9.1.0:GHC.IO.Exception
+                         base-4.9.1.0:GHC.TypeLits
+import  -/  base-4.9.1.0:Prelude 22dd289b8469a8fa8dc81cab7b237771
+import  -/  Render 3b9dac36f3c6919f2473aa494cee54ec
+  exports: 42196c7712c814c6bac2d5299bac88ac
+  defaultWindow 06da54a4d310e93a617f0e1bd2bf6e2b
+  render 3e3ba071354303993c95e46b895c2bef
+import  -/  Shapes 793602c9da782eb18340d30c91b2c33b
+  exports: 86eff6cedd199d63d8d2bc7976a8b0bf
+  <+> 3bcf87a778a82a13654397f62be954d4
+  circle ebc7902a8ea65f52192c13cb54428176
+  point b9ad6510f5624372d13376a154c51eee
+  scale 0ba268dfde43403987a5f0c744521b3d
+  translate d8159a5656d940d0de02d012e5415f9a
+d6831ef04cb9301b090dfae6f7bb7ec7
+  $trModule :: GHC.Types.Module
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.Module Main.$trModule2 Main.$trModule1) -}
+847d9fc3b8e6f0b424199f36b4999bb2
+  $trModule1 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS "Main"#) -}
+24ef6042833e75ffd7aa98b83ecca98d
+  $trModule2 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS "main"#) -}
+4bbdc14338c0fbc12ec464bd541aaae4
+  exampleDrawing :: [(Shapes.Transform, Shapes.Shape)]
+  {- HasNoCafRefs, Strictness: m2,
+     Unfolding: (GHC.Types.:
+                   @ (Shapes.Transform, Shapes.Shape)
+                   Main.exampleDrawing1
+                   (GHC.Types.[] @ (Shapes.Transform, Shapes.Shape))) -}
+1428cd6be7a898a2a039d92afd630739
+  exampleDrawing1 :: (Shapes.Transform, Shapes.Shape)
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: ((Main.exampleDrawing2, Shapes.Circle)) -}
+7136c836009daefac8580b09d0cf49d0
+  exampleDrawing10 :: GHC.Types.Double
+  {- HasNoCafRefs, Strictness: m, Unfolding: (GHC.Types.D# 0.5##) -}
+b9b8c58112745b1ef9d4782752762109
+  exampleDrawing2 :: Shapes.Transform
+  {- HasNoCafRefs, Strictness: m4,
+     Unfolding: (Shapes.Compose
+                   Main.exampleDrawing7
+                   Main.exampleDrawing3) -}
+3585b68afdd7099e2c2e65f901754024
+  exampleDrawing3 :: Shapes.Transform
+  {- HasNoCafRefs, Strictness: m2,
+     Unfolding: (Shapes.Translate Main.exampleDrawing4) -}
+4dac8d1249c2c04761ed376f627aee7e
+  exampleDrawing4 :: Shapes.Vector
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (Shapes.Vector
+                   Main.exampleDrawing6
+                   Main.exampleDrawing5) -}
+3806dc2a50df8ea9f8bc3b09e614a404
+  exampleDrawing5 :: GHC.Types.Double
+  {- HasNoCafRefs, Strictness: m, Unfolding: (GHC.Types.D# 0.4##) -}
+812ca9cf43db8f9d078225741bcf0e85
+  exampleDrawing6 :: GHC.Types.Double
+  {- HasNoCafRefs, Strictness: m, Unfolding: (GHC.Types.D# 1.2##) -}
+fb16d341acebe1146e7d9783219d3fb6
+  exampleDrawing7 :: Shapes.Transform
+  {- HasNoCafRefs, Strictness: m3,
+     Unfolding: (Shapes.Scale Main.exampleDrawing8) -}
+a90a3968ff1cbb6f852d37553f28b58a
+  exampleDrawing8 :: Shapes.Vector
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (Shapes.Vector
+                   Main.exampleDrawing10
+                   Main.exampleDrawing9) -}
+c6c90f50ce7898800fece8a3f429e0ed
+  exampleDrawing9 :: GHC.Types.Double
+  {- HasNoCafRefs, Strictness: m, Unfolding: (GHC.Types.D# 0.25##) -}
+4f487442a03eadb3a21991cc17418547
+  main :: GHC.Types.IO ()
+  {- Unfolding: (Render.$wrender
+                   Render.defaultWindow5
+                   Render.defaultWindow3
+                   Render.defaultWindow2
+                   50#
+                   Main.exampleDrawing) -}
+92fa9d7417282abda31d1d58568402e3
+  main1 ::
+    GHC.Prim.State# GHC.Prim.RealWorld
+    -> (# GHC.Prim.State# GHC.Prim.RealWorld, () #)
+  {- Arity: 1,
+     Unfolding: (GHC.TopHandler.runMainIO1 @ () Main.main) -}
+vectorised variables:
+vectorised tycons:
+vectorised reused tycons:
+parallel variables:
+parallel tycons:
+trusted: safe
+require own pkg trusted: False
+

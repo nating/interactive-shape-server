@@ -1,0 +1,21 @@
+name:                ShapeServer
+version:             0.1.0.0
+synopsis:            Simple shape example for CS4012
+description:         Simple shape example for CS4012
+homepage:            https://github.com/nating/functional/assignment-1/README.md
+license:             BSD3
+license-file:        LICENSE
+author:              Geoff Natin
+maintainer:          nating@tcd.ie
+copyright:           2017 Geoff Natin
+category:            Web
+build-type:          Simple
+cabal-version:       >=1.10
+extra-source-files:  README.md
+
+executable ShapeServer
+  hs-source-dirs:      src
+  main-is:             Main.hs
+  other-modules:       Ansi, Render, Server, Shapes
+  default-language:    Haskell2010
+  build-depends:       base >= 4.7 && < 5
