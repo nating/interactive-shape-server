@@ -1,4 +1,5 @@
 # Functional Programming Assignment 1
+This assignment's goal is to build an interactive shape server. It is worth 7% of the module's grade.
 
 ## Specification
 
@@ -13,3 +14,5 @@
 * To parse the shape input, just have the compiler derive a "Read" instance for the necessary types and use that.  
 * Suitably document it by writing it as a literate Haskell program.
 * It's OK to make any changes that you feel you need to the EDSL so long as you motivate them clearly in the documentation. 
+* Justify all changes to the initial code that you make
+* Only modify Shape.hs. You probably don’t need to edit any other file. You only need the shape language.
