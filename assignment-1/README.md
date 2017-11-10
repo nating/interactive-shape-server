@@ -1,4 +1,5 @@
 # Functional Programming Assignment 1
+This assignment's goal is to build an interactive shape server. It is worth 7% of the module's grade.
 
 ## Specification
 
