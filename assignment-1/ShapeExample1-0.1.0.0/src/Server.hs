@@ -7,12 +7,15 @@ import Data.Monoid (mconcat)
 import Text.Blaze.Svg11 ((!), mkPath, rotate, l, m)
 import qualified Text.Blaze.Svg11 as S
 import qualified Text.Blaze.Svg11.Attributes as A
-import Text.Blaze.Svg.Renderer.String (renderSvg)
+import Text.Blaze.Svg.Renderer.Utf8 (renderSvg)
+
+svg drawing = do
+    setHeader "Content-Type" "image/svg+xml"
+    setHeader "Vary" "Accept Encoding"
+    raw $ renderSvg drawing
 
 serve = scotty 3000 $ do
-  get "/:word" $ do
-    beam <- param "word"
-    svg $ renderSvg svgDoc
+  get "/:word" $ svg svgDoc
 
 
 svgDoc :: S.Svg

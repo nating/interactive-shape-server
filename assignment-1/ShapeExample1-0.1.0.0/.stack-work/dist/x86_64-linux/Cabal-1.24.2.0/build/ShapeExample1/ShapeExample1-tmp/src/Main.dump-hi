@@ -1,11 +1,11 @@
 
 ==================== FINAL INTERFACE ====================
-2017-11-21 12:08:33.540777 UTC
+2017-11-21 18:10:35.177292 UTC
 
 interface main@main:Main 8002
-  interface hash: 93143015b187c32427bc17bce94bc0e7
-  ABI hash: d0393f23af256d4e5342f40225dc7dca
-  export-list hash: d169e622a9ec31627ee0737ca1e4311c
+  interface hash: 85d7e391420b2a749d264a5dc9af383f
+  ABI hash: 3429ca695c6b77c8a4cb1aa8e5673142
+  export-list hash: 3adc0e79cbb7431f8d17293bd5de15be
   orphan hash: 693e9af84d3dfcc71e640e005bdc5e2e
   flag hash: 5bdef1d95115aaa8f3b06f48c70a74c4
   sig of: Nothing
@@ -25,6 +25,8 @@ package dependencies: aeson-1.1.2.0@aeson-1.1.2.0-7ssY6fy1GxZGXxTPcOtf2k
                       base-compat-0.9.3@base-compat-0.9.3-KeJp8zYMpcS9WibvTcxU22
                       binary-0.8.3.0@binary-0.8.3.0
                       blaze-builder-0.4.0.2@blaze-builder-0.4.0.2-LxClHUTiKUUAxWtvJ5Oeoy
+                      blaze-markup-0.8.0.0@blaze-markup-0.8.0.0-GsxkVbRgODkgUQDmmDVob
+                      blaze-svg-0.3.6.1@blaze-svg-0.3.6.1-E6CYGgfBIFH476loEvWeGj
                       byteorder-1.0.4@byteorder-1.0.4-9NlNHkBVdo7F1prFVKrkcH
                       bytestring-0.10.8.1@bytestring-0.10.8.1
                       case-insensitive-1.2.0.10@case-insensitive-1.2.0.10-1D5OUKQ7UrJ7IpOe0di4Un
@@ -138,9 +140,9 @@ family instance modules: attoparsec-0.13.1.0@attoparsec-0.13.1.0-3ql4hcH9pGfBAlE
 import  -/  base-4.9.1.0:Prelude 22dd289b8469a8fa8dc81cab7b237771
 import  -/  Render 3b9dac36f3c6919f2473aa494cee54ec
   exports: 42196c7712c814c6bac2d5299bac88ac
-import  -/  Server d7a6fce5d77fc678e7f840428f7a7131
-  exports: 7d27ec529d4064a3deac158934536f14
-  serve 4d5c39d99257be3ea7661417ab9b8162
+import  -/  Server de2b40ecb837eac311e3a83dab23bd6c
+  exports: c15c56c30c800797636725b553dc8820
+  serve 3d2ae27df3d00fe2c45cb202c62e4aaa
 import  -/  Shapes 793602c9da782eb18340d30c91b2c33b
   exports: 86eff6cedd199d63d8d2bc7976a8b0bf
   <+> 3bcf87a778a82a13654397f62be954d4
@@ -209,10 +211,10 @@ a90a3968ff1cbb6f852d37553f28b58a
 c6c90f50ce7898800fece8a3f429e0ed
   exampleDrawing9 :: GHC.Types.Double
   {- HasNoCafRefs, Strictness: m, Unfolding: (GHC.Types.D# 0.25##) -}
-f59f37102860e7ac39dbc11fc12f9044
+e32c37a94826ea9a37d49dc9f57f6ac9
   main :: GHC.Types.IO ()
   {- Unfolding: InlineRule (0, True, True) Server.serve -}
-640dd6e623c0f30a82b1ab870be87bcc
+867799e67a06f9b28b500a62e1295c45
   main1 ::
     GHC.Prim.State# GHC.Prim.RealWorld
     -> (# GHC.Prim.State# GHC.Prim.RealWorld, () #)

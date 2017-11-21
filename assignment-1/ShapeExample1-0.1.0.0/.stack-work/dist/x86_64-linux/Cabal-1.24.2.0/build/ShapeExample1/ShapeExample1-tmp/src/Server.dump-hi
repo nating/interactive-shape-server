@@ -1,18 +1,22 @@
 
 ==================== FINAL INTERFACE ====================
-2017-11-21 12:08:32.874714 UTC
+2017-11-21 18:10:34.684894 UTC
 
 interface main@main:Server 8002
-  interface hash: e81fab0efd8f95d3788289c4429dedce
-  ABI hash: d7a6fce5d77fc678e7f840428f7a7131
-  export-list hash: 7d27ec529d4064a3deac158934536f14
+  interface hash: 90435a5e27810151330f066e23d6cb1e
+  ABI hash: de2b40ecb837eac311e3a83dab23bd6c
+  export-list hash: c15c56c30c800797636725b553dc8820
   orphan hash: 693e9af84d3dfcc71e640e005bdc5e2e
   flag hash: 22f7c82bd23aef2fa9c2c09c28b5aebf
   sig of: Nothing
   used TH splices: False
   where
 exports:
+  Server.makePath
+  Server.makeTransform
   Server.serve
+  Server.svg
+  Server.svgDoc
 module dependencies:
 package dependencies: aeson-1.1.2.0@aeson-1.1.2.0-7ssY6fy1GxZGXxTPcOtf2k
                       appar-0.1.4@appar-0.1.4-DGWHHt2WRn9FI49prcwO9
@@ -24,6 +28,8 @@ package dependencies: aeson-1.1.2.0@aeson-1.1.2.0-7ssY6fy1GxZGXxTPcOtf2k
                       base-compat-0.9.3@base-compat-0.9.3-KeJp8zYMpcS9WibvTcxU22
                       binary-0.8.3.0@binary-0.8.3.0
                       blaze-builder-0.4.0.2@blaze-builder-0.4.0.2-LxClHUTiKUUAxWtvJ5Oeoy
+                      blaze-markup-0.8.0.0@blaze-markup-0.8.0.0-GsxkVbRgODkgUQDmmDVob
+                      blaze-svg-0.3.6.1@blaze-svg-0.3.6.1-E6CYGgfBIFH476loEvWeGj
                       byteorder-1.0.4@byteorder-1.0.4-9NlNHkBVdo7F1prFVKrkcH
                       bytestring-0.10.8.1@bytestring-0.10.8.1
                       case-insensitive-1.2.0.10@case-insensitive-1.2.0.10-1D5OUKQ7UrJ7IpOe0di4Un
@@ -135,8 +141,12 @@ family instance modules: attoparsec-0.13.1.0@attoparsec-0.13.1.0-3ql4hcH9pGfBAlE
                          vector-0.12.0.1@vector-0.12.0.1-692PQMDMB6pIQ1uGwefDcQ:Data.Vector.Unboxed
                          vector-0.12.0.1@vector-0.12.0.1-692PQMDMB6pIQ1uGwefDcQ:Data.Vector.Unboxed.Base
 import  -/  base-4.9.1.0:Data.Monoid 51cc9cd8c130d49ba96b7c2c2406022b
-import  -/  base-4.9.1.0:GHC.Base c4231c43c07e46080a26bf94094c7aa1
 import  -/  base-4.9.1.0:Prelude 22dd289b8469a8fa8dc81cab7b237771
+import  -/  blaze-markup-0.8.0.0@blaze-markup-0.8.0.0-GsxkVbRgODkgUQDmmDVob:Text.Blaze.Internal c1d6ebf18cc7de440fbc2d1a2a795843
+import  -/  blaze-svg-0.3.6.1@blaze-svg-0.3.6.1-E6CYGgfBIFH476loEvWeGj:Text.Blaze.Svg.Internal cffc7b1bca7b3586ae25aeb718abb55b
+import  -/  blaze-svg-0.3.6.1@blaze-svg-0.3.6.1-E6CYGgfBIFH476loEvWeGj:Text.Blaze.Svg.Renderer.Utf8 e2f4642473b16a8cdce3ca89f311d0be
+import  -/  blaze-svg-0.3.6.1@blaze-svg-0.3.6.1-E6CYGgfBIFH476loEvWeGj:Text.Blaze.Svg11 ffe4dbf1048c9a6d5d9dad94ecced8e8
+import  -/  blaze-svg-0.3.6.1@blaze-svg-0.3.6.1-E6CYGgfBIFH476loEvWeGj:Text.Blaze.Svg11.Attributes 2eac472bb3ab7f6d74496a530091d88d
 import  -/  scotty-0.11.0@scotty-0.11.0-A0Fu08UQDtq1x6NLBiRRmh:Web.Scotty 9eff37751f8615ef023d45128bab86c8
 02b7963a57006f11768d99ee15be977b
   $trModule :: GHC.Types.Module
@@ -152,7 +162,158 @@ f728e61ebc5666a5698aa1455a998eb8
   $trModule2 :: GHC.Types.TrName
   {- HasNoCafRefs, Strictness: m1,
      Unfolding: (GHC.Types.TrNameS "main"#) -}
-4d5c39d99257be3ea7661417ab9b8162
+c0f64c82fc993ea98f100af11f9732eb
+  makePath :: Text.Blaze.Internal.AttributeValue
+  {- Strictness: m7,
+     Unfolding: InlineRule (0, True, True)
+                Server.makePath1
+                  `cast`
+                (Sym (Text.Blaze.Internal.N:AttributeValue[0])) -}
+f3b56f58a1db115eb67183fbbd5d35c8
+  makePath1 :: Text.Blaze.Internal.ChoiceString
+  {- Strictness: m7,
+     Unfolding: (Text.Blaze.Internal.AppendChoiceString
+                   Server.makePath10
+                   Server.makePath_x2) -}
+3617953dc9e7ec83fd8b72d33db2954b
+  makePath10 :: Text.Blaze.Internal.ChoiceString
+  {- Strictness: m7,
+     Unfolding: (Text.Blaze.Internal.AppendChoiceString
+                   Text.Blaze.Internal.EmptyChoiceString
+                   Server.makePath_x4) -}
+09811618cad2c59693e22fa9cec39b2d
+  makePath11 :: [GHC.Base.String]
+  {- Unfolding: (GHC.Types.:
+                   @ GHC.Base.String
+                   Text.Blaze.Svg.Internal.l1
+                   Server.makePath12) -}
+65c2bf4fa342a477f16001f8949bfed3
+  makePath12 :: [GHC.Base.String]
+  {- Unfolding: (GHC.Types.:
+                   @ GHC.Base.String
+                   Server.makePath17
+                   Server.makePath13) -}
+23a0666ae966381289722b4011191f29
+  makePath13 :: [GHC.Base.String]
+  {- Unfolding: (GHC.Types.:
+                   @ GHC.Base.String
+                   Text.Blaze.Svg.Internal.a5
+                   Server.makePath14) -}
+c6a692535507bb474d2905cd9666b398
+  makePath14 :: [GHC.Base.String]
+  {- Unfolding: (GHC.Types.:
+                   @ GHC.Base.String
+                   Server.makePath15
+                   Text.Blaze.Svg.Internal.a1) -}
+1ab9e3a1032e8bfe11fb98fa9f7fa3b6
+  makePath15 :: GHC.Base.String
+  {- Unfolding: (case GHC.Show.$w$cshowsPrec1
+                        0#
+                        Server.makePath16
+                        (GHC.Types.[] @ GHC.Types.Char) of ww2 { (#,#) ww3 ww4 ->
+                 GHC.Types.: @ GHC.Types.Char ww3 ww4 }) -}
+de8216d42405f3bd859c86b0c34d15b4
+  makePath16 :: GHC.Integer.Type.Integer
+  {- HasNoCafRefs, Unfolding: (3) -}
+2f4508900187032b8887709bba20b350
+  makePath17 :: GHC.Base.String
+  {- Unfolding: (case GHC.Show.$w$cshowsPrec1
+                        0#
+                        Server.makePath18
+                        (GHC.Types.[] @ GHC.Types.Char) of ww2 { (#,#) ww3 ww4 ->
+                 GHC.Types.: @ GHC.Types.Char ww3 ww4 }) -}
+70e50cfa28dd2da9b3178889be03c798
+  makePath18 :: GHC.Integer.Type.Integer
+  {- HasNoCafRefs, Unfolding: (2) -}
+b545cc5a264448b7528ac9d90a9cc874
+  makePath2 :: [GHC.Base.String]
+  {- Unfolding: (GHC.Types.:
+                   @ GHC.Base.String
+                   Text.Blaze.Svg.Internal.m1
+                   Server.makePath3) -}
+67b637b63dd2db8585a9a8d28909f01a
+  makePath3 :: [GHC.Base.String]
+  {- Unfolding: (GHC.Types.:
+                   @ GHC.Base.String
+                   Server.makePath8
+                   Server.makePath4) -}
+ffb848219e2d3cebe8de1067e6d9e438
+  makePath4 :: [GHC.Base.String]
+  {- Unfolding: (GHC.Types.:
+                   @ GHC.Base.String
+                   Text.Blaze.Svg.Internal.a5
+                   Server.makePath5) -}
+669c3799ea8f93c0162ca68938bb5d1f
+  makePath5 :: [GHC.Base.String]
+  {- Unfolding: (GHC.Types.:
+                   @ GHC.Base.String
+                   Server.makePath6
+                   Text.Blaze.Svg.Internal.a1) -}
+4b996976d4566a8c7bf181d976eff4b4
+  makePath6 :: GHC.Base.String
+  {- Unfolding: (case GHC.Show.$w$cshowsPrec1
+                        0#
+                        Server.makePath7
+                        (GHC.Types.[] @ GHC.Types.Char) of ww2 { (#,#) ww3 ww4 ->
+                 GHC.Types.: @ GHC.Types.Char ww3 ww4 }) -}
+13dec28fde32efa58bd0509fce2d94e6
+  makePath7 :: GHC.Integer.Type.Integer
+  {- HasNoCafRefs, Unfolding: (5) -}
+593206512254453beb845b3991bcbb8f
+  makePath8 :: GHC.Base.String
+  {- Unfolding: (case GHC.Show.$w$cshowsPrec1
+                        0#
+                        Server.makePath9
+                        (GHC.Types.[] @ GHC.Types.Char) of ww2 { (#,#) ww3 ww4 ->
+                 GHC.Types.: @ GHC.Types.Char ww3 ww4 }) -}
+ba32ce0d72925b878c01d755d9373291
+  makePath9 :: GHC.Integer.Type.Integer
+  {- HasNoCafRefs, Unfolding: (4) -}
+54a6d158c28ed7ead8a50efb5b467d05
+  makePath_x1 :: [GHC.Types.Char]
+  {- Unfolding: (Text.Blaze.Svg.Internal.a_go Server.makePath2) -}
+96d124610d276f9728fbcc099468a984
+  makePath_x2 :: Text.Blaze.Internal.ChoiceString
+  {- Strictness: m2,
+     Unfolding: (Text.Blaze.Internal.String Server.makePath_x1) -}
+dcffb0d59c2f2cdd2e82dea97c633a3f
+  makePath_x4 :: Text.Blaze.Internal.ChoiceString
+  {- Strictness: m2,
+     Unfolding: (Text.Blaze.Internal.String Server.makePath_x5) -}
+017219ce6b4a46e633f9651d1c55acf9
+  makePath_x5 :: [GHC.Types.Char]
+  {- Unfolding: (Text.Blaze.Svg.Internal.a_go Server.makePath11) -}
+169a2982eb9d42ab6a7c2031fd4daa94
+  makeTransform :: Text.Blaze.Internal.AttributeValue
+  {- Strictness: m2,
+     Unfolding: InlineRule (0, True, True)
+                Server.makeTransform1
+                  `cast`
+                (Sym (Text.Blaze.Internal.N:AttributeValue[0])) -}
+59514c1a5d2600a27693a324520a1a1a
+  makeTransform1 :: Text.Blaze.Internal.ChoiceString
+  {- Strictness: m2,
+     Unfolding: (Text.Blaze.Internal.String Server.makeTransform2) -}
+67c2b7756785ea2110dbb0c06d5097b9
+  makeTransform2 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.Base.++
+                   @ GHC.Types.Char
+                   Text.Blaze.Svg.Internal.rotate2
+                   Server.makeTransform3) -}
+ef0aca99fc0a22a5654e3d3f0ac8cbc7
+  makeTransform3 :: [GHC.Types.Char]
+  {- Unfolding: (case GHC.Show.$w$cshowsPrec1
+                        0#
+                        Server.makeTransform4
+                        (GHC.Types.[] @ GHC.Types.Char) of ww2 { (#,#) ww3 ww4 ->
+                 GHC.Base.++
+                   @ GHC.Types.Char
+                   (GHC.Types.: @ GHC.Types.Char ww3 ww4)
+                   Text.Blaze.Svg.Internal.matrix2 }) -}
+6f9bc56e918406890c0134b358787c43
+  makeTransform4 :: GHC.Integer.Type.Integer
+  {- HasNoCafRefs, Unfolding: (50) -}
+3d2ae27df3d00fe2c45cb202c62e4aaa
   serve :: GHC.Types.IO ()
   {- Unfolding: (Web.Scotty.Trans.scottyOptsT
                    @ GHC.Types.IO
@@ -160,43 +321,38 @@ f728e61ebc5666a5698aa1455a998eb8
                    @ Data.Text.Internal.Lazy.Text
                    GHC.Base.$fMonadIO
                    Control.Monad.IO.Class.$fMonadIOIO
-                   Server.serve11
+                   Server.serve7
                    (GHC.Base.id @ (GHC.Types.IO Network.Wai.Internal.Response))
                    Server.serve1) -}
-8d2a6e8dab8ebf83ac2eaf222d5a4904
+7eca27e3ff2c28a15fb390a09cb0c482
   serve1 ::
     Web.Scotty.Internal.Types.ScottyT
       Data.Text.Internal.Lazy.Text GHC.Types.IO ()
-  {- Unfolding: (Server.serve10
+  {- Unfolding: (Server.serve6
                    Network.HTTP.Types.Method.GET
-                   Server.serve7
-                   Server.serve2
-                     `cast`
-                   (Trans
-                        (Sym (Control.Monad.Trans.Reader.N:ReaderT[0]
-                                  <*>_N
-                                  <Web.Scotty.Internal.Types.ActionEnv>_R
-                                  <Control.Monad.Trans.State.Lazy.StateT
-                                     Web.Scotty.Internal.Types.ScottyResponse GHC.Types.IO>_R
-                                  <Data.Either.Either
-                                     (Web.Scotty.Internal.Types.ActionError
-                                        Data.Text.Internal.Lazy.Text)
-                                     ()>_N))
-                        (Trans
-                             (Sym (Control.Monad.Trans.Except.N:ExceptT[0]
-                                       <Web.Scotty.Internal.Types.ActionError
-                                          Data.Text.Internal.Lazy.Text>_N
-                                       <Control.Monad.Trans.Reader.ReaderT
-                                          Web.Scotty.Internal.Types.ActionEnv
-                                          (Control.Monad.Trans.State.Lazy.StateT
-                                             Web.Scotty.Internal.Types.ScottyResponse
-                                             GHC.Types.IO)>_R
-                                       <()>_N))
-                             (Sym (Web.Scotty.Internal.Types.N:ActionT[0]
-                                       <Data.Text.Internal.Lazy.Text>_N
-                                       <GHC.Types.IO>_R) <()>_N)))) -}
-caeb5cda5813695eff100eb69c2aa573
-  serve10 ::
+                   Server.serve3
+                   Server.serve2) -}
+8aaea602fb41cad0c26ffef27e4ab1af
+  serve2 ::
+    Web.Scotty.Internal.Types.ActionT
+      Data.Text.Internal.Lazy.Text GHC.Types.IO ()
+  {- Unfolding: (Server.svg Server.svgDoc) -}
+278009aa1a2b8fd28b3e2f03acb69a3a
+  serve3 :: Web.Scotty.Internal.Types.RoutePattern
+  {- Unfolding: (Web.Scotty.Internal.Types.Capture Server.serve4) -}
+78f898a1e646b997ec191fd9426daead
+  serve4 :: Data.Text.Internal.Lazy.Text
+  {- Unfolding: (case GHC.Base.map
+                        @ GHC.Types.Char
+                        @ GHC.Types.Char
+                        Data.Text.Internal.safe
+                        Server.serve5 of dt { DEFAULT ->
+                 Web.Scotty.Internal.Types.$fIsStringRoutePattern_outer dt }) -}
+4cafe3eb13eaf43e02b93d990ee3d1d4
+  serve5 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "/:word"#) -}
+e570f5fa078facb8eacd465fbf134ce5
+  serve6 ::
     Network.HTTP.Types.Method.StdMethod
     -> Web.Scotty.Internal.Types.RoutePattern
     -> Web.Scotty.Internal.Types.ActionT
@@ -208,15 +364,15 @@ caeb5cda5813695eff100eb69c2aa573
                    @ GHC.Types.IO
                    Web.Scotty.Internal.Types.$fScottyErrorText
                    Control.Monad.IO.Class.$fMonadIOIO) -}
-fe527e1ba04cded88f601bd6c133c88d
-  serve11 :: Web.Scotty.Internal.Types.Options
+2603cfb7e7f4785ec06f3d4b9280154a
+  serve7 :: Web.Scotty.Internal.Types.Options
   {- Unfolding: (Web.Scotty.Internal.Types.Options
                    Web.Scotty.Internal.Types.$fDefaultOptions3
-                   Server.serve12) -}
-67af55bb84129da90f1f65bbefbcfc90
-  serve12 :: Network.Wai.Handler.Warp.Settings.Settings
+                   Server.serve8) -}
+d981191550159f0da90ab72c633bbb9f
+  serve8 :: Network.Wai.Handler.Warp.Settings.Settings
   {- Unfolding: (Network.Wai.Handler.Warp.Settings.Settings
-                   Server.serve13
+                   Server.serve9
                    Network.Wai.Handler.Warp.Settings.defaultSettings16
                    Network.Wai.Handler.Warp.Settings.defaultOnException1
                      `cast`
@@ -266,198 +422,1361 @@ fe527e1ba04cded88f601bd6c133c88d
                     ->_R <GHC.Integer.Type.Integer>_R
                     ->_R Sym (GHC.Types.N:IO[0] <()>_R))
                    (GHC.Base.Nothing @ GHC.Types.Int)) -}
-3de5e1bdf93ebdf334982ae4f2c65716
-  serve13 :: GHC.Types.Int
+c7b9e691fabb3e41825fea0368c3ed61
+  serve9 :: GHC.Types.Int
   {- HasNoCafRefs, Unfolding: (GHC.Types.I# 3000#) -}
-eee6a8b9fb7c8a1ab3825235436540e3
-  serve2 ::
-    Web.Scotty.Internal.Types.ActionEnv
-    -> Control.Monad.Trans.State.Lazy.StateT
-         Web.Scotty.Internal.Types.ScottyResponse
-         GHC.Types.IO
-         (Data.Either.Either
-            (Web.Scotty.Internal.Types.ActionError
-               Data.Text.Internal.Lazy.Text)
-            ())
-  {- Arity: 1,
-     Unfolding: (\ (w4 :: Web.Scotty.Internal.Types.ActionEnv) ->
+66897eb02a48d4b742569a2881f31e98
+  svg ::
+    Text.Blaze.Internal.Markup
+    -> Web.Scotty.Internal.Types.ActionT
+         Data.Text.Internal.Lazy.Text GHC.Types.IO ()
+  {- Arity: 1, Strictness: <L,1*U>,
+     Unfolding: (\ (drawing :: Text.Blaze.Internal.Markup) ->
                  let {
-                   m1 :: Control.Monad.Trans.State.Lazy.StateT
-                           Web.Scotty.Internal.Types.ScottyResponse
-                           GHC.Types.IO
-                           (Data.Either.Either
-                              (Web.Scotty.Internal.Types.ActionError
-                                 Data.Text.Internal.Lazy.Text)
-                              Data.Text.Internal.Lazy.Text)
-                   = Server.serve_w2
-                       `cast`
-                     (Trans
-                          (Web.Scotty.Internal.Types.N:ActionT[0]
-                               <Data.Text.Internal.Lazy.Text>_N
-                               <GHC.Types.IO>_R <Data.Text.Internal.Lazy.Text>_N)
-                          (Trans
-                               (Control.Monad.Trans.Except.N:ExceptT[0]
-                                    <Web.Scotty.Internal.Types.ActionError
-                                       Data.Text.Internal.Lazy.Text>_N
-                                    <Control.Monad.Trans.Reader.ReaderT
-                                       Web.Scotty.Internal.Types.ActionEnv
-                                       (Control.Monad.Trans.State.Lazy.StateT
-                                          Web.Scotty.Internal.Types.ScottyResponse GHC.Types.IO)>_R
-                                    <Data.Text.Internal.Lazy.Text>_N)
-                               (Control.Monad.Trans.Reader.N:ReaderT[0]
-                                    <*>_N
-                                    <Web.Scotty.Internal.Types.ActionEnv>_R
-                                    <Control.Monad.Trans.State.Lazy.StateT
-                                       Web.Scotty.Internal.Types.ScottyResponse GHC.Types.IO>_R
-                                    <Data.Either.Either
-                                       (Web.Scotty.Internal.Types.ActionError
-                                          Data.Text.Internal.Lazy.Text)
-                                       Data.Text.Internal.Lazy.Text>_N)))
-                       w4
+                   w1 :: Data.ByteString.Lazy.Internal.ByteString
+                   = Data.ByteString.Builder.toLazyByteString
+                       (Server.svg_go3
+                          @ ()
+                          Server.svg14
+                            `cast`
+                          (Sym (Data.ByteString.Builder.Internal.N:Builder[0]))
+                          drawing)
                  } in
-                 (\ (s1 :: Web.Scotty.Internal.Types.ScottyResponse)
-                    (s :: GHC.Prim.State# GHC.Prim.RealWorld)[OneShot] ->
-                  case (m1
-                          `cast`
-                        (Control.Monad.Trans.State.Lazy.N:StateT[0]
-                             <Web.Scotty.Internal.Types.ScottyResponse>_N
-                             <GHC.Types.IO>_R
-                             <Data.Either.Either
-                                (Web.Scotty.Internal.Types.ActionError
-                                   Data.Text.Internal.Lazy.Text)
-                                Data.Text.Internal.Lazy.Text>_N)
-                          s1)
+                 let {
+                   lvl2 :: forall r.
+                           Data.ByteString.Builder.Internal.BuildStep r
+                           -> Data.ByteString.Builder.Internal.BufferRange
+                           -> GHC.Prim.State# GHC.Prim.RealWorld
+                           -> (# GHC.Prim.State# GHC.Prim.RealWorld,
+                                 Data.ByteString.Builder.Internal.BuildSignal r #)
+                     {- Arity: 3 -}
+                   = Web.Scotty.Action.html1 w1
+                 } in
+                 let {
+                   lvl3 :: Web.Scotty.Internal.Types.Content
+                   = Web.Scotty.Internal.Types.ContentBuilder
+                       lvl2
                          `cast`
-                       (GHC.Types.N:IO[0]
-                            <(Data.Either.Either
-                                (Web.Scotty.Internal.Types.ActionError
-                                   Data.Text.Internal.Lazy.Text)
-                                Data.Text.Internal.Lazy.Text,
-                              Web.Scotty.Internal.Types.ScottyResponse)>_R)
-                         s of ds1 { (#,#) ipv ipv1 ->
-                  case ipv1 of wild { (,) a1 s' ->
-                  case a1 of wild1 {
-                    Data.Either.Left e1
-                    -> (# ipv,
-                          (Data.Either.Left
-                             @ (Web.Scotty.Internal.Types.ActionError
-                                  Data.Text.Internal.Lazy.Text)
-                             @ ()
-                             e1,
-                           s') #)
-                    Data.Either.Right x
-                    -> (((Web.Scotty.Action.$whtml
-                            @ Data.Text.Internal.Lazy.Text
-                            @ GHC.Types.IO
-                            GHC.Base.$fMonadIO
-                            (Server.serve_go31
-                               Server.serve5
-                               (GHC.Types.: @ Data.Text.Internal.Lazy.Text x Server.serve3)))
-                           `cast`
-                         (Trans
-                              (Web.Scotty.Internal.Types.N:ActionT[0]
-                                   <Data.Text.Internal.Lazy.Text>_N <GHC.Types.IO>_R <()>_N)
-                              (Trans
-                                   (Control.Monad.Trans.Except.N:ExceptT[0]
-                                        <Web.Scotty.Internal.Types.ActionError
-                                           Data.Text.Internal.Lazy.Text>_N
-                                        <Control.Monad.Trans.Reader.ReaderT
-                                           Web.Scotty.Internal.Types.ActionEnv
-                                           (Control.Monad.Trans.State.Lazy.StateT
-                                              Web.Scotty.Internal.Types.ScottyResponse
-                                              GHC.Types.IO)>_R
-                                        <()>_N)
-                                   (Control.Monad.Trans.Reader.N:ReaderT[0]
-                                        <*>_N
-                                        <Web.Scotty.Internal.Types.ActionEnv>_R
-                                        <Control.Monad.Trans.State.Lazy.StateT
-                                           Web.Scotty.Internal.Types.ScottyResponse GHC.Types.IO>_R
-                                        <Data.Either.Either
-                                           (Web.Scotty.Internal.Types.ActionError
-                                              Data.Text.Internal.Lazy.Text)
-                                           ()>_N)))
-                           w4)
-                          `cast`
-                        (Control.Monad.Trans.State.Lazy.N:StateT[0]
-                             <Web.Scotty.Internal.Types.ScottyResponse>_N
-                             <GHC.Types.IO>_R
-                             <Data.Either.Either
-                                (Web.Scotty.Internal.Types.ActionError
-                                   Data.Text.Internal.Lazy.Text)
-                                ()>_N)
-                          s')
-                         `cast`
-                       (GHC.Types.N:IO[0]
-                            <(Data.Either.Either
-                                (Web.Scotty.Internal.Types.ActionError
-                                   Data.Text.Internal.Lazy.Text)
-                                (),
-                              Web.Scotty.Internal.Types.ScottyResponse)>_R)
-                         ipv } } })
+                       (Trans
+                            (forall (r :: <*>_N).
+                             <Data.ByteString.Builder.Internal.BuildStep r>_R
+                             ->_R <Data.ByteString.Builder.Internal.BufferRange>_R
+                             ->_R Sym (GHC.Types.N:IO[0]
+                                           <Data.ByteString.Builder.Internal.BuildSignal r>_R))
+                            (Sym (Data.ByteString.Builder.Internal.N:Builder[0])))
+                 } in
+                 (\ (eta :: Web.Scotty.Internal.Types.ActionEnv)
+                    (eta1 :: Web.Scotty.Internal.Types.ScottyResponse)
+                    (eta2 :: GHC.Prim.State# GHC.Prim.RealWorld)[OneShot] ->
+                  (# eta2,
+                     (Server.svg13,
+                      case eta1 of wild { Web.Scotty.Internal.Types.SR ds ds1 ds2 ->
+                      Web.Scotty.Internal.Types.SR
+                        ds
+                        (case Web.Scotty.Action.$wlvl
+                                Server.svg10
+                                Server.svg7
+                                (Web.Scotty.Action.setHeader1
+                                   Server.svg4
+                                   Server.svg1
+                                   ds1) of ww { (#,#) ww1 ww2 ->
+                         GHC.Types.:
+                           @ (Network.HTTP.Types.Header.HeaderName,
+                              Data.ByteString.Internal.ByteString)
+                           ww1
+                           ww2 })
+                        lvl3 }) #))
                    `cast`
                  (Trans
-                      (<Web.Scotty.Internal.Types.ScottyResponse>_R
-                       ->_R Sym (GHC.Types.N:IO[0]
-                                     <(Data.Either.Either
-                                         (Web.Scotty.Internal.Types.ActionError
-                                            Data.Text.Internal.Lazy.Text)
-                                         (),
-                                       Web.Scotty.Internal.Types.ScottyResponse)>_R))
-                      (Sym (Control.Monad.Trans.State.Lazy.N:StateT[0]
-                                <Web.Scotty.Internal.Types.ScottyResponse>_N
-                                <GHC.Types.IO>_R
-                                <Data.Either.Either
-                                   (Web.Scotty.Internal.Types.ActionError
-                                      Data.Text.Internal.Lazy.Text)
-                                   ()>_N)))) -}
-c39cc2b23bca9320d7e933a6080dc267
-  serve3 :: [Data.Text.Internal.Lazy.Text]
-  {- Unfolding: (GHC.Types.:
-                   @ Data.Text.Internal.Lazy.Text
-                   Server.serve4
-                   (GHC.Types.[] @ Data.Text.Internal.Lazy.Text)) -}
-9e3e1686fdcd230f303a5b5918fb34c0
-  serve4 :: Data.Text.Internal.Lazy.Text
-  {- Unfolding: (Data.Text.Lazy.unpackCString# " me up!</h1>"#) -}
-b8c87bb0a57707f699eb8dfe4d4b1b8a
-  serve5 :: Data.Text.Internal.Lazy.Text
-  {- Unfolding: (Data.Text.Lazy.unpackCString# "<h1>Scotty, "#) -}
-a2cf2733e724942af281af769dbf9751
-  serve6 :: Data.Text.Internal.Lazy.Text
-  {- Unfolding: (Data.Text.Lazy.unpackCString# "word"#) -}
-c5f3419bc957ab246962088e389584fa
-  serve7 :: Web.Scotty.Internal.Types.RoutePattern
-  {- Unfolding: (Web.Scotty.Internal.Types.Capture Server.serve8) -}
-da722853c1ee4e55de9ab63ddbc40875
-  serve8 :: Data.Text.Internal.Lazy.Text
-  {- Unfolding: (case GHC.Base.map
-                        @ GHC.Types.Char
-                        @ GHC.Types.Char
-                        Data.Text.Internal.safe
-                        Server.serve9 of dt { DEFAULT ->
-                 Web.Scotty.Internal.Types.$fIsStringRoutePattern_outer dt }) -}
-ad131ee23d1b9f73af7d372b826448da
-  serve9 :: [GHC.Types.Char]
-  {- Unfolding: (GHC.CString.unpackCString# "/:word"#) -}
-ffea5419b871c4cc7c7f2870a6f1d275
-  serve_go31 ::
-    Data.Text.Internal.Lazy.Text
-    -> [Data.Text.Internal.Lazy.Text] -> Data.Text.Internal.Lazy.Text
-  {- Arity: 2, HasNoCafRefs, Strictness: <S,1*U><L,1*U> -}
-2e4c1f60237a2946d1cce50e3bdb7288
-  serve_w2 ::
-    Web.Scotty.Internal.Types.ActionT
-      Data.Text.Internal.Lazy.Text
-      GHC.Types.IO
-      Data.Text.Internal.Lazy.Text
-  {- Unfolding: (Web.Scotty.Action.param
-                   @ Data.Text.Internal.Lazy.Text
-                   @ Data.Text.Internal.Lazy.Text
-                   @ GHC.Types.IO
-                   Web.Scotty.Action.$fParsableText0
-                   Web.Scotty.Internal.Types.$fScottyErrorText
-                   GHC.Base.$fMonadIO
-                   Server.serve6) -}
+                      (<Web.Scotty.Internal.Types.ActionEnv>_R
+                       ->_R Trans
+                                (<Web.Scotty.Internal.Types.ScottyResponse>_R
+                                 ->_R Sym (GHC.Types.N:IO[0]
+                                               <(Data.Either.Either
+                                                   (Web.Scotty.Internal.Types.ActionError
+                                                      Data.Text.Internal.Lazy.Text)
+                                                   (),
+                                                 Web.Scotty.Internal.Types.ScottyResponse)>_R))
+                                (Sym (Control.Monad.Trans.State.Lazy.N:StateT[0]
+                                          <Web.Scotty.Internal.Types.ScottyResponse>_N
+                                          <GHC.Types.IO>_R
+                                          <Data.Either.Either
+                                             (Web.Scotty.Internal.Types.ActionError
+                                                Data.Text.Internal.Lazy.Text)
+                                             ()>_N)))
+                      (Trans
+                           (Sym (Control.Monad.Trans.Reader.N:ReaderT[0]
+                                     <*>_N
+                                     <Web.Scotty.Internal.Types.ActionEnv>_R
+                                     <Control.Monad.Trans.State.Lazy.StateT
+                                        Web.Scotty.Internal.Types.ScottyResponse GHC.Types.IO>_R
+                                     <Data.Either.Either
+                                        (Web.Scotty.Internal.Types.ActionError
+                                           Data.Text.Internal.Lazy.Text)
+                                        ()>_N))
+                           (Trans
+                                (Sym (Control.Monad.Trans.Except.N:ExceptT[0]
+                                          <Web.Scotty.Internal.Types.ActionError
+                                             Data.Text.Internal.Lazy.Text>_N
+                                          <Control.Monad.Trans.Reader.ReaderT
+                                             Web.Scotty.Internal.Types.ActionEnv
+                                             (Control.Monad.Trans.State.Lazy.StateT
+                                                Web.Scotty.Internal.Types.ScottyResponse
+                                                GHC.Types.IO)>_R
+                                          <()>_N))
+                                (Sym (Web.Scotty.Internal.Types.N:ActionT[0]
+                                          <Data.Text.Internal.Lazy.Text>_N
+                                          <GHC.Types.IO>_R) <()>_N))))) -}
+ed1026bbb0c7c87d1d67210c06350b4c
+  svg1 :: Data.ByteString.Internal.ByteString
+  {- Unfolding: (case Data.Text.concat
+                        Server.svg2 of ww { Data.Text.Internal.Text ww1 ww2 ww3 ->
+                 Data.Text.Encoding.$wencodeUtf8 ww1 ww2 ww3 }) -}
+9dcc9a34a3a859ce8e581c0b49f77bbf
+  svg10 :: Network.HTTP.Types.Header.HeaderName
+  {- Unfolding: (case Data.Text.concat
+                        Server.svg11 of ww { Data.Text.Internal.Text ww1 ww2 ww3 ->
+                 case Data.Text.Encoding.$wencodeUtf8
+                        ww1
+                        ww2
+                        ww3 of dt { Data.ByteString.Internal.PS ipv ipv1 ipv2 ipv3 ->
+                 case Data.CaseInsensitive.Internal.$wfoldCaseBS
+                        ipv
+                        ipv1
+                        ipv2
+                        ipv3 of dt1 { Data.ByteString.Internal.PS ipv4 ipv5 ipv6 ipv7 ->
+                 Data.CaseInsensitive.Internal.CI
+                   @ Data.ByteString.Internal.ByteString
+                   dt
+                   dt1 } } }) -}
+8f874fb0a457ed85e9c174658f2e661b
+  svg11 :: [Data.Text.Internal.Text]
+  {- Unfolding: (Data.Text.Lazy.dropEnd_go Server.svg12) -}
+c3b9d81861b610afc6282844edc7b816
+  svg12 :: Data.Text.Internal.Lazy.Text
+  {- Unfolding: (Data.Text.Lazy.unpackCString# "Vary"#) -}
+e4aed7444bf35d550b143817eb878423
+  svg13 ::
+    Data.Either.Either
+      (Web.Scotty.Internal.Types.ActionError
+         Data.Text.Internal.Lazy.Text)
+      ()
+  {- HasNoCafRefs,
+     Unfolding: (Data.Either.Right
+                   @ (Web.Scotty.Internal.Types.ActionError
+                        Data.Text.Internal.Lazy.Text)
+                   @ ()
+                   GHC.Tuple.()) -}
+2cbb4ea392e2c124575654d6f7d46591
+  svg14 ::
+    Data.ByteString.Builder.Internal.BuildStep r
+    -> Data.ByteString.Builder.Internal.BufferRange
+    -> GHC.Types.IO (Data.ByteString.Builder.Internal.BuildSignal r)
+  {- Arity: 2, HasNoCafRefs,
+     Unfolding: (\ @ r
+                   (cont :: Data.ByteString.Builder.Internal.BuildStep r)
+                   (range :: Data.ByteString.Builder.Internal.BufferRange) ->
+                 cont range) -}
+b23ac945bd552d3b12ec5fa0b2c89512
+  svg2 :: [Data.Text.Internal.Text]
+  {- Unfolding: (Data.Text.Lazy.dropEnd_go Server.svg3) -}
+70da5c08faf4aa2f37761781271ca55a
+  svg3 :: Data.Text.Internal.Lazy.Text
+  {- Unfolding: (Data.Text.Lazy.unpackCString# "image/svg+xml"#) -}
+47113dd59df4fa4114e6c373dc2e0a83
+  svg4 :: Network.HTTP.Types.Header.HeaderName
+  {- Unfolding: (case Data.Text.concat
+                        Server.svg5 of ww { Data.Text.Internal.Text ww1 ww2 ww3 ->
+                 case Data.Text.Encoding.$wencodeUtf8
+                        ww1
+                        ww2
+                        ww3 of dt { Data.ByteString.Internal.PS ipv ipv1 ipv2 ipv3 ->
+                 case Data.CaseInsensitive.Internal.$wfoldCaseBS
+                        ipv
+                        ipv1
+                        ipv2
+                        ipv3 of dt1 { Data.ByteString.Internal.PS ipv4 ipv5 ipv6 ipv7 ->
+                 Data.CaseInsensitive.Internal.CI
+                   @ Data.ByteString.Internal.ByteString
+                   dt
+                   dt1 } } }) -}
+5be7faa4b32c4fbdb93dd32d9137d11c
+  svg5 :: [Data.Text.Internal.Text]
+  {- Unfolding: (Data.Text.Lazy.dropEnd_go Server.svg6) -}
+4cb90243890aaeb710cc1423325ec582
+  svg6 :: Data.Text.Internal.Lazy.Text
+  {- Unfolding: (Data.Text.Lazy.unpackCString# "Content-Type"#) -}
+0895d1d62d71eb34105bb8246eedf513
+  svg7 :: Data.ByteString.Internal.ByteString
+  {- Unfolding: (case Data.Text.concat
+                        Server.svg8 of ww { Data.Text.Internal.Text ww1 ww2 ww3 ->
+                 Data.Text.Encoding.$wencodeUtf8 ww1 ww2 ww3 }) -}
+02ea6b0b4ffe0eaf7060588c56730a91
+  svg8 :: [Data.Text.Internal.Text]
+  {- Unfolding: (Data.Text.Lazy.dropEnd_go Server.svg9) -}
+bd465783e63d30bbf5cfb7c3a379be3f
+  svg9 :: Data.Text.Internal.Lazy.Text
+  {- Unfolding: (Data.Text.Lazy.unpackCString# "Accept Encoding"#) -}
+e1e76452c6b070fa594d88ccb5e3de6a
+  svgDoc :: Text.Blaze.Svg.Internal.Svg
+  {- Strictness: m8,
+     Unfolding: (Text.Blaze.Internal.AddAttribute
+                   @ ()
+                   Server.svgDoc133
+                   Server.svgDoc129
+                   Server.svgDoc127
+                   Server.svgDoc1) -}
+599b1f763e53a7c4aa438f7391b0bacf
+  svgDoc1 :: Text.Blaze.Internal.MarkupM ()
+  {- Strictness: m8,
+     Unfolding: (Text.Blaze.Internal.AddAttribute
+                   @ ()
+                   Server.svgDoc41
+                   Server.svgDoc37
+                   Server.svgDoc125
+                   Server.svgDoc2) -}
+495a31517da120af98d416b922c06a86
+  svgDoc10 :: Text.Blaze.Internal.MarkupM ()
+  {- Unfolding: (Text.Blaze.Internal.Append
+                   @ ()
+                   @ ()
+                   Server.svgDoc58
+                   Server.svgDoc11) -}
+5bc0e4491e0e57b772cf3173ab255987
+  svgDoc100 ::
+    GHC.Prim.State# GHC.Prim.RealWorld
+    -> (# GHC.Prim.State# GHC.Prim.RealWorld,
+          Data.Text.Internal.Text #)
+  {- Arity: 1,
+     Unfolding: (\ (s1 :: GHC.Prim.State#
+                            GHC.Prim.RealWorld)[OneShot] ->
+                 case GHC.Prim.newByteArray#
+                        @ GHC.Prim.RealWorld
+                        10#
+                        s1 of ds1 { (#,#) ipv ipv1 ->
+                 Text.Blaze.Internal.$wouter ipv1 4# Server.svgDoc_w17 0# ipv }) -}
+1463787c8f3f0bbe50a0d00b22d477a4
+  svgDoc101 :: Data.ByteString.Internal.ByteString
+  {- Unfolding: (case Server.svgDoc_t18 of ww { Data.Text.Internal.Text ww1 ww2 ww3 ->
+                 Data.Text.Encoding.$wencodeUtf8 ww1 ww2 ww3 }) -}
+61790e4e132e56bcf967c8b8140e1ecf
+  svgDoc102 :: [GHC.Types.Char] -> [GHC.Types.Char]
+  {- Arity: 1,
+     Unfolding: (GHC.Base.++ @ GHC.Types.Char Server.svgDoc_w17) -}
+f174e4bc7d08f5dd7b31a87a77cf5653
+  svgDoc103 :: Text.Blaze.Internal.ChoiceString
+  {- Strictness: m2,
+     Unfolding: (Text.Blaze.Internal.String Server.svgDoc104) -}
+152d969582b36a73938bddddc7c12ca6
+  svgDoc104 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString#
+                   "http://www.w3.org/1999/xlink"#) -}
+70a844da59beda36617081e3f81e32c1
+  svgDoc105 :: Text.Blaze.Internal.StaticString
+  {- Strictness: m,
+     Unfolding: (Text.Blaze.Internal.StaticString
+                   Server.svgDoc108
+                   Server.svgDoc107
+                   Server.svgDoc_t19) -}
+f463556640774c9d36e977efb3356bd2
+  svgDoc106 ::
+    GHC.Prim.State# GHC.Prim.RealWorld
+    -> (# GHC.Prim.State# GHC.Prim.RealWorld,
+          Data.Text.Internal.Text #)
+  {- Arity: 1,
+     Unfolding: (\ (s1 :: GHC.Prim.State#
+                            GHC.Prim.RealWorld)[OneShot] ->
+                 case GHC.Prim.newByteArray#
+                        @ GHC.Prim.RealWorld
+                        10#
+                        s1 of ds1 { (#,#) ipv ipv1 ->
+                 Text.Blaze.Internal.$wouter ipv1 4# Server.svgDoc_w18 0# ipv }) -}
+42d48019d907939780a74faa27031dba
+  svgDoc107 :: Data.ByteString.Internal.ByteString
+  {- Unfolding: (case Server.svgDoc_t19 of ww { Data.Text.Internal.Text ww1 ww2 ww3 ->
+                 Data.Text.Encoding.$wencodeUtf8 ww1 ww2 ww3 }) -}
+b586a2498c88c77901e03e1824fd2a44
+  svgDoc108 :: [GHC.Types.Char] -> [GHC.Types.Char]
+  {- Arity: 1,
+     Unfolding: (GHC.Base.++ @ GHC.Types.Char Server.svgDoc_w18) -}
+de9209cc75ce049563d1ebd0cf49b42f
+  svgDoc109 :: Text.Blaze.Internal.StaticString
+  {- Strictness: m,
+     Unfolding: (Text.Blaze.Internal.StaticString
+                   Server.svgDoc112
+                   Server.svgDoc111
+                   Server.svgDoc_t20) -}
+02a337cfaa8f714412b1b22093209a3d
+  svgDoc11 :: Text.Blaze.Internal.MarkupM ()
+  {- Unfolding: (Text.Blaze.Internal.Append
+                   @ ()
+                   @ ()
+                   Server.svgDoc55
+                   Server.svgDoc12) -}
+f06d34b25a68c2f4f1be4f30c83a6091
+  svgDoc110 ::
+    GHC.Prim.State# GHC.Prim.RealWorld
+    -> (# GHC.Prim.State# GHC.Prim.RealWorld,
+          Data.Text.Internal.Text #)
+  {- Arity: 1,
+     Unfolding: (\ (s1 :: GHC.Prim.State#
+                            GHC.Prim.RealWorld)[OneShot] ->
+                 case GHC.Prim.newByteArray#
+                        @ GHC.Prim.RealWorld
+                        10#
+                        s1 of ds1 { (#,#) ipv ipv1 ->
+                 Text.Blaze.Internal.$wouter ipv1 4# Server.svgDoc_w19 0# ipv }) -}
+451f8455225ae81d5374367ddf698e89
+  svgDoc111 :: Data.ByteString.Internal.ByteString
+  {- Unfolding: (case Server.svgDoc_t20 of ww { Data.Text.Internal.Text ww1 ww2 ww3 ->
+                 Data.Text.Encoding.$wencodeUtf8 ww1 ww2 ww3 }) -}
+b4014db4207c1ab8c6b68c5734074e95
+  svgDoc112 :: [GHC.Types.Char] -> [GHC.Types.Char]
+  {- Arity: 1,
+     Unfolding: (GHC.Base.++ @ GHC.Types.Char Server.svgDoc_w19) -}
+3b480c463e78889239b91f142934c185
+  svgDoc113 :: Text.Blaze.Internal.ChoiceString
+  {- Strictness: m2,
+     Unfolding: (Text.Blaze.Internal.String Server.svgDoc114) -}
+1c5c2d01de643b295e8ec183d33ff8e2
+  svgDoc114 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "1.1"#) -}
+f3af1d14ba797d0e029106354783f88a
+  svgDoc115 :: Text.Blaze.Internal.StaticString
+  {- Strictness: m,
+     Unfolding: (Text.Blaze.Internal.StaticString
+                   Server.svgDoc118
+                   Server.svgDoc117
+                   Server.svgDoc_t21) -}
+2d82024e90ab1de23fd93418e5a42728
+  svgDoc116 ::
+    GHC.Prim.State# GHC.Prim.RealWorld
+    -> (# GHC.Prim.State# GHC.Prim.RealWorld,
+          Data.Text.Internal.Text #)
+  {- Arity: 1,
+     Unfolding: (\ (s1 :: GHC.Prim.State#
+                            GHC.Prim.RealWorld)[OneShot] ->
+                 case GHC.Prim.newByteArray#
+                        @ GHC.Prim.RealWorld
+                        10#
+                        s1 of ds1 { (#,#) ipv ipv1 ->
+                 Text.Blaze.Internal.$wouter ipv1 4# Server.svgDoc_w20 0# ipv }) -}
+5d708edb03af07c9c60c5ceafb16183d
+  svgDoc117 :: Data.ByteString.Internal.ByteString
+  {- Unfolding: (case Server.svgDoc_t21 of ww { Data.Text.Internal.Text ww1 ww2 ww3 ->
+                 Data.Text.Encoding.$wencodeUtf8 ww1 ww2 ww3 }) -}
+9ae5c3b1b337366d574e63886ee1bbe8
+  svgDoc118 :: [GHC.Types.Char] -> [GHC.Types.Char]
+  {- Arity: 1,
+     Unfolding: (GHC.Base.++ @ GHC.Types.Char Server.svgDoc_w20) -}
+c9a6bced791142c4dde5278272123831
+  svgDoc119 :: Text.Blaze.Internal.StaticString
+  {- Strictness: m,
+     Unfolding: (Text.Blaze.Internal.StaticString
+                   Server.svgDoc122
+                   Server.svgDoc121
+                   Server.svgDoc_t22) -}
+3eeb12100a8bf652417f4bf19d348e7f
+  svgDoc12 :: Text.Blaze.Internal.MarkupM ()
+  {- Unfolding: (Text.Blaze.Internal.Append
+                   @ ()
+                   @ ()
+                   Server.svgDoc22
+                   Server.svgDoc13) -}
+331faf093a1528442529a7f624f55df4
+  svgDoc120 ::
+    GHC.Prim.State# GHC.Prim.RealWorld
+    -> (# GHC.Prim.State# GHC.Prim.RealWorld,
+          Data.Text.Internal.Text #)
+  {- Arity: 1,
+     Unfolding: (\ (s1 :: GHC.Prim.State#
+                            GHC.Prim.RealWorld)[OneShot] ->
+                 case GHC.Prim.newByteArray#
+                        @ GHC.Prim.RealWorld
+                        10#
+                        s1 of ds1 { (#,#) ipv ipv1 ->
+                 Text.Blaze.Internal.$wouter ipv1 4# Server.svgDoc_w21 0# ipv }) -}
+13d4cfac00bd529b0e5b8957acac8e43
+  svgDoc121 :: Data.ByteString.Internal.ByteString
+  {- Unfolding: (case Server.svgDoc_t22 of ww { Data.Text.Internal.Text ww1 ww2 ww3 ->
+                 Data.Text.Encoding.$wencodeUtf8 ww1 ww2 ww3 }) -}
+bb20dffef7f56aa257728b9126b3bfc3
+  svgDoc122 :: [GHC.Types.Char] -> [GHC.Types.Char]
+  {- Arity: 1,
+     Unfolding: (GHC.Base.++ @ GHC.Types.Char Server.svgDoc_w21) -}
+eeb0248cee29fb6c9ab187af1a428740
+  svgDoc123 :: Text.Blaze.Internal.ChoiceString
+  {- Strictness: m2,
+     Unfolding: (Text.Blaze.Internal.String Server.svgDoc124) -}
+fc188bc1c7f070eb5624a5e1eb0841e8
+  svgDoc124 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "150"#) -}
+ff4c441bb86632d8eaae55a113851f7c
+  svgDoc125 :: Text.Blaze.Internal.ChoiceString
+  {- Strictness: m2,
+     Unfolding: (Text.Blaze.Internal.String Server.svgDoc126) -}
+91205133300d20d683756107b8b34092
+  svgDoc126 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "100"#) -}
+e9b476a86db87d20794ebdb2bc4b3191
+  svgDoc127 :: Text.Blaze.Internal.ChoiceString
+  {- Strictness: m2,
+     Unfolding: (Text.Blaze.Internal.String Server.svgDoc128) -}
+b161100691f38e85bf8da959325b41b3
+  svgDoc128 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "0 0 3 2"#) -}
+87c0590d0e05e71fb27ab08c02a17c34
+  svgDoc129 :: Text.Blaze.Internal.StaticString
+  {- Strictness: m,
+     Unfolding: (Text.Blaze.Internal.StaticString
+                   Server.svgDoc132
+                   Server.svgDoc131
+                   Server.svgDoc_t23) -}
+c16d9cf564a16eb885d366b41ca762bb
+  svgDoc13 :: Text.Blaze.Internal.MarkupM ()
+  {- Strictness: m8,
+     Unfolding: (Text.Blaze.Internal.AddAttribute
+                   @ ()
+                   Server.svgDoc18
+                   Server.svgDoc14
+                   Server.makePath1
+                   Text.Blaze.Svg11.path) -}
+d464f773865cf49571482fb3c311325d
+  svgDoc130 ::
+    GHC.Prim.State# GHC.Prim.RealWorld
+    -> (# GHC.Prim.State# GHC.Prim.RealWorld,
+          Data.Text.Internal.Text #)
+  {- Arity: 1,
+     Unfolding: (\ (s1 :: GHC.Prim.State#
+                            GHC.Prim.RealWorld)[OneShot] ->
+                 case GHC.Prim.newByteArray#
+                        @ GHC.Prim.RealWorld
+                        10#
+                        s1 of ds1 { (#,#) ipv ipv1 ->
+                 Text.Blaze.Internal.$wouter ipv1 4# Server.svgDoc_w22 0# ipv }) -}
+e7aa3981f492e478691ee390b58d5c0a
+  svgDoc131 :: Data.ByteString.Internal.ByteString
+  {- Unfolding: (case Server.svgDoc_t23 of ww { Data.Text.Internal.Text ww1 ww2 ww3 ->
+                 Data.Text.Encoding.$wencodeUtf8 ww1 ww2 ww3 }) -}
+126e05ad338cc9086b0ee205f2bed6f3
+  svgDoc132 :: [GHC.Types.Char] -> [GHC.Types.Char]
+  {- Arity: 1,
+     Unfolding: (GHC.Base.++ @ GHC.Types.Char Server.svgDoc_w22) -}
+af16c54ef32a18bb2f86c57c4e8837d5
+  svgDoc133 :: Text.Blaze.Internal.StaticString
+  {- Strictness: m,
+     Unfolding: (Text.Blaze.Internal.StaticString
+                   Server.svgDoc136
+                   Server.svgDoc135
+                   Server.svgDoc_t24) -}
+d15bb6fc2e7801c89adddd8be862d824
+  svgDoc134 ::
+    GHC.Prim.State# GHC.Prim.RealWorld
+    -> (# GHC.Prim.State# GHC.Prim.RealWorld,
+          Data.Text.Internal.Text #)
+  {- Arity: 1,
+     Unfolding: (\ (s1 :: GHC.Prim.State#
+                            GHC.Prim.RealWorld)[OneShot] ->
+                 case GHC.Prim.newByteArray#
+                        @ GHC.Prim.RealWorld
+                        10#
+                        s1 of ds1 { (#,#) ipv ipv1 ->
+                 Text.Blaze.Internal.$wouter ipv1 4# Server.svgDoc_w23 0# ipv }) -}
+d8025c78947020e5ab6cb31630dec39d
+  svgDoc135 :: Data.ByteString.Internal.ByteString
+  {- Unfolding: (case Server.svgDoc_t24 of ww { Data.Text.Internal.Text ww1 ww2 ww3 ->
+                 Data.Text.Encoding.$wencodeUtf8 ww1 ww2 ww3 }) -}
+47b3cda33d6f1ef4352425314a04bfa4
+  svgDoc136 :: [GHC.Types.Char] -> [GHC.Types.Char]
+  {- Arity: 1,
+     Unfolding: (GHC.Base.++ @ GHC.Types.Char Server.svgDoc_w23) -}
+2cf8e9af678a15dc8a894471b4558c0e
+  svgDoc14 :: Text.Blaze.Internal.StaticString
+  {- Strictness: m,
+     Unfolding: (Text.Blaze.Internal.StaticString
+                   Server.svgDoc17
+                   Server.svgDoc16
+                   Server.svgDoc_t1) -}
+2f53b781d618c9d87575d47c9f460d69
+  svgDoc15 ::
+    GHC.Prim.State# GHC.Prim.RealWorld
+    -> (# GHC.Prim.State# GHC.Prim.RealWorld,
+          Data.Text.Internal.Text #)
+  {- Arity: 1,
+     Unfolding: (\ (s1 :: GHC.Prim.State#
+                            GHC.Prim.RealWorld)[OneShot] ->
+                 case GHC.Prim.newByteArray#
+                        @ GHC.Prim.RealWorld
+                        10#
+                        s1 of ds1 { (#,#) ipv ipv1 ->
+                 Text.Blaze.Internal.$wouter ipv1 4# Server.svgDoc_w 0# ipv }) -}
+9d2f3b9982b61e998d9d025160936dfd
+  svgDoc16 :: Data.ByteString.Internal.ByteString
+  {- Unfolding: (case Server.svgDoc_t1 of ww { Data.Text.Internal.Text ww1 ww2 ww3 ->
+                 Data.Text.Encoding.$wencodeUtf8 ww1 ww2 ww3 }) -}
+7727a9db190b51a045981a4500816cd8
+  svgDoc17 :: [GHC.Types.Char] -> [GHC.Types.Char]
+  {- Arity: 1,
+     Unfolding: (GHC.Base.++ @ GHC.Types.Char Server.svgDoc_w) -}
+88daa550c74e9f6ab60edebd472f23cf
+  svgDoc18 :: Text.Blaze.Internal.StaticString
+  {- Strictness: m,
+     Unfolding: (Text.Blaze.Internal.StaticString
+                   Server.svgDoc21
+                   Server.svgDoc20
+                   Server.svgDoc_t2) -}
+fb2195a7652c43bccaa28943ddb8f455
+  svgDoc19 ::
+    GHC.Prim.State# GHC.Prim.RealWorld
+    -> (# GHC.Prim.State# GHC.Prim.RealWorld,
+          Data.Text.Internal.Text #)
+  {- Arity: 1,
+     Unfolding: (\ (s1 :: GHC.Prim.State#
+                            GHC.Prim.RealWorld)[OneShot] ->
+                 case GHC.Prim.newByteArray#
+                        @ GHC.Prim.RealWorld
+                        10#
+                        s1 of ds1 { (#,#) ipv ipv1 ->
+                 Text.Blaze.Internal.$wouter ipv1 4# Server.svgDoc_w1 0# ipv }) -}
+0f5ba8e4b0c4a3ac3a224cd8d07b4f84
+  svgDoc2 :: Text.Blaze.Internal.MarkupM ()
+  {- Strictness: m8,
+     Unfolding: (Text.Blaze.Internal.AddAttribute
+                   @ ()
+                   Server.svgDoc31
+                   Server.svgDoc27
+                   Server.svgDoc123
+                   Server.svgDoc3) -}
+56a7082788c0eeebd90eec27b36ca26c
+  svgDoc20 :: Data.ByteString.Internal.ByteString
+  {- Unfolding: (case Server.svgDoc_t2 of ww { Data.Text.Internal.Text ww1 ww2 ww3 ->
+                 Data.Text.Encoding.$wencodeUtf8 ww1 ww2 ww3 }) -}
+18d302ff8d1574c76b974aee136052c5
+  svgDoc21 :: [GHC.Types.Char] -> [GHC.Types.Char]
+  {- Arity: 1,
+     Unfolding: (GHC.Base.++ @ GHC.Types.Char Server.svgDoc_w1) -}
+6ba5406190cdc5e0a04debc39d239a2d
+  svgDoc22 :: Text.Blaze.Internal.MarkupM ()
+  {- Strictness: m8,
+     Unfolding: (Text.Blaze.Internal.AddAttribute
+                   @ ()
+                   Server.svgDoc51
+                   Server.svgDoc47
+                   Server.svgDoc45
+                   Server.svgDoc23) -}
+00274d60148cb9c33b7cbd496ddb7345
+  svgDoc23 :: Text.Blaze.Internal.MarkupM ()
+  {- Strictness: m8,
+     Unfolding: (Text.Blaze.Internal.AddAttribute
+                   @ ()
+                   Server.svgDoc41
+                   Server.svgDoc37
+                   Server.svgDoc35
+                   Server.svgDoc24) -}
+82dcdff815868a60a87de186ef1558c0
+  svgDoc24 :: Text.Blaze.Internal.MarkupM ()
+  {- Strictness: m8,
+     Unfolding: (Text.Blaze.Internal.AddAttribute
+                   @ ()
+                   Server.svgDoc31
+                   Server.svgDoc27
+                   Server.svgDoc25
+                   Text.Blaze.Svg11.rect) -}
+4a5c9b9faa30afc03dcfdb0142314818
+  svgDoc25 :: Text.Blaze.Internal.ChoiceString
+  {- Strictness: m2,
+     Unfolding: (Text.Blaze.Internal.String Server.svgDoc26) -}
+e22089b61670b715bc1e714b2387192d
+  svgDoc26 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "1"#) -}
+c3c59ce22071437cdb0293985613b854
+  svgDoc27 :: Text.Blaze.Internal.StaticString
+  {- Strictness: m,
+     Unfolding: (Text.Blaze.Internal.StaticString
+                   Server.svgDoc30
+                   Server.svgDoc29
+                   Server.svgDoc_t3) -}
+74dd69e83f625a275b355ddccd676f17
+  svgDoc28 ::
+    GHC.Prim.State# GHC.Prim.RealWorld
+    -> (# GHC.Prim.State# GHC.Prim.RealWorld,
+          Data.Text.Internal.Text #)
+  {- Arity: 1,
+     Unfolding: (\ (s1 :: GHC.Prim.State#
+                            GHC.Prim.RealWorld)[OneShot] ->
+                 case GHC.Prim.newByteArray#
+                        @ GHC.Prim.RealWorld
+                        10#
+                        s1 of ds1 { (#,#) ipv ipv1 ->
+                 Text.Blaze.Internal.$wouter ipv1 4# Server.svgDoc_w2 0# ipv }) -}
+d3edb8030d1c3e7d53fd451a861d67c3
+  svgDoc29 :: Data.ByteString.Internal.ByteString
+  {- Unfolding: (case Server.svgDoc_t3 of ww { Data.Text.Internal.Text ww1 ww2 ww3 ->
+                 Data.Text.Encoding.$wencodeUtf8 ww1 ww2 ww3 }) -}
+d28250cbc41cc1bd652257028af30fee
+  svgDoc3 :: Text.Blaze.Internal.MarkupM ()
+  {- Strictness: m8,
+     Unfolding: (Text.Blaze.Internal.AddAttribute
+                   @ ()
+                   Server.svgDoc119
+                   Server.svgDoc115
+                   Server.svgDoc113
+                   Server.svgDoc4) -}
+0b999fa1f41eaf18474b37c54081dea4
+  svgDoc30 :: [GHC.Types.Char] -> [GHC.Types.Char]
+  {- Arity: 1,
+     Unfolding: (GHC.Base.++ @ GHC.Types.Char Server.svgDoc_w2) -}
+f1341b5ae74672528522d45720e6d6a3
+  svgDoc31 :: Text.Blaze.Internal.StaticString
+  {- Strictness: m,
+     Unfolding: (Text.Blaze.Internal.StaticString
+                   Server.svgDoc34
+                   Server.svgDoc33
+                   Server.svgDoc_t4) -}
+33a44d3a9ce362abd76f9eadfc37fcfe
+  svgDoc32 ::
+    GHC.Prim.State# GHC.Prim.RealWorld
+    -> (# GHC.Prim.State# GHC.Prim.RealWorld,
+          Data.Text.Internal.Text #)
+  {- Arity: 1,
+     Unfolding: (\ (s1 :: GHC.Prim.State#
+                            GHC.Prim.RealWorld)[OneShot] ->
+                 case GHC.Prim.newByteArray#
+                        @ GHC.Prim.RealWorld
+                        10#
+                        s1 of ds1 { (#,#) ipv ipv1 ->
+                 Text.Blaze.Internal.$wouter ipv1 4# Server.svgDoc_w3 0# ipv }) -}
+0eb5e981ffb26cf5d13bc5000b76e87d
+  svgDoc33 :: Data.ByteString.Internal.ByteString
+  {- Unfolding: (case Server.svgDoc_t4 of ww { Data.Text.Internal.Text ww1 ww2 ww3 ->
+                 Data.Text.Encoding.$wencodeUtf8 ww1 ww2 ww3 }) -}
+c594c6d8b7ef588f0441df160992a181
+  svgDoc34 :: [GHC.Types.Char] -> [GHC.Types.Char]
+  {- Arity: 1,
+     Unfolding: (GHC.Base.++ @ GHC.Types.Char Server.svgDoc_w3) -}
+3c6d70ea6d66101dd2ae1bd69c455b7f
+  svgDoc35 :: Text.Blaze.Internal.ChoiceString
+  {- Strictness: m2,
+     Unfolding: (Text.Blaze.Internal.String Server.svgDoc36) -}
+5dc1cc5b37d2e2e5de3f007bd0c0f467
+  svgDoc36 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "2"#) -}
+0908c4c298082e762e054a8e20924d06
+  svgDoc37 :: Text.Blaze.Internal.StaticString
+  {- Strictness: m,
+     Unfolding: (Text.Blaze.Internal.StaticString
+                   Server.svgDoc40
+                   Server.svgDoc39
+                   Server.svgDoc_t5) -}
+997d40380ce277bacde115c82c1e9ee6
+  svgDoc38 ::
+    GHC.Prim.State# GHC.Prim.RealWorld
+    -> (# GHC.Prim.State# GHC.Prim.RealWorld,
+          Data.Text.Internal.Text #)
+  {- Arity: 1,
+     Unfolding: (\ (s1 :: GHC.Prim.State#
+                            GHC.Prim.RealWorld)[OneShot] ->
+                 case GHC.Prim.newByteArray#
+                        @ GHC.Prim.RealWorld
+                        10#
+                        s1 of ds1 { (#,#) ipv ipv1 ->
+                 Text.Blaze.Internal.$wouter ipv1 4# Server.svgDoc_w4 0# ipv }) -}
+d3aabdf8d013af43d2f5a7333f29f385
+  svgDoc39 :: Data.ByteString.Internal.ByteString
+  {- Unfolding: (case Server.svgDoc_t5 of ww { Data.Text.Internal.Text ww1 ww2 ww3 ->
+                 Data.Text.Encoding.$wencodeUtf8 ww1 ww2 ww3 }) -}
+0ca27695ef56d5d5da867fe9ce2cbe43
+  svgDoc4 :: Text.Blaze.Internal.MarkupM ()
+  {- Unfolding: (Text.Blaze.Internal.Append
+                   @ ()
+                   @ ()
+                   Text.Blaze.Svg11.docType
+                   Server.svgDoc5) -}
+c6aa5a9197f9bd03145137bfdc3c59b8
+  svgDoc40 :: [GHC.Types.Char] -> [GHC.Types.Char]
+  {- Arity: 1,
+     Unfolding: (GHC.Base.++ @ GHC.Types.Char Server.svgDoc_w4) -}
+f7afe33daf038ee1f6ced8f595dc0fd8
+  svgDoc41 :: Text.Blaze.Internal.StaticString
+  {- Strictness: m,
+     Unfolding: (Text.Blaze.Internal.StaticString
+                   Server.svgDoc44
+                   Server.svgDoc43
+                   Server.svgDoc_t6) -}
+dbaf5e295119bbada36ed52edd06582a
+  svgDoc42 ::
+    GHC.Prim.State# GHC.Prim.RealWorld
+    -> (# GHC.Prim.State# GHC.Prim.RealWorld,
+          Data.Text.Internal.Text #)
+  {- Arity: 1,
+     Unfolding: (\ (s1 :: GHC.Prim.State#
+                            GHC.Prim.RealWorld)[OneShot] ->
+                 case GHC.Prim.newByteArray#
+                        @ GHC.Prim.RealWorld
+                        10#
+                        s1 of ds1 { (#,#) ipv ipv1 ->
+                 Text.Blaze.Internal.$wouter ipv1 4# Server.svgDoc_w5 0# ipv }) -}
+51c9298207aec602429f99e111b939f1
+  svgDoc43 :: Data.ByteString.Internal.ByteString
+  {- Unfolding: (case Server.svgDoc_t6 of ww { Data.Text.Internal.Text ww1 ww2 ww3 ->
+                 Data.Text.Encoding.$wencodeUtf8 ww1 ww2 ww3 }) -}
+ed59be7ea2bcea7109936d904ee749a4
+  svgDoc44 :: [GHC.Types.Char] -> [GHC.Types.Char]
+  {- Arity: 1,
+     Unfolding: (GHC.Base.++ @ GHC.Types.Char Server.svgDoc_w5) -}
+be0e584e4c41e30426feed997912d029
+  svgDoc45 :: Text.Blaze.Internal.ChoiceString
+  {- Strictness: m2,
+     Unfolding: (Text.Blaze.Internal.String Server.svgDoc46) -}
+125d01a0fb4b36287b5aa47023fef200
+  svgDoc46 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "#d2232c"#) -}
+75e2c8371aca199374ae89a0996b0a87
+  svgDoc47 :: Text.Blaze.Internal.StaticString
+  {- Strictness: m,
+     Unfolding: (Text.Blaze.Internal.StaticString
+                   Server.svgDoc50
+                   Server.svgDoc49
+                   Server.svgDoc_t7) -}
+c1484888f54e89aae7779ce8331afd5b
+  svgDoc48 ::
+    GHC.Prim.State# GHC.Prim.RealWorld
+    -> (# GHC.Prim.State# GHC.Prim.RealWorld,
+          Data.Text.Internal.Text #)
+  {- Arity: 1,
+     Unfolding: (\ (s1 :: GHC.Prim.State#
+                            GHC.Prim.RealWorld)[OneShot] ->
+                 case GHC.Prim.newByteArray#
+                        @ GHC.Prim.RealWorld
+                        10#
+                        s1 of ds1 { (#,#) ipv ipv1 ->
+                 Text.Blaze.Internal.$wouter ipv1 4# Server.svgDoc_w6 0# ipv }) -}
+78c1883111b48b80e85928b4f2628dbd
+  svgDoc49 :: Data.ByteString.Internal.ByteString
+  {- Unfolding: (case Server.svgDoc_t7 of ww { Data.Text.Internal.Text ww1 ww2 ww3 ->
+                 Data.Text.Encoding.$wencodeUtf8 ww1 ww2 ww3 }) -}
+6a46d102625d1bf124aa0f2226c7b473
+  svgDoc5 :: Text.Blaze.Internal.MarkupM ()
+  {- Strictness: m8,
+     Unfolding: (Text.Blaze.Internal.AddAttribute
+                   @ ()
+                   Server.svgDoc109
+                   Server.svgDoc105
+                   Server.svgDoc103
+                   Server.svgDoc6) -}
+a0d44d4326ea89bff33fb4ff086645a1
+  svgDoc50 :: [GHC.Types.Char] -> [GHC.Types.Char]
+  {- Arity: 1,
+     Unfolding: (GHC.Base.++ @ GHC.Types.Char Server.svgDoc_w6) -}
+3675dc1e1b064269f441caf97e54e8c0
+  svgDoc51 :: Text.Blaze.Internal.StaticString
+  {- Strictness: m,
+     Unfolding: (Text.Blaze.Internal.StaticString
+                   Server.svgDoc54
+                   Server.svgDoc53
+                   Server.svgDoc_t8) -}
+b69c8f3f273eee17eb5ec6722115696e
+  svgDoc52 ::
+    GHC.Prim.State# GHC.Prim.RealWorld
+    -> (# GHC.Prim.State# GHC.Prim.RealWorld,
+          Data.Text.Internal.Text #)
+  {- Arity: 1,
+     Unfolding: (\ (s1 :: GHC.Prim.State#
+                            GHC.Prim.RealWorld)[OneShot] ->
+                 case GHC.Prim.newByteArray#
+                        @ GHC.Prim.RealWorld
+                        10#
+                        s1 of ds1 { (#,#) ipv ipv1 ->
+                 Text.Blaze.Internal.$wouter ipv1 4# Server.svgDoc_w7 0# ipv }) -}
+15d9ccf2bf55cecee85d706613fcd571
+  svgDoc53 :: Data.ByteString.Internal.ByteString
+  {- Unfolding: (case Server.svgDoc_t8 of ww { Data.Text.Internal.Text ww1 ww2 ww3 ->
+                 Data.Text.Encoding.$wencodeUtf8 ww1 ww2 ww3 }) -}
+57d2df254affd633cc96488848240310
+  svgDoc54 :: [GHC.Types.Char] -> [GHC.Types.Char]
+  {- Arity: 1,
+     Unfolding: (GHC.Base.++ @ GHC.Types.Char Server.svgDoc_w7) -}
+676e0899e6734ebcbc6166f4bb6d2697
+  svgDoc55 :: Text.Blaze.Internal.MarkupM ()
+  {- Strictness: m8,
+     Unfolding: (Text.Blaze.Internal.AddAttribute
+                   @ ()
+                   Server.svgDoc51
+                   Server.svgDoc47
+                   Server.svgDoc56
+                   Server.svgDoc23) -}
+4d7ccb3cc982019cdb7caa871326e4ec
+  svgDoc56 :: Text.Blaze.Internal.ChoiceString
+  {- Strictness: m2,
+     Unfolding: (Text.Blaze.Internal.String Server.svgDoc57) -}
+5cd67fe1cfb9b2c5b24111421d5507ae
+  svgDoc57 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "#ffffff"#) -}
+5f45f5e226a46e7bebbb048474a06bdb
+  svgDoc58 :: Text.Blaze.Internal.MarkupM ()
+  {- Strictness: m8,
+     Unfolding: (Text.Blaze.Internal.AddAttribute
+                   @ ()
+                   Server.svgDoc51
+                   Server.svgDoc47
+                   Server.svgDoc59
+                   Server.svgDoc23) -}
+7bcbc412727f42cf95cd496f6b27a024
+  svgDoc59 :: Text.Blaze.Internal.ChoiceString
+  {- Strictness: m2,
+     Unfolding: (Text.Blaze.Internal.String Server.svgDoc60) -}
+ea19a09a3b20898a06746bd4365380b5
+  svgDoc6 :: Text.Blaze.Internal.MarkupM ()
+  {- Strictness: m8,
+     Unfolding: (Text.Blaze.Internal.AddAttribute
+                   @ ()
+                   Server.svgDoc99
+                   Server.svgDoc95
+                   Server.svgDoc93
+                   Server.svgDoc7) -}
+78b219a7f2d9ef3532d0382a7d4ef81c
+  svgDoc60 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "#008d46"#) -}
+b6578f27492345762ca29b26ccf3c2e5
+  svgDoc61 :: Text.Blaze.Internal.StaticString
+  {- Strictness: m,
+     Unfolding: (Text.Blaze.Internal.StaticString
+                   Server.svgDoc64
+                   Server.svgDoc63
+                   Server.svgDoc_t9) -}
+52d57fed86df1e3f2239888cb34311c4
+  svgDoc62 ::
+    GHC.Prim.State# GHC.Prim.RealWorld
+    -> (# GHC.Prim.State# GHC.Prim.RealWorld,
+          Data.Text.Internal.Text #)
+  {- Arity: 1,
+     Unfolding: (\ (s1 :: GHC.Prim.State#
+                            GHC.Prim.RealWorld)[OneShot] ->
+                 case GHC.Prim.newByteArray#
+                        @ GHC.Prim.RealWorld
+                        10#
+                        s1 of ds1 { (#,#) ipv ipv1 ->
+                 Text.Blaze.Internal.$wouter ipv1 4# Server.svgDoc_w8 0# ipv }) -}
+58cb5b3a8aadbfd524c5eaeb26322ba6
+  svgDoc63 :: Data.ByteString.Internal.ByteString
+  {- Unfolding: (case Server.svgDoc_t9 of ww { Data.Text.Internal.Text ww1 ww2 ww3 ->
+                 Data.Text.Encoding.$wencodeUtf8 ww1 ww2 ww3 }) -}
+0604a9f2b426b7b34e6eb28ec0105db0
+  svgDoc64 :: [GHC.Types.Char] -> [GHC.Types.Char]
+  {- Arity: 1,
+     Unfolding: (GHC.Base.++ @ GHC.Types.Char Server.svgDoc_w8) -}
+8f9596b2e1b0085e854a21c67dc01961
+  svgDoc65 :: Text.Blaze.Internal.StaticString
+  {- Strictness: m,
+     Unfolding: (Text.Blaze.Internal.StaticString
+                   Server.svgDoc68
+                   Server.svgDoc67
+                   Server.svgDoc_t10) -}
+3fd15a108936aafe88b6cef86e11e824
+  svgDoc66 ::
+    GHC.Prim.State# GHC.Prim.RealWorld
+    -> (# GHC.Prim.State# GHC.Prim.RealWorld,
+          Data.Text.Internal.Text #)
+  {- Arity: 1,
+     Unfolding: (\ (s1 :: GHC.Prim.State#
+                            GHC.Prim.RealWorld)[OneShot] ->
+                 case GHC.Prim.newByteArray#
+                        @ GHC.Prim.RealWorld
+                        10#
+                        s1 of ds1 { (#,#) ipv ipv1 ->
+                 Text.Blaze.Internal.$wouter ipv1 4# Server.svgDoc_w9 0# ipv }) -}
+dbe219ddd25400623dc4cb4b9c498640
+  svgDoc67 :: Data.ByteString.Internal.ByteString
+  {- Unfolding: (case Server.svgDoc_t10 of ww { Data.Text.Internal.Text ww1 ww2 ww3 ->
+                 Data.Text.Encoding.$wencodeUtf8 ww1 ww2 ww3 }) -}
+603e4efb55e936c221e9357d9bfb33f3
+  svgDoc68 :: [GHC.Types.Char] -> [GHC.Types.Char]
+  {- Arity: 1,
+     Unfolding: (GHC.Base.++ @ GHC.Types.Char Server.svgDoc_w9) -}
+b988dccc59b7e8da43cc0391f93aeb23
+  svgDoc69 :: Text.Blaze.Internal.StaticString
+  {- Strictness: m,
+     Unfolding: (Text.Blaze.Internal.StaticString
+                   Server.svgDoc72
+                   Server.svgDoc71
+                   Server.svgDoc_t11) -}
+291ce6df0268402135cc2eadf8223257
+  svgDoc7 :: Text.Blaze.Internal.MarkupM ()
+  {- Strictness: m1,
+     Unfolding: (Text.Blaze.Internal.Parent
+                   @ ()
+                   Server.svgDoc89
+                   Server.svgDoc85
+                   Server.svgDoc81
+                   Server.svgDoc8) -}
+fe534f99b9cd97b24739b90440284806
+  svgDoc70 ::
+    GHC.Prim.State# GHC.Prim.RealWorld
+    -> (# GHC.Prim.State# GHC.Prim.RealWorld,
+          Data.Text.Internal.Text #)
+  {- Arity: 1,
+     Unfolding: (\ (s1 :: GHC.Prim.State#
+                            GHC.Prim.RealWorld)[OneShot] ->
+                 case GHC.Prim.newByteArray#
+                        @ GHC.Prim.RealWorld
+                        10#
+                        s1 of ds1 { (#,#) ipv ipv1 ->
+                 Text.Blaze.Internal.$wouter ipv1 4# Server.svgDoc_w10 0# ipv }) -}
+cb301b9eb69559a93b28f5dfd5fd8a28
+  svgDoc71 :: Data.ByteString.Internal.ByteString
+  {- Unfolding: (case Server.svgDoc_t11 of ww { Data.Text.Internal.Text ww1 ww2 ww3 ->
+                 Data.Text.Encoding.$wencodeUtf8 ww1 ww2 ww3 }) -}
+8b5db93776c72bfc5c642c50c0cb0e74
+  svgDoc72 :: [GHC.Types.Char] -> [GHC.Types.Char]
+  {- Arity: 1,
+     Unfolding: (GHC.Base.++ @ GHC.Types.Char Server.svgDoc_w10) -}
+c5163aba63812cdde5f9c6ac84c3a73e
+  svgDoc73 :: Text.Blaze.Internal.StaticString
+  {- Strictness: m,
+     Unfolding: (Text.Blaze.Internal.StaticString
+                   Server.svgDoc76
+                   Server.svgDoc75
+                   Server.svgDoc_t12) -}
+506fafe4610c0ec8ab025d2d59993e77
+  svgDoc74 ::
+    GHC.Prim.State# GHC.Prim.RealWorld
+    -> (# GHC.Prim.State# GHC.Prim.RealWorld,
+          Data.Text.Internal.Text #)
+  {- Arity: 1,
+     Unfolding: (\ (s1 :: GHC.Prim.State#
+                            GHC.Prim.RealWorld)[OneShot] ->
+                 case GHC.Prim.newByteArray#
+                        @ GHC.Prim.RealWorld
+                        10#
+                        s1 of ds1 { (#,#) ipv ipv1 ->
+                 Text.Blaze.Internal.$wouter ipv1 4# Server.svgDoc_w11 0# ipv }) -}
+a51dcee0a3490d7116a71ff3117fc1a5
+  svgDoc75 :: Data.ByteString.Internal.ByteString
+  {- Unfolding: (case Server.svgDoc_t12 of ww { Data.Text.Internal.Text ww1 ww2 ww3 ->
+                 Data.Text.Encoding.$wencodeUtf8 ww1 ww2 ww3 }) -}
+f6060a8040082eb550abc3a3176c151c
+  svgDoc76 :: [GHC.Types.Char] -> [GHC.Types.Char]
+  {- Arity: 1,
+     Unfolding: (GHC.Base.++ @ GHC.Types.Char Server.svgDoc_w11) -}
+c8f3b8d543ce2fab67f3c34a24c2f3a9
+  svgDoc77 :: Text.Blaze.Internal.StaticString
+  {- Strictness: m,
+     Unfolding: (Text.Blaze.Internal.StaticString
+                   Server.svgDoc80
+                   Server.svgDoc79
+                   Server.svgDoc_t13) -}
+f4c180c13fc17ab0106402354d13a437
+  svgDoc78 ::
+    GHC.Prim.State# GHC.Prim.RealWorld
+    -> (# GHC.Prim.State# GHC.Prim.RealWorld,
+          Data.Text.Internal.Text #)
+  {- Arity: 1,
+     Unfolding: (\ (s1 :: GHC.Prim.State#
+                            GHC.Prim.RealWorld)[OneShot] ->
+                 case GHC.Prim.newByteArray#
+                        @ GHC.Prim.RealWorld
+                        10#
+                        s1 of ds1 { (#,#) ipv ipv1 ->
+                 Text.Blaze.Internal.$wouter ipv1 4# Server.svgDoc_w12 0# ipv }) -}
+42039fe80985d8291adae50519d0d27f
+  svgDoc79 :: Data.ByteString.Internal.ByteString
+  {- Unfolding: (case Server.svgDoc_t13 of ww { Data.Text.Internal.Text ww1 ww2 ww3 ->
+                 Data.Text.Encoding.$wencodeUtf8 ww1 ww2 ww3 }) -}
+a9d6519bfe9973be554419e351f73e18
+  svgDoc8 :: Text.Blaze.Internal.MarkupM ()
+  {- Strictness: m8,
+     Unfolding: (Text.Blaze.Internal.AddAttribute
+                   @ ()
+                   Server.svgDoc77
+                   Server.svgDoc73
+                   Server.makeTransform1
+                   Server.svgDoc9) -}
+ec9372bd3ad108fc258a79394f62356e
+  svgDoc80 :: [GHC.Types.Char] -> [GHC.Types.Char]
+  {- Arity: 1,
+     Unfolding: (GHC.Base.++ @ GHC.Types.Char Server.svgDoc_w12) -}
+e49c42c89abb6ba313d3a75b4c29d830
+  svgDoc81 :: Text.Blaze.Internal.StaticString
+  {- Strictness: m,
+     Unfolding: (Text.Blaze.Internal.StaticString
+                   Server.svgDoc84
+                   Server.svgDoc83
+                   Server.svgDoc_t14) -}
+d0ef622b10adf220f27d62d409cc0383
+  svgDoc82 ::
+    GHC.Prim.State# GHC.Prim.RealWorld
+    -> (# GHC.Prim.State# GHC.Prim.RealWorld,
+          Data.Text.Internal.Text #)
+  {- Arity: 1,
+     Unfolding: (\ (s1 :: GHC.Prim.State#
+                            GHC.Prim.RealWorld)[OneShot] ->
+                 case GHC.Prim.newByteArray#
+                        @ GHC.Prim.RealWorld
+                        10#
+                        s1 of ds1 { (#,#) ipv ipv1 ->
+                 Text.Blaze.Internal.$wouter ipv1 4# Server.svgDoc_w13 0# ipv }) -}
+867dde1167576150609e47ba00af90c1
+  svgDoc83 :: Data.ByteString.Internal.ByteString
+  {- Unfolding: (case Server.svgDoc_t14 of ww { Data.Text.Internal.Text ww1 ww2 ww3 ->
+                 Data.Text.Encoding.$wencodeUtf8 ww1 ww2 ww3 }) -}
+6edb55872633fed05658dc9d93064855
+  svgDoc84 :: [GHC.Types.Char] -> [GHC.Types.Char]
+  {- Arity: 1,
+     Unfolding: (GHC.Base.++ @ GHC.Types.Char Server.svgDoc_w13) -}
+2c54c5a0f943a83e43018a82f4c1b114
+  svgDoc85 :: Text.Blaze.Internal.StaticString
+  {- Strictness: m,
+     Unfolding: (Text.Blaze.Internal.StaticString
+                   Server.svgDoc88
+                   Server.svgDoc87
+                   Server.svgDoc_t15) -}
+464a93a67fb92ecb1bfa0139d41b5944
+  svgDoc86 ::
+    GHC.Prim.State# GHC.Prim.RealWorld
+    -> (# GHC.Prim.State# GHC.Prim.RealWorld,
+          Data.Text.Internal.Text #)
+  {- Arity: 1,
+     Unfolding: (\ (s1 :: GHC.Prim.State#
+                            GHC.Prim.RealWorld)[OneShot] ->
+                 case GHC.Prim.newByteArray#
+                        @ GHC.Prim.RealWorld
+                        10#
+                        s1 of ds1 { (#,#) ipv ipv1 ->
+                 Text.Blaze.Internal.$wouter ipv1 4# Server.svgDoc_w14 0# ipv }) -}
+b612c4241905b5178296597625fce284
+  svgDoc87 :: Data.ByteString.Internal.ByteString
+  {- Unfolding: (case Server.svgDoc_t15 of ww { Data.Text.Internal.Text ww1 ww2 ww3 ->
+                 Data.Text.Encoding.$wencodeUtf8 ww1 ww2 ww3 }) -}
+713017b2414e5b2462b4d902c648cc2e
+  svgDoc88 :: [GHC.Types.Char] -> [GHC.Types.Char]
+  {- Arity: 1,
+     Unfolding: (GHC.Base.++ @ GHC.Types.Char Server.svgDoc_w14) -}
+94dcabb9149dbf29a2a96f717ca46e0f
+  svgDoc89 :: Text.Blaze.Internal.StaticString
+  {- Strictness: m,
+     Unfolding: (Text.Blaze.Internal.StaticString
+                   Server.svgDoc92
+                   Server.svgDoc91
+                   Server.svgDoc_t16) -}
+522456c21f01880d5daa6b0c2aae561b
+  svgDoc9 :: Text.Blaze.Internal.MarkupM ()
+  {- Strictness: m1,
+     Unfolding: (Text.Blaze.Internal.Parent
+                   @ ()
+                   Server.svgDoc69
+                   Server.svgDoc65
+                   Server.svgDoc61
+                   Server.svgDoc10) -}
+15408ab31a4e12f6f46defa5002ae864
+  svgDoc90 ::
+    GHC.Prim.State# GHC.Prim.RealWorld
+    -> (# GHC.Prim.State# GHC.Prim.RealWorld,
+          Data.Text.Internal.Text #)
+  {- Arity: 1,
+     Unfolding: (\ (s1 :: GHC.Prim.State#
+                            GHC.Prim.RealWorld)[OneShot] ->
+                 case GHC.Prim.newByteArray#
+                        @ GHC.Prim.RealWorld
+                        10#
+                        s1 of ds1 { (#,#) ipv ipv1 ->
+                 Text.Blaze.Internal.$wouter ipv1 4# Server.svgDoc_w15 0# ipv }) -}
+3a63215927a0387e0b181c07a1c5ffe3
+  svgDoc91 :: Data.ByteString.Internal.ByteString
+  {- Unfolding: (case Server.svgDoc_t16 of ww { Data.Text.Internal.Text ww1 ww2 ww3 ->
+                 Data.Text.Encoding.$wencodeUtf8 ww1 ww2 ww3 }) -}
+a36f97b9ae1d73b81cca33c62dd4489e
+  svgDoc92 :: [GHC.Types.Char] -> [GHC.Types.Char]
+  {- Arity: 1,
+     Unfolding: (GHC.Base.++ @ GHC.Types.Char Server.svgDoc_w15) -}
+4aa846c946ee4490c7e7c305b2227945
+  svgDoc93 :: Text.Blaze.Internal.ChoiceString
+  {- Strictness: m2,
+     Unfolding: (Text.Blaze.Internal.String Server.svgDoc94) -}
+d83b630f3f92adc43494d1014c1f7242
+  svgDoc94 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString#
+                   "http://www.w3.org/2000/svg"#) -}
+9271cff43151ddcf06e525c57d08720e
+  svgDoc95 :: Text.Blaze.Internal.StaticString
+  {- Strictness: m,
+     Unfolding: (Text.Blaze.Internal.StaticString
+                   Server.svgDoc98
+                   Server.svgDoc97
+                   Server.svgDoc_t17) -}
+8d374de57d2ce6fd9003ac4bec989ce0
+  svgDoc96 ::
+    GHC.Prim.State# GHC.Prim.RealWorld
+    -> (# GHC.Prim.State# GHC.Prim.RealWorld,
+          Data.Text.Internal.Text #)
+  {- Arity: 1,
+     Unfolding: (\ (s1 :: GHC.Prim.State#
+                            GHC.Prim.RealWorld)[OneShot] ->
+                 case GHC.Prim.newByteArray#
+                        @ GHC.Prim.RealWorld
+                        10#
+                        s1 of ds1 { (#,#) ipv ipv1 ->
+                 Text.Blaze.Internal.$wouter ipv1 4# Server.svgDoc_w16 0# ipv }) -}
+458a09ad99280831d7641a42c01e9890
+  svgDoc97 :: Data.ByteString.Internal.ByteString
+  {- Unfolding: (case Server.svgDoc_t17 of ww { Data.Text.Internal.Text ww1 ww2 ww3 ->
+                 Data.Text.Encoding.$wencodeUtf8 ww1 ww2 ww3 }) -}
+4934a3bee171c1c1a870bcac9b14dbaa
+  svgDoc98 :: [GHC.Types.Char] -> [GHC.Types.Char]
+  {- Arity: 1,
+     Unfolding: (GHC.Base.++ @ GHC.Types.Char Server.svgDoc_w16) -}
+ba15e5648247938ca6da13b7b97f2a98
+  svgDoc99 :: Text.Blaze.Internal.StaticString
+  {- Strictness: m,
+     Unfolding: (Text.Blaze.Internal.StaticString
+                   Server.svgDoc102
+                   Server.svgDoc101
+                   Server.svgDoc_t18) -}
+0a20ddb4f7bad4b8f585584eebd86470
+  svgDoc_t1 :: Data.Text.Internal.Text
+  {- Unfolding: (case GHC.Magic.runRW#
+                        @ 'GHC.Types.PtrRepLifted
+                        @ Data.Text.Internal.Text
+                        Server.svgDoc15 of ds1 { (#,#) ipv ipv1 ->
+                 ipv1 }) -}
+69feb5a35f6bd430f8befe1adc8a1b77
+  svgDoc_t10 :: Data.Text.Internal.Text
+  {- Unfolding: (case GHC.Magic.runRW#
+                        @ 'GHC.Types.PtrRepLifted
+                        @ Data.Text.Internal.Text
+                        Server.svgDoc66 of ds1 { (#,#) ipv ipv1 ->
+                 ipv1 }) -}
+fdbdff572a4b340ec509b75fd90b4e71
+  svgDoc_t11 :: Data.Text.Internal.Text
+  {- Unfolding: (case GHC.Magic.runRW#
+                        @ 'GHC.Types.PtrRepLifted
+                        @ Data.Text.Internal.Text
+                        Server.svgDoc70 of ds1 { (#,#) ipv ipv1 ->
+                 ipv1 }) -}
+455e55022dbc53ca0b302214ae7081e9
+  svgDoc_t12 :: Data.Text.Internal.Text
+  {- Unfolding: (case GHC.Magic.runRW#
+                        @ 'GHC.Types.PtrRepLifted
+                        @ Data.Text.Internal.Text
+                        Server.svgDoc74 of ds1 { (#,#) ipv ipv1 ->
+                 ipv1 }) -}
+a59f298e2bf7b1361a0cc1b77df43c87
+  svgDoc_t13 :: Data.Text.Internal.Text
+  {- Unfolding: (case GHC.Magic.runRW#
+                        @ 'GHC.Types.PtrRepLifted
+                        @ Data.Text.Internal.Text
+                        Server.svgDoc78 of ds1 { (#,#) ipv ipv1 ->
+                 ipv1 }) -}
+f942fcac0e4f6a792398a4121e4b207e
+  svgDoc_t14 :: Data.Text.Internal.Text
+  {- Unfolding: (case GHC.Magic.runRW#
+                        @ 'GHC.Types.PtrRepLifted
+                        @ Data.Text.Internal.Text
+                        Server.svgDoc82 of ds1 { (#,#) ipv ipv1 ->
+                 ipv1 }) -}
+be524215e32fa1beb4c3ce056e284de0
+  svgDoc_t15 :: Data.Text.Internal.Text
+  {- Unfolding: (case GHC.Magic.runRW#
+                        @ 'GHC.Types.PtrRepLifted
+                        @ Data.Text.Internal.Text
+                        Server.svgDoc86 of ds1 { (#,#) ipv ipv1 ->
+                 ipv1 }) -}
+e7903095005877e96c0aa2a8eef696b9
+  svgDoc_t16 :: Data.Text.Internal.Text
+  {- Unfolding: (case GHC.Magic.runRW#
+                        @ 'GHC.Types.PtrRepLifted
+                        @ Data.Text.Internal.Text
+                        Server.svgDoc90 of ds1 { (#,#) ipv ipv1 ->
+                 ipv1 }) -}
+a7cfccc452c5c7ad3e51651ad282574f
+  svgDoc_t17 :: Data.Text.Internal.Text
+  {- Unfolding: (case GHC.Magic.runRW#
+                        @ 'GHC.Types.PtrRepLifted
+                        @ Data.Text.Internal.Text
+                        Server.svgDoc96 of ds1 { (#,#) ipv ipv1 ->
+                 ipv1 }) -}
+840f738cb2aff8e80ca1ae6d0d1bbbd1
+  svgDoc_t18 :: Data.Text.Internal.Text
+  {- Unfolding: (case GHC.Magic.runRW#
+                        @ 'GHC.Types.PtrRepLifted
+                        @ Data.Text.Internal.Text
+                        Server.svgDoc100 of ds1 { (#,#) ipv ipv1 ->
+                 ipv1 }) -}
+86d4b1cb2223ddbbf2bcf659d70a221c
+  svgDoc_t19 :: Data.Text.Internal.Text
+  {- Unfolding: (case GHC.Magic.runRW#
+                        @ 'GHC.Types.PtrRepLifted
+                        @ Data.Text.Internal.Text
+                        Server.svgDoc106 of ds1 { (#,#) ipv ipv1 ->
+                 ipv1 }) -}
+a0e9fa237e8b730b6d72582a1971c159
+  svgDoc_t2 :: Data.Text.Internal.Text
+  {- Unfolding: (case GHC.Magic.runRW#
+                        @ 'GHC.Types.PtrRepLifted
+                        @ Data.Text.Internal.Text
+                        Server.svgDoc19 of ds1 { (#,#) ipv ipv1 ->
+                 ipv1 }) -}
+58e91251d233a295fcb8ddd101d1dc9f
+  svgDoc_t20 :: Data.Text.Internal.Text
+  {- Unfolding: (case GHC.Magic.runRW#
+                        @ 'GHC.Types.PtrRepLifted
+                        @ Data.Text.Internal.Text
+                        Server.svgDoc110 of ds1 { (#,#) ipv ipv1 ->
+                 ipv1 }) -}
+7b73b96dc537f05146bdfd4fcbe98589
+  svgDoc_t21 :: Data.Text.Internal.Text
+  {- Unfolding: (case GHC.Magic.runRW#
+                        @ 'GHC.Types.PtrRepLifted
+                        @ Data.Text.Internal.Text
+                        Server.svgDoc116 of ds1 { (#,#) ipv ipv1 ->
+                 ipv1 }) -}
+2bf8fef471f898ef13808abe55459be9
+  svgDoc_t22 :: Data.Text.Internal.Text
+  {- Unfolding: (case GHC.Magic.runRW#
+                        @ 'GHC.Types.PtrRepLifted
+                        @ Data.Text.Internal.Text
+                        Server.svgDoc120 of ds1 { (#,#) ipv ipv1 ->
+                 ipv1 }) -}
+dfe7977c3e243c4f24c3e5d94c2141f6
+  svgDoc_t23 :: Data.Text.Internal.Text
+  {- Unfolding: (case GHC.Magic.runRW#
+                        @ 'GHC.Types.PtrRepLifted
+                        @ Data.Text.Internal.Text
+                        Server.svgDoc130 of ds1 { (#,#) ipv ipv1 ->
+                 ipv1 }) -}
+65d3abf2c2f2a54744fe4789053d5d32
+  svgDoc_t24 :: Data.Text.Internal.Text
+  {- Unfolding: (case GHC.Magic.runRW#
+                        @ 'GHC.Types.PtrRepLifted
+                        @ Data.Text.Internal.Text
+                        Server.svgDoc134 of ds1 { (#,#) ipv ipv1 ->
+                 ipv1 }) -}
+2b8f9abda64d17ed6ac41256797e36e2
+  svgDoc_t3 :: Data.Text.Internal.Text
+  {- Unfolding: (case GHC.Magic.runRW#
+                        @ 'GHC.Types.PtrRepLifted
+                        @ Data.Text.Internal.Text
+                        Server.svgDoc28 of ds1 { (#,#) ipv ipv1 ->
+                 ipv1 }) -}
+04d07beef4dabc9e7d05cb4cdfac0952
+  svgDoc_t4 :: Data.Text.Internal.Text
+  {- Unfolding: (case GHC.Magic.runRW#
+                        @ 'GHC.Types.PtrRepLifted
+                        @ Data.Text.Internal.Text
+                        Server.svgDoc32 of ds1 { (#,#) ipv ipv1 ->
+                 ipv1 }) -}
+15daca7d01cd8ed7c72e1d0a97eca2b8
+  svgDoc_t5 :: Data.Text.Internal.Text
+  {- Unfolding: (case GHC.Magic.runRW#
+                        @ 'GHC.Types.PtrRepLifted
+                        @ Data.Text.Internal.Text
+                        Server.svgDoc38 of ds1 { (#,#) ipv ipv1 ->
+                 ipv1 }) -}
+412a11808c59af9842103d8fc09f5422
+  svgDoc_t6 :: Data.Text.Internal.Text
+  {- Unfolding: (case GHC.Magic.runRW#
+                        @ 'GHC.Types.PtrRepLifted
+                        @ Data.Text.Internal.Text
+                        Server.svgDoc42 of ds1 { (#,#) ipv ipv1 ->
+                 ipv1 }) -}
+d191acfafae65f0ae37f50537a60d3c3
+  svgDoc_t7 :: Data.Text.Internal.Text
+  {- Unfolding: (case GHC.Magic.runRW#
+                        @ 'GHC.Types.PtrRepLifted
+                        @ Data.Text.Internal.Text
+                        Server.svgDoc48 of ds1 { (#,#) ipv ipv1 ->
+                 ipv1 }) -}
+3be0a2e2b34075132622bed763c55439
+  svgDoc_t8 :: Data.Text.Internal.Text
+  {- Unfolding: (case GHC.Magic.runRW#
+                        @ 'GHC.Types.PtrRepLifted
+                        @ Data.Text.Internal.Text
+                        Server.svgDoc52 of ds1 { (#,#) ipv ipv1 ->
+                 ipv1 }) -}
+42aef2488d51f87ee48da24c6bd794f0
+  svgDoc_t9 :: Data.Text.Internal.Text
+  {- Unfolding: (case GHC.Magic.runRW#
+                        @ 'GHC.Types.PtrRepLifted
+                        @ Data.Text.Internal.Text
+                        Server.svgDoc62 of ds1 { (#,#) ipv ipv1 ->
+                 ipv1 }) -}
+a4684754bd5e69c2ec7512ddba00b866
+  svgDoc_w :: GHC.Base.String
+  {- Unfolding: (GHC.CString.unpackCString# " d=\""#) -}
+6d0f798de1d2942d2fbb7269df35983a
+  svgDoc_w1 :: GHC.Base.String
+  {- Unfolding: (GHC.CString.unpackCString# "d"#) -}
+a31feb864e80af57ee1325bbed812ff2
+  svgDoc_w10 :: GHC.Base.String
+  {- Unfolding: (GHC.CString.unpackCString# "g"#) -}
+d559df7b5165ef38115c105647405757
+  svgDoc_w11 :: GHC.Base.String
+  {- Unfolding: (GHC.CString.unpackCString# " transform=\""#) -}
+363b9704522bae8f1a39b50c26d8dbf9
+  svgDoc_w12 :: GHC.Base.String
+  {- Unfolding: (GHC.CString.unpackCString# "transform"#) -}
+3d15db122f93a9926928d2848bf6aa53
+  svgDoc_w13 :: GHC.Base.String
+  {- Unfolding: (GHC.CString.unpackCString# "</svg>"#) -}
+b39ffb46919e44f19ea8fe2b323e71e3
+  svgDoc_w14 :: GHC.Base.String
+  {- Unfolding: (GHC.CString.unpackCString# "<svg"#) -}
+9c8013d3c543b87461fc4de084f7139e
+  svgDoc_w15 :: GHC.Base.String
+  {- Unfolding: (GHC.CString.unpackCString# "svg"#) -}
+b02b9cad16c49d1c27d9febbd5cae663
+  svgDoc_w16 :: GHC.Base.String
+  {- Unfolding: (GHC.CString.unpackCString# " xmlns=\""#) -}
+c455b4420a9a3e3fb319081ae633cdf2
+  svgDoc_w17 :: GHC.Base.String
+  {- Unfolding: (GHC.CString.unpackCString# "xmlns"#) -}
+06f16cf735e91faf0eb4b94d70f68bad
+  svgDoc_w18 :: GHC.Base.String
+  {- Unfolding: (GHC.CString.unpackCString# " xmlns:xlink=\""#) -}
+c19172ad643c8c6d0b63d3ce8ca361bd
+  svgDoc_w19 :: GHC.Base.String
+  {- Unfolding: (GHC.CString.unpackCString# "xmlns:xlink"#) -}
+ab2d5959cc14ebf0e7f1fe8832af025e
+  svgDoc_w2 :: GHC.Base.String
+  {- Unfolding: (GHC.CString.unpackCString# " width=\""#) -}
+eec098ae54f6d0c3447b1c4e18685a81
+  svgDoc_w20 :: GHC.Base.String
+  {- Unfolding: (GHC.CString.unpackCString# " version=\""#) -}
+29dde3952ce8dac03fc1cbcd10315190
+  svgDoc_w21 :: GHC.Base.String
+  {- Unfolding: (GHC.CString.unpackCString# "version"#) -}
+bf90ac4c4b5067e9069d80bfa6b14ad9
+  svgDoc_w22 :: GHC.Base.String
+  {- Unfolding: (GHC.CString.unpackCString# " viewBox=\""#) -}
+242453a47e23ef4b3e55e80b9833f556
+  svgDoc_w23 :: GHC.Base.String
+  {- Unfolding: (GHC.CString.unpackCString# "viewBox"#) -}
+cd75a8d8256da9cdead28eddb54f31b9
+  svgDoc_w3 :: GHC.Base.String
+  {- Unfolding: (GHC.CString.unpackCString# "width"#) -}
+ae76c7a04e16c071365bcf459922aa31
+  svgDoc_w4 :: GHC.Base.String
+  {- Unfolding: (GHC.CString.unpackCString# " height=\""#) -}
+3c2c0352c158e9fed17fb898b99f0a40
+  svgDoc_w5 :: GHC.Base.String
+  {- Unfolding: (GHC.CString.unpackCString# "height"#) -}
+eba0dcf99577962208cd06107373fff7
+  svgDoc_w6 :: GHC.Base.String
+  {- Unfolding: (GHC.CString.unpackCString# " fill=\""#) -}
+70de6a52bf52115e14c861242b600433
+  svgDoc_w7 :: GHC.Base.String
+  {- Unfolding: (GHC.CString.unpackCString# "fill"#) -}
+20c1ee39fb3b33834c415b3a6c19adc3
+  svgDoc_w8 :: GHC.Base.String
+  {- Unfolding: (GHC.CString.unpackCString# "</g>"#) -}
+771259e4c02bcf667f7d7c492454d5b5
+  svgDoc_w9 :: GHC.Base.String
+  {- Unfolding: (GHC.CString.unpackCString# "<g"#) -}
+15fa5cc2ba62e81e3f759460d0ec1367
+  svg_go3 ::
+    Data.ByteString.Builder.Internal.Builder
+    -> Text.Blaze.Internal.MarkupM b
+    -> Data.ByteString.Builder.Internal.Builder
+  {- Arity: 2, Strictness: <L,C(U)><S,1*U>, Inline: NOINLINE -}
 vectorised variables:
 vectorised tycons:
 vectorised reused tycons:
