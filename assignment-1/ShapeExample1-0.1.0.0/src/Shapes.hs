@@ -1,11 +1,19 @@
 module Shapes(
-  Shape, Point, Vector, Transform, Drawing,
-  point, getX, getY,
+  Shape, 
+  --Point, Vector, 
+  Transform, 
+  --Drawing,
+  --point, getX, getY,
   empty, circle, square,
-  identity, translate, rotate, scale, (<+>),
-  inside)  where
+  identity, translate, rotate, scale, (<+>)
+  --,inside
+  )  where
 
+import qualified Text.Blaze.Svg11 as S
+import qualified Text.Blaze.Svg11.Attributes as A
+import Text.Blaze.Svg.Renderer.Utf8 (renderSvg)
 
+{-
 -- Utilities
 
 data Vector = Vector Double Double
@@ -38,7 +46,9 @@ type Point  = Vector
 
 point :: Double -> Double -> Point
 point = vector
+-}
 
+--------------Shapes------------------
 
 data Shape = Empty 
            | Circle 
@@ -46,33 +56,35 @@ data Shape = Empty
              deriving Show
 
 empty, circle, square :: Shape
-
 empty = Empty
 circle = Circle
 square = Square
 
--- Transformations
+-----------Transformations------------
+--TODO: Add more AttributeValues (http://support.hfm.io/1.5/api/blaze-svg-0.3.6.1/Text-Blaze-Svg.html)
+
 
 data Transform = Identity
-           | Translate Vector
-           | Scale Vector
+           | Translate Double Double
+           | Scale Double Double
+           | Rotate Double
            | Compose Transform Transform
-           | Rotate Matrix
              deriving Show
 
 identity = Identity
 translate = Translate
 scale = Scale
-rotate angle = Rotate $ matrix (cos angle) (-sin angle) (sin angle) (cos angle)
+rotate angle = Rotate
 t0 <+> t1 = Compose t0 t1
 
-transform :: Transform -> Point -> Point
-transform Identity                   x = id x
-transform (Translate (Vector tx ty)) (Vector px py)  = Vector (px - tx) (py - ty)
-transform (Scale (Vector tx ty))     (Vector px py)  = Vector (px / tx)  (py / ty)
-transform (Rotate m)                 p = (invert m) `mult` p
-transform (Compose t1 t2)            p = transform t2 $ transform t1 p
+transform :: Transform -> [S.AttributeValue]
+transform Identity                 = [S.scale 1 1]
+transform (Translate tx ty)        = [S.translate tx ty]
+transform (Scale sx sy)            = [S.scale sx sy]
+transform (Rotate angle)           = [S.rotate angle]
+transform (Compose t1 t2)          = transform t2 ++ transform t1
 
+{-
 -- Drawings
 
 type Drawing = [(Transform,Shape)]
@@ -98,3 +110,4 @@ maxnorm :: Point -> Double
 maxnorm (Vector x y ) = max (abs x) (abs y)
 
 testShape = (scale (point 10 10), circle)
+-}

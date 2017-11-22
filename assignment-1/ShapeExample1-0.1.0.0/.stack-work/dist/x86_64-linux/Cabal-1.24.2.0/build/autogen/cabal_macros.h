@@ -28,6 +28,13 @@
   (major1) == 0 && (major2) <  11 || \
   (major1) == 0 && (major2) == 11 && (minor) <= 0)
 
+/* package text-1.2.2.2 */
+#define VERSION_text "1.2.2.2"
+#define MIN_VERSION_text(major1,major2,minor) (\
+  (major1) <  1 || \
+  (major1) == 1 && (major2) <  2 || \
+  (major1) == 1 && (major2) == 2 && (minor) <= 2)
+
 /* tool gcc-5.4.0 */
 #define TOOL_VERSION_gcc "5.4.0"
 #define MIN_TOOL_VERSION_gcc(major1,major2,minor) (\
