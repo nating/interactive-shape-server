@@ -1,5 +1,5 @@
 Configuring primitive-0.6.2.0...
-setup-Simple-Cabal-1.24.2.0-ghc-8.0.2: Missing dependency on a foreign
+Cabal-simple_mPHDZzAJ_1.24.2.0_ghc-8.0.2: Missing dependency on a foreign
 library:
 * Missing (or bad) header file: primitive-memops.h
 This problem can usually be solved by installing the system package that
