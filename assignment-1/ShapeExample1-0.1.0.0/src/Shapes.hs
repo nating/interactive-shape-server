@@ -60,6 +60,7 @@ fill = Fill
 fillOpacity = FillOpacity
 stroke = Stroke
 strokeColor = StrokeColor
+s0 <-> s1 = StyleCompose s0 s1
 
 style :: Style -> [S.Attribute]
 style (Fill c)             = [A.fill c]
