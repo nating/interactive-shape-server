@@ -4,6 +4,7 @@ import qualified Text.Blaze.Svg11 as S
 import qualified Text.Blaze.Svg11.Attributes as A
 import Text.Blaze.Svg.Renderer.Utf8 (renderSvg)
 
+import Color
 
 --------------Shapes------------------
 
@@ -41,8 +42,8 @@ transform (Scale sx sy)            = [S.scale sx sy]
 transform (Rotate angle)           = [S.rotate angle]
 transform (Compose t1 t2)          = transform t2 ++ transform t1
 
-{-
 
+{-
 
 -----------Styles------------
 --TODO: Add more AttributeValues 
@@ -58,14 +59,15 @@ data Style = Fill Color
 fill = Fill
 fillOpacity = FillOpacity
 stroke = Stroke
+strokeColor = StrokeColor
 
+style :: Style -> [S.Attribute]
+style (Fill c)             = [A.fill c]
+style (FillOpacity d)      = [A.FillOpacity d]
+style (Stroke d)           = [A.Stroke d]
+style (StrokeColor c)      = [A.StrokeColor c]
+style (StyleCompose s0 s1) = style s0 ++ style s1
 
-transform :: Style -> [S.]
-transform Identity                 = [S.scale 1 1]
-transform (Translate tx ty)        = [S.translate tx ty]
-transform (Scale sx sy)            = [S.scale sx sy]
-transform (Rotate angle)           = [S.rotate angle]
-transform (Compose t1 t2)          = transform t2 ++ transform t1
 
 -}
 
