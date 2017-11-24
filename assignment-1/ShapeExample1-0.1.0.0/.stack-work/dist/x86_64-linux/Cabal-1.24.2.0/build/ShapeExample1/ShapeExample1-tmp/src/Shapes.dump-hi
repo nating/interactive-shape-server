@@ -1,11 +1,11 @@
 
 ==================== FINAL INTERFACE ====================
-2017-11-22 15:42:53.707298 UTC
+2017-11-24 21:03:57.874042 UTC
 
 interface main@main:Shapes 8002
-  interface hash: f4c813e57baa77f36827126499175004
-  ABI hash: 633894da74afd81d48e4d2a62f9b9d08
-  export-list hash: 46ccc50e928087589c62ca52271a264f
+  interface hash: e4171355ec6c2778ea0ac6d3ce5ac930
+  ABI hash: 3a8feec93b67ad90c91eaf6fcaba1366
+  export-list hash: 4f905d3e41fd44ae4fa1f9e9af2e39e6
   orphan hash: 693e9af84d3dfcc71e640e005bdc5e2e
   flag hash: 52e25017ea2471189bd6f9d9f6dbdebf
   sig of: Nothing
@@ -19,9 +19,12 @@ exports:
   Shapes.rotate
   Shapes.scale
   Shapes.square
+  Shapes.testDrawing
+  Shapes.transform
   Shapes.translate
-  Shapes.Shape
-  Shapes.Transform
+  Shapes.Drawing
+  Shapes.Shape{Shapes.Circle Shapes.Empty Shapes.Square}
+  Shapes.Transform{Shapes.Compose Shapes.Identity Shapes.Rotate Shapes.Scale Shapes.Translate}
 module dependencies:
 package dependencies: array-0.5.1.1@array-0.5.1.1 base-4.9.1.0
                       binary-0.8.3.0@binary-0.8.3.0
@@ -57,15 +60,405 @@ family instance modules: base-4.9.1.0:Control.Applicative
                          text-1.2.2.2@text-1.2.2.2-9UQZjEJZQFSGMffj1Z5g00:Data.Text
                          text-1.2.2.2@text-1.2.2.2-9UQZjEJZQFSGMffj1Z5g00:Data.Text.Lazy
 import  -/  base-4.9.1.0:GHC.Base c4231c43c07e46080a26bf94094c7aa1
+import  -/  base-4.9.1.0:GHC.Read b6821365d2d5fa2155c9e910160e7f57
 import  -/  base-4.9.1.0:GHC.Show a027f5ac24879eaba752f44aa90fe511
 import  -/  base-4.9.1.0:Prelude 22dd289b8469a8fa8dc81cab7b237771
+import  -/  base-4.9.1.0:Text.ParserCombinators.ReadPrec 5a182a8d6deb0f7d67aed5fab08a5cc0
+import  -/  base-4.9.1.0:Text.Read.Lex 16199fac3c6c2d64cc7c268f3c0d2269
 import  -/  blaze-markup-0.8.0.0@blaze-markup-0.8.0.0-GsxkVbRgODkgUQDmmDVob:Text.Blaze.Internal c1d6ebf18cc7de440fbc2d1a2a795843
 import  -/  blaze-svg-0.3.6.1@blaze-svg-0.3.6.1-E6CYGgfBIFH476loEvWeGj:Text.Blaze.Svg.Internal cffc7b1bca7b3586ae25aeb718abb55b
 import  -/  blaze-svg-0.3.6.1@blaze-svg-0.3.6.1-E6CYGgfBIFH476loEvWeGj:Text.Blaze.Svg.Renderer.Utf8 e2f4642473b16a8cdce3ca89f311d0be
 import  -/  blaze-svg-0.3.6.1@blaze-svg-0.3.6.1-E6CYGgfBIFH476loEvWeGj:Text.Blaze.Svg11 ffe4dbf1048c9a6d5d9dad94ecced8e8
 import  -/  blaze-svg-0.3.6.1@blaze-svg-0.3.6.1-E6CYGgfBIFH476loEvWeGj:Text.Blaze.Svg11.Attributes 2eac472bb3ab7f6d74496a530091d88d
 import  -/  ghc-prim-0.5.0.0:GHC.Classes 0bdf3d057a415ec1b84a7b1994efbe47
-def31a77171bff12a34e1fbd8179f706
+a70891e3593f81ed111926db922174f5
+  $fReadShape :: GHC.Read.Read Shapes.Shape
+  DFunId
+  {- Strictness: m, Inline: [ALWAYS] CONLIKE,
+     Unfolding: DFun:.
+                  @ Shapes.Shape
+                  Shapes.$fReadShape_$creadsPrec
+                  Shapes.$fReadShape_$creadList
+                  Shapes.$fReadShape_$creadPrec
+                  Shapes.$fReadShape_$creadListPrec -}
+a70891e3593f81ed111926db922174f5
+  $fReadShape1 ::
+    Text.ParserCombinators.ReadPrec.Prec
+    -> forall b.
+       ([Shapes.Shape] -> Text.ParserCombinators.ReadP.P b)
+       -> Text.ParserCombinators.ReadP.P b
+  {- Arity: 2, Strictness: <L,U><L,U>,
+     Unfolding: InlineRule (2, True, False)
+                (\ (eta :: Text.ParserCombinators.ReadPrec.Prec)
+                   @ b
+                   (eta1 :: [Shapes.Shape] -> Text.ParserCombinators.ReadP.P b) ->
+                 GHC.Read.list1
+                   @ Shapes.Shape
+                   Shapes.$fReadShape2
+                     `cast`
+                   (Sym (Text.ParserCombinators.ReadPrec.N:ReadPrec[0]
+                             <Shapes.Shape>_R))
+                   eta
+                   @ b
+                   eta1) -}
+a70891e3593f81ed111926db922174f5
+  $fReadShape10 ::
+    ([GHC.Types.Char],
+     Text.ParserCombinators.ReadPrec.ReadPrec Shapes.Shape)
+  {- Strictness: m,
+     Unfolding: ((Shapes.$fReadShape12,
+                  Shapes.$fReadShape11
+                    `cast`
+                  (Trans
+                       (<Text.ParserCombinators.ReadPrec.Prec>_R
+                        ->_R Sym (Text.ParserCombinators.ReadP.N:ReadP[0]
+                                      <Shapes.Shape>_R))
+                       (Sym (Text.ParserCombinators.ReadPrec.N:ReadPrec[0]
+                                 <Shapes.Shape>_R))))) -}
+a70891e3593f81ed111926db922174f5
+  $fReadShape11 ::
+    Text.ParserCombinators.ReadPrec.Prec
+    -> forall b.
+       (Shapes.Shape -> Text.ParserCombinators.ReadP.P b)
+       -> Text.ParserCombinators.ReadP.P b
+  {- Arity: 2, HasNoCafRefs, Strictness: <L,A><C(S),1*C1(U)>,
+     Unfolding: InlineRule (2, True, True)
+                (\ (ds :: Text.ParserCombinators.ReadPrec.Prec)
+                   @ b
+                   (eta :: Shapes.Shape -> Text.ParserCombinators.ReadP.P b) ->
+                 eta Shapes.Circle) -}
+4af1b1b2c9ee6f8e87468ec56305c614
+  $fReadShape12 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "Circle"#) -}
+a70891e3593f81ed111926db922174f5
+  $fReadShape13 ::
+    ([GHC.Types.Char],
+     Text.ParserCombinators.ReadPrec.ReadPrec Shapes.Shape)
+  {- Strictness: m,
+     Unfolding: ((Shapes.$fReadShape15,
+                  Shapes.$fReadShape14
+                    `cast`
+                  (Trans
+                       (<Text.ParserCombinators.ReadPrec.Prec>_R
+                        ->_R Sym (Text.ParserCombinators.ReadP.N:ReadP[0]
+                                      <Shapes.Shape>_R))
+                       (Sym (Text.ParserCombinators.ReadPrec.N:ReadPrec[0]
+                                 <Shapes.Shape>_R))))) -}
+a70891e3593f81ed111926db922174f5
+  $fReadShape14 ::
+    Text.ParserCombinators.ReadPrec.Prec
+    -> forall b.
+       (Shapes.Shape -> Text.ParserCombinators.ReadP.P b)
+       -> Text.ParserCombinators.ReadP.P b
+  {- Arity: 2, HasNoCafRefs, Strictness: <L,A><C(S),1*C1(U)>,
+     Unfolding: InlineRule (2, True, True)
+                (\ (ds :: Text.ParserCombinators.ReadPrec.Prec)
+                   @ b
+                   (eta :: Shapes.Shape -> Text.ParserCombinators.ReadP.P b) ->
+                 eta Shapes.Empty) -}
+9dee30ccd47bfca0d9957881f536e30f
+  $fReadShape15 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "Empty"#) -}
+a70891e3593f81ed111926db922174f5
+  $fReadShape16 :: Text.ParserCombinators.ReadP.P [Shapes.Shape]
+  {- Unfolding: (GHC.Read.list1
+                   @ Shapes.Shape
+                   Shapes.$fReadShape2
+                     `cast`
+                   (Sym (Text.ParserCombinators.ReadPrec.N:ReadPrec[0]
+                             <Shapes.Shape>_R))
+                   GHC.Read.$fRead()5
+                   @ [Shapes.Shape]
+                   (Text.ParserCombinators.ReadP.$fApplicativeP_$cpure
+                      @ [Shapes.Shape])) -}
+a70891e3593f81ed111926db922174f5
+  $fReadShape2 ::
+    Text.ParserCombinators.ReadPrec.Prec
+    -> Text.ParserCombinators.ReadP.ReadP Shapes.Shape
+  {- Arity: 1,
+     Unfolding: (GHC.Read.parens1
+                   @ Shapes.Shape
+                   Shapes.$fReadShape3
+                     `cast`
+                   (Sym (Text.ParserCombinators.ReadPrec.N:ReadPrec[0]
+                             <Shapes.Shape>_R))) -}
+a70891e3593f81ed111926db922174f5
+  $fReadShape3 ::
+    Text.ParserCombinators.ReadPrec.Prec
+    -> Text.ParserCombinators.ReadP.ReadP Shapes.Shape
+  {- Arity: 1, Strictness: <L,U>,
+     Unfolding: InlineRule (1, True, False)
+                (\ (eta :: Text.ParserCombinators.ReadPrec.Prec) ->
+                 GHC.Read.choose2 @ Shapes.Shape Shapes.$fReadShape4 eta) -}
+a70891e3593f81ed111926db922174f5
+  $fReadShape4 ::
+    [(GHC.Base.String,
+      Text.ParserCombinators.ReadPrec.ReadPrec Shapes.Shape)]
+  {- Strictness: m2,
+     Unfolding: (GHC.Types.:
+                   @ (GHC.Base.String,
+                      Text.ParserCombinators.ReadPrec.ReadPrec Shapes.Shape)
+                   Shapes.$fReadShape13
+                   Shapes.$fReadShape5) -}
+a70891e3593f81ed111926db922174f5
+  $fReadShape5 ::
+    [(GHC.Base.String,
+      Text.ParserCombinators.ReadPrec.ReadPrec Shapes.Shape)]
+  {- Strictness: m2,
+     Unfolding: (GHC.Types.:
+                   @ (GHC.Base.String,
+                      Text.ParserCombinators.ReadPrec.ReadPrec Shapes.Shape)
+                   Shapes.$fReadShape10
+                   Shapes.$fReadShape6) -}
+a70891e3593f81ed111926db922174f5
+  $fReadShape6 ::
+    [(GHC.Base.String,
+      Text.ParserCombinators.ReadPrec.ReadPrec Shapes.Shape)]
+  {- Strictness: m2,
+     Unfolding: (GHC.Types.:
+                   @ (GHC.Base.String,
+                      Text.ParserCombinators.ReadPrec.ReadPrec Shapes.Shape)
+                   Shapes.$fReadShape7
+                   (GHC.Types.[]
+                      @ (GHC.Base.String,
+                         Text.ParserCombinators.ReadPrec.ReadPrec Shapes.Shape))) -}
+a70891e3593f81ed111926db922174f5
+  $fReadShape7 ::
+    ([GHC.Types.Char],
+     Text.ParserCombinators.ReadPrec.ReadPrec Shapes.Shape)
+  {- Strictness: m,
+     Unfolding: ((Shapes.$fReadShape9,
+                  Shapes.$fReadShape8
+                    `cast`
+                  (Trans
+                       (<Text.ParserCombinators.ReadPrec.Prec>_R
+                        ->_R Sym (Text.ParserCombinators.ReadP.N:ReadP[0]
+                                      <Shapes.Shape>_R))
+                       (Sym (Text.ParserCombinators.ReadPrec.N:ReadPrec[0]
+                                 <Shapes.Shape>_R))))) -}
+a70891e3593f81ed111926db922174f5
+  $fReadShape8 ::
+    Text.ParserCombinators.ReadPrec.Prec
+    -> forall b.
+       (Shapes.Shape -> Text.ParserCombinators.ReadP.P b)
+       -> Text.ParserCombinators.ReadP.P b
+  {- Arity: 2, HasNoCafRefs, Strictness: <L,A><C(S),1*C1(U)>,
+     Unfolding: InlineRule (2, True, True)
+                (\ (ds :: Text.ParserCombinators.ReadPrec.Prec)
+                   @ b
+                   (eta :: Shapes.Shape -> Text.ParserCombinators.ReadP.P b) ->
+                 eta Shapes.Square) -}
+528217f3f9e0d481911893023b42e2ce
+  $fReadShape9 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "Square"#) -}
+a70891e3593f81ed111926db922174f5
+  $fReadShape_$creadList ::
+    Text.ParserCombinators.ReadP.ReadS [Shapes.Shape]
+  {- Arity: 1,
+     Unfolding: (Text.ParserCombinators.ReadP.run
+                   @ [Shapes.Shape]
+                   Shapes.$fReadShape16) -}
+a70891e3593f81ed111926db922174f5
+  $fReadShape_$creadListPrec ::
+    Text.ParserCombinators.ReadPrec.ReadPrec [Shapes.Shape]
+  {- Arity: 2, Strictness: <L,U><L,U>,
+     Unfolding: InlineRule (0, True, True)
+                Shapes.$fReadShape1
+                  `cast`
+                (Trans
+                     (<Text.ParserCombinators.ReadPrec.Prec>_R
+                      ->_R Sym (Text.ParserCombinators.ReadP.N:ReadP[0]
+                                    <[Shapes.Shape]>_R))
+                     (Sym (Text.ParserCombinators.ReadPrec.N:ReadPrec[0]
+                               <[Shapes.Shape]>_R))) -}
+a70891e3593f81ed111926db922174f5
+  $fReadShape_$creadPrec ::
+    Text.ParserCombinators.ReadPrec.ReadPrec Shapes.Shape
+  {- Arity: 1,
+     Unfolding: InlineRule (0, True, True)
+                Shapes.$fReadShape2
+                  `cast`
+                (Sym (Text.ParserCombinators.ReadPrec.N:ReadPrec[0]
+                          <Shapes.Shape>_R)) -}
+a70891e3593f81ed111926db922174f5
+  $fReadShape_$creadsPrec ::
+    GHC.Types.Int -> Text.ParserCombinators.ReadP.ReadS Shapes.Shape
+  {- Arity: 1, Strictness: <L,U>,
+     Unfolding: InlineRule (1, True, False)
+                (\ (eta :: GHC.Types.Int) ->
+                 Text.ParserCombinators.ReadP.run
+                   @ Shapes.Shape
+                   ((GHC.Read.parens1
+                       @ Shapes.Shape
+                       Shapes.$fReadShape3
+                         `cast`
+                       (Sym (Text.ParserCombinators.ReadPrec.N:ReadPrec[0]
+                                 <Shapes.Shape>_R))
+                       eta)
+                      `cast`
+                    (Text.ParserCombinators.ReadP.N:ReadP[0] <Shapes.Shape>_R)
+                      @ Shapes.Shape
+                      (Text.ParserCombinators.ReadP.$fApplicativeP_$cpure
+                         @ Shapes.Shape))) -}
+8754b83c09e902e89ed57850b8c4e999
+  $fReadTransform :: GHC.Read.Read Shapes.Transform
+  DFunId
+  {- Strictness: m, Inline: [ALWAYS] CONLIKE,
+     Unfolding: DFun:.
+                  @ Shapes.Transform
+                  Shapes.$fReadTransform_$creadsPrec
+                  Shapes.$fReadTransform_$creadList
+                  Shapes.$fReadTransform_$creadPrec
+                  Shapes.$fReadTransform_$creadListPrec -}
+8754b83c09e902e89ed57850b8c4e999
+  $fReadTransform1 ::
+    Text.ParserCombinators.ReadPrec.Prec
+    -> forall b.
+       ([Shapes.Transform] -> Text.ParserCombinators.ReadP.P b)
+       -> Text.ParserCombinators.ReadP.P b
+  {- Arity: 2, Strictness: <L,U><L,U>,
+     Unfolding: InlineRule (2, True, False)
+                (\ (eta :: Text.ParserCombinators.ReadPrec.Prec)
+                   @ b
+                   (eta1 :: [Shapes.Transform] -> Text.ParserCombinators.ReadP.P b) ->
+                 GHC.Read.list1
+                   @ Shapes.Transform
+                   Shapes.$fReadTransform2
+                     `cast`
+                   (Sym (Text.ParserCombinators.ReadPrec.N:ReadPrec[0]
+                             <Shapes.Transform>_R))
+                   eta
+                   @ b
+                   eta1) -}
+8754b83c09e902e89ed57850b8c4e999
+  $fReadTransform2 ::
+    Text.ParserCombinators.ReadPrec.Prec
+    -> Text.ParserCombinators.ReadP.ReadP Shapes.Transform
+  {- Arity: 1,
+     Unfolding: (GHC.Read.parens1
+                   @ Shapes.Transform
+                   Shapes.$fReadTransform3
+                     `cast`
+                   (Trans
+                        (<Text.ParserCombinators.ReadPrec.Prec>_R
+                         ->_R Sym (Text.ParserCombinators.ReadP.N:ReadP[0]
+                                       <Shapes.Transform>_R))
+                        (Sym (Text.ParserCombinators.ReadPrec.N:ReadPrec[0]
+                                  <Shapes.Transform>_R)))) -}
+8754b83c09e902e89ed57850b8c4e999
+  $fReadTransform3 ::
+    Text.ParserCombinators.ReadPrec.Prec
+    -> forall b.
+       (Shapes.Transform -> Text.ParserCombinators.ReadP.P b)
+       -> Text.ParserCombinators.ReadP.P b
+  {- Arity: 2, Strictness: <L,1*U(U)><L,C(U)>,
+     Unfolding: (\ (n :: Text.ParserCombinators.ReadPrec.Prec)
+                   @ b
+                   (eta :: Shapes.Transform -> Text.ParserCombinators.ReadP.P b) ->
+                 let {
+                   lvl81 :: Text.ParserCombinators.ReadP.P b
+                   = let {
+                       lvl82 :: Text.ParserCombinators.ReadP.P b = eta Shapes.Identity
+                     } in
+                     Text.Read.Lex.expect2
+                       @ b
+                       (\ (a1 :: Text.Read.Lex.Lexeme) ->
+                        case a1 of wild {
+                          DEFAULT -> Text.ParserCombinators.ReadP.Fail @ b
+                          Text.Read.Lex.Ident a2
+                          -> case GHC.Base.eqString a2 Shapes.$fReadTransform4 of wild1 {
+                               GHC.Types.False -> Text.ParserCombinators.ReadP.Fail @ b
+                               GHC.Types.True -> lvl82 } })
+                 } in
+                 let {
+                   k :: () -> Text.ParserCombinators.ReadP.P b
+                     {- Arity: 1, Strictness: <L,A>, Inline: INLINE[0],
+                        Unfolding: InlineRule (1, True, True) (\ (w4 :: ()) -> lvl81) -}
+                   = \ (w4 :: ()) -> lvl81
+                 } in
+                 Text.ParserCombinators.ReadP.$fAlternativeP_$c<|>
+                   @ b
+                   (Text.ParserCombinators.ReadP.Look
+                      @ b
+                      (\ (a :: GHC.Base.String) ->
+                       (Text.ParserCombinators.ReadP.skipSpaces_skip a)
+                         `cast`
+                       (Text.ParserCombinators.ReadP.N:ReadP[0] <()>_R)
+                         @ b
+                         k))
+                   (case n of ww { GHC.Types.I# ww2 ->
+                    Shapes.$w$creadPrec ww2 @ b eta })) -}
+20eab3998758a6dc255ac71f35aecd83
+  $fReadTransform4 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "Identity"#) -}
+8754b83c09e902e89ed57850b8c4e999
+  $fReadTransform5 ::
+    Text.ParserCombinators.ReadP.P [Shapes.Transform]
+  {- Unfolding: (GHC.Read.list1
+                   @ Shapes.Transform
+                   Shapes.$fReadTransform2
+                     `cast`
+                   (Sym (Text.ParserCombinators.ReadPrec.N:ReadPrec[0]
+                             <Shapes.Transform>_R))
+                   GHC.Read.$fRead()5
+                   @ [Shapes.Transform]
+                   (Text.ParserCombinators.ReadP.$fApplicativeP_$cpure
+                      @ [Shapes.Transform])) -}
+8754b83c09e902e89ed57850b8c4e999
+  $fReadTransform_$creadList ::
+    Text.ParserCombinators.ReadP.ReadS [Shapes.Transform]
+  {- Arity: 1,
+     Unfolding: (Text.ParserCombinators.ReadP.run
+                   @ [Shapes.Transform]
+                   Shapes.$fReadTransform5) -}
+8754b83c09e902e89ed57850b8c4e999
+  $fReadTransform_$creadListPrec ::
+    Text.ParserCombinators.ReadPrec.ReadPrec [Shapes.Transform]
+  {- Arity: 2, Strictness: <L,U><L,U>,
+     Unfolding: InlineRule (0, True, True)
+                Shapes.$fReadTransform1
+                  `cast`
+                (Trans
+                     (<Text.ParserCombinators.ReadPrec.Prec>_R
+                      ->_R Sym (Text.ParserCombinators.ReadP.N:ReadP[0]
+                                    <[Shapes.Transform]>_R))
+                     (Sym (Text.ParserCombinators.ReadPrec.N:ReadPrec[0]
+                               <[Shapes.Transform]>_R))) -}
+8754b83c09e902e89ed57850b8c4e999
+  $fReadTransform_$creadPrec ::
+    Text.ParserCombinators.ReadPrec.ReadPrec Shapes.Transform
+  {- Arity: 1,
+     Unfolding: InlineRule (0, True, True)
+                Shapes.$fReadTransform2
+                  `cast`
+                (Sym (Text.ParserCombinators.ReadPrec.N:ReadPrec[0]
+                          <Shapes.Transform>_R)) -}
+8754b83c09e902e89ed57850b8c4e999
+  $fReadTransform_$creadsPrec ::
+    GHC.Types.Int
+    -> Text.ParserCombinators.ReadP.ReadS Shapes.Transform
+  {- Arity: 1, Strictness: <L,U>,
+     Unfolding: InlineRule (1, True, False)
+                (\ (eta :: GHC.Types.Int) ->
+                 Text.ParserCombinators.ReadP.run
+                   @ Shapes.Transform
+                   ((GHC.Read.parens1
+                       @ Shapes.Transform
+                       Shapes.$fReadTransform3
+                         `cast`
+                       (Trans
+                            (<Text.ParserCombinators.ReadPrec.Prec>_R
+                             ->_R Sym (Text.ParserCombinators.ReadP.N:ReadP[0]
+                                           <Shapes.Transform>_R))
+                            (Sym (Text.ParserCombinators.ReadPrec.N:ReadPrec[0]
+                                      <Shapes.Transform>_R)))
+                       eta)
+                      `cast`
+                    (Text.ParserCombinators.ReadP.N:ReadP[0] <Shapes.Transform>_R)
+                      @ Shapes.Transform
+                      (Text.ParserCombinators.ReadP.$fApplicativeP_$cpure
+                         @ Shapes.Transform))) -}
+a70891e3593f81ed111926db922174f5
   $fShowShape :: GHC.Show.Show Shapes.Shape
   DFunId
   {- Strictness: m, Inline: [ALWAYS] CONLIKE,
@@ -74,31 +467,22 @@ def31a77171bff12a34e1fbd8179f706
                   Shapes.$fShowShape_$cshowsPrec
                   Shapes.$fShowShape_$cshow
                   Shapes.$fShowShape_$cshowList -}
-3bcbfa3e689adee2993951efce4bb9ba
-  $fShowShape1 :: [GHC.Types.Char]
-  {- Unfolding: (GHC.CString.unpackCString# "Square"#) -}
-7baa32dbee5b598f0167e763c6a76973
-  $fShowShape2 :: [GHC.Types.Char]
-  {- Unfolding: (GHC.CString.unpackCString# "Circle"#) -}
-b01f8280eacead7cf77958f56ef6eea8
-  $fShowShape3 :: [GHC.Types.Char]
-  {- Unfolding: (GHC.CString.unpackCString# "Empty"#) -}
-def31a77171bff12a34e1fbd8179f706
+a70891e3593f81ed111926db922174f5
   $fShowShape_$cshow :: Shapes.Shape -> GHC.Base.String
   {- Arity: 1, Strictness: <S,1*U>,
      Unfolding: InlineRule (1, True, False)
                 (\ (x :: Shapes.Shape) ->
                  case x of wild {
-                   Shapes.Empty -> Shapes.$fShowShape3
-                   Shapes.Circle -> Shapes.$fShowShape2
-                   Shapes.Square -> Shapes.$fShowShape1 }) -}
-def31a77171bff12a34e1fbd8179f706
+                   Shapes.Empty -> Shapes.$fReadShape15
+                   Shapes.Circle -> Shapes.$fReadShape12
+                   Shapes.Square -> Shapes.$fReadShape9 }) -}
+a70891e3593f81ed111926db922174f5
   $fShowShape_$cshowList :: [Shapes.Shape] -> GHC.Show.ShowS
   {- Arity: 2,
      Unfolding: (GHC.Show.showList__
                    @ Shapes.Shape
                    Shapes.$w$cshowsPrec) -}
-def31a77171bff12a34e1fbd8179f706
+a70891e3593f81ed111926db922174f5
   $fShowShape_$cshowsPrec ::
     GHC.Types.Int -> Shapes.Shape -> GHC.Show.ShowS
   {- Arity: 3, Strictness: <L,A><S,1*U><L,1*U>, Inline: INLINE[0],
@@ -107,7 +491,7 @@ def31a77171bff12a34e1fbd8179f706
                    (w1 :: Shapes.Shape)
                    (w2 :: GHC.Base.String) ->
                  Shapes.$w$cshowsPrec w1 w2) -}
-d15a776a05fab7e17a9cce9bf04030ab
+8754b83c09e902e89ed57850b8c4e999
   $fShowTransform :: GHC.Show.Show Shapes.Transform
   DFunId
   {- Strictness: m, Inline: [ALWAYS] CONLIKE,
@@ -116,7 +500,7 @@ d15a776a05fab7e17a9cce9bf04030ab
                   Shapes.$fShowTransform_$cshowsPrec
                   Shapes.$fShowTransform_$cshow
                   Shapes.$fShowTransform_$cshowList -}
-d15a776a05fab7e17a9cce9bf04030ab
+8754b83c09e902e89ed57850b8c4e999
   $fShowTransform1 :: Shapes.Transform -> GHC.Show.ShowS
   {- Arity: 1,
      Unfolding: (Shapes.$fShowTransform_$cshowsPrec
@@ -124,7 +508,7 @@ d15a776a05fab7e17a9cce9bf04030ab
 cd9ba456394f91a903a05ab96de0498c
   $fShowTransform2 :: GHC.Types.Int
   {- HasNoCafRefs, Strictness: m, Unfolding: (GHC.Types.I# 0#) -}
-d15a776a05fab7e17a9cce9bf04030ab
+8754b83c09e902e89ed57850b8c4e999
   $fShowTransform_$cshow :: Shapes.Transform -> GHC.Base.String
   {- Arity: 1, Strictness: <S,1*U>,
      Unfolding: InlineRule (1, True, False)
@@ -133,13 +517,13 @@ d15a776a05fab7e17a9cce9bf04030ab
                    GHC.Show.shows22
                    x
                    (GHC.Types.[] @ GHC.Types.Char)) -}
-d15a776a05fab7e17a9cce9bf04030ab
+8754b83c09e902e89ed57850b8c4e999
   $fShowTransform_$cshowList :: [Shapes.Transform] -> GHC.Show.ShowS
   {- Arity: 2,
      Unfolding: (GHC.Show.showList__
                    @ Shapes.Transform
                    Shapes.$fShowTransform1) -}
-d15a776a05fab7e17a9cce9bf04030ab
+8754b83c09e902e89ed57850b8c4e999
   $fShowTransform_$cshowsPrec ::
     GHC.Types.Int -> Shapes.Transform -> GHC.Show.ShowS
   {- Arity: 2, Strictness: <L,1*U(U)><S,1*U> -}
@@ -277,60 +661,96 @@ efd3091fc8d3ce9b55c0234b1c7566c1
   $trModule2 :: GHC.Types.TrName
   {- HasNoCafRefs, Strictness: m1,
      Unfolding: (GHC.Types.TrNameS "main"#) -}
-def31a77171bff12a34e1fbd8179f706
+8754b83c09e902e89ed57850b8c4e999
+  $w$creadPrec ::
+    GHC.Prim.Int#
+    -> forall b.
+       (Shapes.Transform -> Text.ParserCombinators.ReadP.P b)
+       -> Text.ParserCombinators.ReadP.P b
+  {- Arity: 2, Strictness: <S,U><L,C(U)>, Inline: [0] -}
+a70891e3593f81ed111926db922174f5
   $w$cshowsPrec :: Shapes.Shape -> GHC.Base.String -> GHC.Base.String
   {- Arity: 2, Strictness: <S,1*U><L,1*U>, Inline: [0],
      Unfolding: (\ (w :: Shapes.Shape) (w1 :: GHC.Base.String) ->
                  case w of wild {
-                   Shapes.Empty -> GHC.Base.++ @ GHC.Types.Char Shapes.$fShowShape3 w1
+                   Shapes.Empty
+                   -> GHC.Base.++ @ GHC.Types.Char Shapes.$fReadShape15 w1
                    Shapes.Circle
-                   -> GHC.Base.++ @ GHC.Types.Char Shapes.$fShowShape2 w1
+                   -> GHC.Base.++ @ GHC.Types.Char Shapes.$fReadShape12 w1
                    Shapes.Square
-                   -> GHC.Base.++ @ GHC.Types.Char Shapes.$fShowShape1 w1 }) -}
-794a213893ccd0c1c11cab403d32e734
+                   -> GHC.Base.++ @ GHC.Types.Char Shapes.$fReadShape9 w1 }) -}
+cc3fd576230b5086c84f1930b47db323
   (<+>) :: Shapes.Transform -> Shapes.Transform -> Shapes.Transform
   {- Arity: 2, HasNoCafRefs, Strictness: <L,U><L,U>m5,
      Unfolding: InlineRule (0, True, True) Shapes.Compose -}
-def31a77171bff12a34e1fbd8179f706
+6ef68f64449d84a0854b524ff1c4ebc6
+  type Drawing = [(Shapes.Transform, Shapes.Shape)]
+a70891e3593f81ed111926db922174f5
   data Shape = Empty | Circle | Square
-d15a776a05fab7e17a9cce9bf04030ab
+8754b83c09e902e89ed57850b8c4e999
   data Transform
     = Identity
     | Translate GHC.Types.Double GHC.Types.Double
     | Scale GHC.Types.Double GHC.Types.Double
     | Rotate GHC.Types.Double
     | Compose Shapes.Transform Shapes.Transform
-5f4dec39ab2cd4ec0bbe8b7b01347d38
+e03983fe2fec3576eb31b5c32442e1f7
   circle :: Shapes.Shape
   {- HasNoCafRefs,
      Unfolding: InlineRule (0, True, True) Shapes.Circle -}
-a1fb7abe722b06d52bf6afe6df08455c
+deedf100e9056fecc796f18a162977f5
   empty :: Shapes.Shape
   {- HasNoCafRefs,
      Unfolding: InlineRule (0, True, True) Shapes.Empty -}
-5abf8d7aa5cd9cfc3d28c079b6713c8b
+f2df5a9735d65df015755b11ae5c7455
   identity :: Shapes.Transform
   {- HasNoCafRefs,
      Unfolding: InlineRule (0, True, True) Shapes.Identity -}
-5f992afb84c3784d69a794057ef56185
+305fd1cffc6ca93fb343d9337cf68980
   rotate :: t -> GHC.Types.Double -> Shapes.Transform
   {- Arity: 2, HasNoCafRefs, Strictness: <L,A>,
      Unfolding: InlineRule (1, True, True)
                 (\ @ t (angle :: t) (eta :: GHC.Types.Double) ->
                  Shapes.Rotate eta) -}
-cc5d0247cccda404c1d48d79df3e9d2e
+4ca789abf6bd43cecbb7418abafff4a0
   scale :: GHC.Types.Double -> GHC.Types.Double -> Shapes.Transform
   {- Arity: 2, HasNoCafRefs, Strictness: <L,U><L,U>m3,
      Unfolding: InlineRule (0, True, True) Shapes.Scale -}
-35fd8b6cc8d85f4229d12fa3fb72bd6b
+07f892be1369cdc95a73732bc625b4c0
   square :: Shapes.Shape
   {- HasNoCafRefs,
      Unfolding: InlineRule (0, True, True) Shapes.Square -}
-bfe549e7231afe854f34451283af5ab4
+170aa4e4515c77417414ca1bad3d2c84
+  testDrawing :: [(Shapes.Transform, Shapes.Shape)]
+  {- HasNoCafRefs, Strictness: m2,
+     Unfolding: (GHC.Types.:
+                   @ (Shapes.Transform, Shapes.Shape)
+                   Shapes.testDrawing1
+                   (GHC.Types.[] @ (Shapes.Transform, Shapes.Shape))) -}
+d94f5a6e730d092b7fc14b58f09f2914
+  testDrawing1 :: (Shapes.Transform, Shapes.Shape)
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: ((Shapes.testDrawing2, Shapes.Circle)) -}
+1f338cd70f4f86fb9d42fd8e9d75736d
+  testDrawing2 :: Shapes.Transform
+  {- HasNoCafRefs, Strictness: m3,
+     Unfolding: (Shapes.Scale
+                   Shapes.testDrawing3
+                   Shapes.testDrawing3) -}
+449ac718b5f07171c6481a00fda545ef
+  testDrawing3 :: GHC.Types.Double
+  {- HasNoCafRefs, Strictness: m, Unfolding: (GHC.Types.D# 5.0##) -}
+58bb916b78a66f20d4321db474bc49a8
+  transform ::
+    Shapes.Transform -> [Text.Blaze.Internal.AttributeValue]
+  {- Arity: 1, Strictness: <S,1*U> -}
+036d321f87f74e35d4c3b70d00284062
   translate ::
     GHC.Types.Double -> GHC.Types.Double -> Shapes.Transform
   {- Arity: 2, HasNoCafRefs, Strictness: <L,U><L,U>m2,
      Unfolding: InlineRule (0, True, True) Shapes.Translate -}
+instance GHC.Read.Read [Shapes.Shape] = Shapes.$fReadShape
+instance GHC.Read.Read [Shapes.Transform] = Shapes.$fReadTransform
 instance GHC.Show.Show [Shapes.Shape] = Shapes.$fShowShape
 instance GHC.Show.Show [Shapes.Transform] = Shapes.$fShowTransform
 vectorised variables:

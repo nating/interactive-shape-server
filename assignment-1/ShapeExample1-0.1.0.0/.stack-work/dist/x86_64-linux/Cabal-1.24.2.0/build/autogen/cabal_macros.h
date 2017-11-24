@@ -7,6 +7,13 @@
   (major1) == 0 && (major2) <  1 || \
   (major1) == 0 && (major2) == 1 && (minor) <= 0)
 
+/* package MissingH-1.4.0.1 */
+#define VERSION_MissingH "1.4.0.1"
+#define MIN_VERSION_MissingH(major1,major2,minor) (\
+  (major1) <  1 || \
+  (major1) == 1 && (major2) <  4 || \
+  (major1) == 1 && (major2) == 4 && (minor) <= 0)
+
 /* package base-4.9.1.0 */
 #define VERSION_base "4.9.1.0"
 #define MIN_VERSION_base(major1,major2,minor) (\
@@ -14,12 +21,33 @@
   (major1) == 4 && (major2) <  9 || \
   (major1) == 4 && (major2) == 9 && (minor) <= 1)
 
+/* package base64-bytestring-1.0.0.1 */
+#define VERSION_base64_bytestring "1.0.0.1"
+#define MIN_VERSION_base64_bytestring(major1,major2,minor) (\
+  (major1) <  1 || \
+  (major1) == 1 && (major2) <  0 || \
+  (major1) == 1 && (major2) == 0 && (minor) <= 0)
+
 /* package blaze-svg-0.3.6.1 */
 #define VERSION_blaze_svg "0.3.6.1"
 #define MIN_VERSION_blaze_svg(major1,major2,minor) (\
   (major1) <  0 || \
   (major1) == 0 && (major2) <  3 || \
   (major1) == 0 && (major2) == 3 && (minor) <= 6)
+
+/* package bytestring-0.10.8.1 */
+#define VERSION_bytestring "0.10.8.1"
+#define MIN_VERSION_bytestring(major1,major2,minor) (\
+  (major1) <  0 || \
+  (major1) == 0 && (major2) <  10 || \
+  (major1) == 0 && (major2) == 10 && (minor) <= 8)
+
+/* package codec-0.2.1 */
+#define VERSION_codec "0.2.1"
+#define MIN_VERSION_codec(major1,major2,minor) (\
+  (major1) <  0 || \
+  (major1) == 0 && (major2) <  2 || \
+  (major1) == 0 && (major2) == 2 && (minor) <= 1)
 
 /* package scotty-0.11.0 */
 #define VERSION_scotty "0.11.0"

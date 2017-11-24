@@ -21,4 +21,8 @@ executable ShapeExample1
   build-depends:       base >= 4.7 && < 5,
                        scotty,
                        blaze-svg,
-                       text
+                       text,
+                       base64-bytestring,
+                       MissingH,
+                       bytestring,
+                       codec

@@ -11,26 +11,22 @@
     <title>Interactive Shape Server</title>
 
     <!-- Bootstrap core CSS -->
-    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+    <link href="https://rawgit.com/BlackrockDigital/startbootstrap-business-casual/master/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css">
 
     <!-- Custom fonts for this template -->
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Josefin+Slab:100,300,400,600,700,100italic,300italic,400italic,600italic,700italic" rel="stylesheet" type="text/css">
 
     <!-- Custom styles for this template -->
-    <link href="css/business-casual.css" rel="stylesheet" type="text/css">
+    <link href="https://rawgit.com/BlackrockDigital/startbootstrap-business-casual/master/css/business-casual.css" rel="stylesheet" type="text/css">
 
   </head>
 
-  <body>
-
-    <div class="tagline-upper text-center text-heading text-shadow text-white mt-5 d-none d-lg-block">Shapes &amp; Apes</div>
-    <div class="tagline-lower text-center text-expanded text-shadow text-uppercase text-white mb-5 d-none d-lg-block">by Geoffrey Natin</div>
+  <body style="background-color: black;">
 
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-light bg-faded py-lg-4">
       <div class="container">
-        <a class="navbar-brand text-uppercase text-expanded font-weight-bold d-lg-none" href="#">Start Bootstrap</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -42,13 +38,10 @@
               </a>
             </li>
             <li class="nav-item px-lg-4">
-              <a class="nav-link text-uppercase text-expanded" href="about.html">About</a>
+              <a class="nav-link text-uppercase text-expanded" href="about.html">Load Demo Shapes</a>
             </li>
             <li class="nav-item px-lg-4">
-              <a class="nav-link text-uppercase text-expanded" href="blog.html">Source</a>
-            </li>
-            <li class="nav-item px-lg-4">
-              <a class="nav-link text-uppercase text-expanded" href="contact.html">Contact</a>
+              <a class="nav-link text-uppercase text-expanded" href="blog.html">See Source</a>
             </li>
           </ul>
         </div>
@@ -68,10 +61,20 @@
         <!-- Welcome Message -->
         <div class="text-center mt-4">
           <div class="text-heading text-muted text-lg">Welcome To</div>
-          <h1 class="my-2">Shapes &amp; Apes</h1>
+          <h1 class="my-2">The Interactive Shape Server</h1>
           <div class="text-heading text-muted text-lg">
-            <strong>The Interactive Haskell Shape Server</strong>
+            <strong>By Geoffrey Natin</strong>
           </div>
+        </div>
+        <div id="svgBox">
+          <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="700" height="500" viewBox="0 0 100 100">
+            <g transform="rotate(50)">
+              <circle cy="2" cx="2" r="40" stroke="black" stroke-width="3" fill="red"/>
+              <rect width="20" height="20" fill="blue"/>
+              <rect width="10" height="20" fill="green"/>
+              <path d="L 2,3 M 4,5 "/>
+            </g>
+          </svg>
         </div>
       </div>
 
@@ -80,13 +83,13 @@
 
       <div class="bg-faded p-4 my-4 text-center">
         <hr class="divider">
-        <h2 class="text-center text-lg text-uppercase my-0">Watch your shapes come to life:
+        <h2 class="text-center text-lg text-uppercase my-0">Watch your shapes come to life.
         </h2>
         <hr class="divider">
         <div class="form-group">
-          <textarea class="form-control" rows="5" id="comment"></textarea>
+          <textarea class="form-control" rows="5" id="shapes-input"></textarea>
         </div>
-          <button class="text-center btn btn-primary">Render my Shapes</button>
+          <button onclick="renderSvg()" id="button" class="text-center btn btn-primary">Render my Shapes</button>
       </div>
 
     <!-- /.container -->
@@ -97,10 +100,33 @@
       </div>
     </footer>
 
-    <!-- Bootstrap core JavaScript -->
-    <script src="vendor/jquery/jquery.min.js"></script>
-    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-
   </body>
+  <script>
+
+    document.getElementById("button").addEventListener("click",function(){renderSvg();});
+
+    function renderSvg() {
+      var input = document.getElementById("shapes-input").value; 
+      var postBody = {};
+      postBody.shapes = input;
+      console.log(JSON.stringify(postBody));
+      fetch("/"+input, {  
+          method: 'POST',  
+           body: JSON.stringify(postBody)
+      })
+      .then(function (data) {  
+        console.log('Request success: ', data);
+        var svgResponse = data.text().then(function (t){
+          console.log(t);
+          var svgBox = document.getElementById('svgBox');
+          svgBox.innerHTML = t;
+        });  
+      })  
+      .catch(function (error) {  
+        //TODO: Add some code here to alert that there was an error
+        console.log('Request failure: ', error);  
+      });
+    }
+  </script>
 
 </html>
