@@ -18,8 +18,8 @@ circle = Circle
 square = Square
 
 -----------Transformations------------
---TODO: Add more AttributeValues (http://support.hfm.io/1.5/api/blaze-svg-0.3.6.1/Text-Blaze-Svg.html)
-
+--TODO: Add more AttributeValues 
+--http://support.hfm.io/1.5/api/blaze-svg-0.3.6.1/Text-Blaze-Svg.html
 
 data Transform = Identity
            | Translate Double Double
@@ -41,6 +41,33 @@ transform (Scale sx sy)            = [S.scale sx sy]
 transform (Rotate angle)           = [S.rotate angle]
 transform (Compose t1 t2)          = transform t2 ++ transform t1
 
+{-
+
+
+-----------Styles------------
+--TODO: Add more AttributeValues 
+-- https://hackage.haskell.org/package/blaze-svg-0.3.6.1/docs/Text-Blaze-Svg11-Attributes.html
+
+data Style = Fill Color
+           | FillOpacity Double
+           | Stroke Double
+           | StrokeColor Color
+           | StyleCompose Style Style
+             deriving (Show,Read)
+
+fill = Fill
+fillOpacity = FillOpacity
+stroke = Stroke
+
+
+transform :: Style -> [S.]
+transform Identity                 = [S.scale 1 1]
+transform (Translate tx ty)        = [S.translate tx ty]
+transform (Scale sx sy)            = [S.scale sx sy]
+transform (Rotate angle)           = [S.rotate angle]
+transform (Compose t1 t2)          = transform t2 ++ transform t1
+
+-}
 
 -- Drawings
 

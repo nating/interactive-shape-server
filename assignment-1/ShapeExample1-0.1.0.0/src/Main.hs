@@ -33,14 +33,3 @@ main = scotty 3000 $ do
             serveSvg $ createSvgFromDrawing $ read $ B.unpack $ fromRight $ BS.decode base64Shapes
         False ->  do
             serveSvg $ createSvgFromDrawing $ read $ "[(Scale 5 6,Circle)]"
-
-{-
-  post "/gave-up-on-for-now" $ do
-    svgJson <- rescue jsonData return
-    case lookup ("shapes" svgJson) of
-        Just shapes -> serveSvg $ createSvgFromJson shapes
-        Nothing -> return --TODO: Add code here to return an error to the user
-
-        
-
-        -}

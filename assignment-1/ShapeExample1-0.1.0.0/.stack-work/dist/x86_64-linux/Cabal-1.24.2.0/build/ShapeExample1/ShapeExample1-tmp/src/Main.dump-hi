@@ -1,10 +1,10 @@
 
 ==================== FINAL INTERFACE ====================
-2017-11-24 22:54:00.188064 UTC
+2017-11-24 23:10:28.344729 UTC
 
 interface main@main:Main 8002
-  interface hash: e204c85359a40a65c5dd2922e8e87a6d
-  ABI hash: 71b5b3612a5732fcca1f6f265d086490
+  interface hash: 30b58817153c67035ea71c3eec6923af
+  ABI hash: 3c543a5f560f0be5a10b280ed473ae77
   export-list hash: 76e70a94faf691b727f85415fcf07244
   orphan hash: 693e9af84d3dfcc71e640e005bdc5e2e
   flag hash: 37b872909b0cadba0bf7d0e95338298f
@@ -144,7 +144,6 @@ import  -/  base-4.9.1.0:Control.Monad.IO.Class 1a4384f66ee999caf5366398edb6ca7b
 import  -/  base-4.9.1.0:Data.Either 20b09ef8d0a5b74fdec011c40c1587f5
 import  -/  base-4.9.1.0:Data.Monoid 51cc9cd8c130d49ba96b7c2c2406022b
 import  -/  base-4.9.1.0:Prelude 22dd289b8469a8fa8dc81cab7b237771
-import  -/  base-4.9.1.0:System.IO e4a64a8e3dce8616da54f0ee7104f7db
 import  -/  base-4.9.1.0:Text.Read 75c59863e882ebaec4532e9465e2ee9b
 import  -/  base64-bytestring-1.0.0.1@base64-bytestring-1.0.0.1-4O9TExPPz6eI82Yj7L4SIj:Data.ByteString.Base64 a45a83e3500838257fcfde8fa8197052
 import  -/  blaze-svg-0.3.6.1@blaze-svg-0.3.6.1-E6CYGgfBIFH476loEvWeGj:Text.Blaze.Svg.Renderer.Utf8 e2f4642473b16a8cdce3ca89f311d0be
@@ -182,7 +181,7 @@ d6831ef04cb9301b090dfae6f7bb7ec7
   $trModule2 :: GHC.Types.TrName
   {- HasNoCafRefs, Strictness: m1,
      Unfolding: (GHC.Types.TrNameS "main"#) -}
-70fab3644e1176ef669a6382f38e83f4
+924651bb12cdd1084a71beb0b9885188
   main :: GHC.Types.IO ()
   {- Unfolding: (Web.Scotty.Trans.scottyOptsT
                    @ GHC.Types.IO
@@ -190,7 +189,7 @@ d6831ef04cb9301b090dfae6f7bb7ec7
                    @ Data.Text.Internal.Lazy.Text
                    GHC.Base.$fMonadIO
                    Control.Monad.IO.Class.$fMonadIOIO
-                   Main.main42
+                   Main.main32
                    (GHC.Base.id @ (GHC.Types.IO Network.Wai.Internal.Response))
                    Main.main1
                      `cast`
@@ -202,7 +201,7 @@ d6831ef04cb9301b090dfae6f7bb7ec7
                                   <()>_N))
                         (Sym (Web.Scotty.Internal.Types.N:ScottyT[0]
                                   <Data.Text.Internal.Lazy.Text>_N <GHC.Types.IO>_N) <()>_N))) -}
-1b7bef0f7138944f41aad7598195c568
+e21df0dee831bc2ad06a2326f1c9e7aa
   main1 ::
     Web.Scotty.Internal.Types.ScottyState
       Data.Text.Internal.Lazy.Text GHC.Types.IO
@@ -213,9 +212,9 @@ d6831ef04cb9301b090dfae6f7bb7ec7
   {- Arity: 1,
      Unfolding: (\ (s1 :: Web.Scotty.Internal.Types.ScottyState
                             Data.Text.Internal.Lazy.Text GHC.Types.IO)[OneShot] ->
-                 (Main.main41
+                 (Main.main31
                     Network.HTTP.Types.Method.POST
-                    Main.main38
+                    Main.main28
                     Main.main11
                       `cast`
                     (Trans
@@ -250,7 +249,7 @@ d6831ef04cb9301b090dfae6f7bb7ec7
                               Data.Text.Internal.Lazy.Text GHC.Types.IO>_N
                            <Data.Functor.Identity.Identity>_R
                            <()>_N))
-                   (case ((Main.main41
+                   (case ((Main.main31
                              Network.HTTP.Types.Method.GET
                              Main.main8
                              Main.main6
@@ -305,7 +304,7 @@ d6831ef04cb9301b090dfae6f7bb7ec7
                                        Data.Text.Internal.Lazy.Text GHC.Types.IO>_N
                                     <Data.Functor.Identity.Identity>_R
                                     <()>_N))
-                            (case ((Main.main41
+                            (case ((Main.main31
                                       Network.HTTP.Types.Method.GET
                                       Main.main3
                                       Main.main2)
@@ -337,7 +336,7 @@ d6831ef04cb9301b090dfae6f7bb7ec7
 56e276db61f0064ae68ef574dbbf6aae
   main10 :: [GHC.Types.Char]
   {- Unfolding: (GHC.CString.unpackCString# "/"#) -}
-c696620889d0e66df7cff91984e3168d
+51fd3286813bda2d40c447e2ef3cf466
   main11 ::
     Web.Scotty.Internal.Types.ActionEnv
     -> Control.Monad.Trans.State.Lazy.StateT
@@ -422,227 +421,158 @@ c696620889d0e66df7cff91984e3168d
                               ww3
                               ww4 of wild2 {
                          Data.Either.Left ds2
-                         -> case ((Main.main32
-                                     `cast`
-                                   (Control.Monad.Trans.Reader.N:ReaderT[0]
-                                        <*>_N
-                                        <Web.Scotty.Internal.Types.ActionEnv>_R
-                                        <Control.Monad.Trans.State.Lazy.StateT
-                                           Web.Scotty.Internal.Types.ScottyResponse GHC.Types.IO>_R
-                                        <Data.Either.Either
-                                           (Web.Scotty.Internal.Types.ActionError
-                                              Data.Text.Internal.Lazy.Text)
-                                           ()>_N)
-                                     w4)
-                                    `cast`
-                                  (Control.Monad.Trans.State.Lazy.N:StateT[0]
-                                       <Web.Scotty.Internal.Types.ScottyResponse>_N
-                                       <GHC.Types.IO>_R
-                                       <Data.Either.Either
-                                          (Web.Scotty.Internal.Types.ActionError
-                                             Data.Text.Internal.Lazy.Text)
-                                          ()>_N)
-                                    s')
-                                   `cast`
-                                 (GHC.Types.N:IO[0]
-                                      <(Data.Either.Either
-                                          (Web.Scotty.Internal.Types.ActionError
-                                             Data.Text.Internal.Lazy.Text)
-                                          (),
-                                        Web.Scotty.Internal.Types.ScottyResponse)>_R)
-                                   ipv of ds3 { (#,#) ipv2 ipv3 ->
-                            case ipv3 of wild3 { (,) a2 s'1 ->
-                            case a2 of wild4 {
-                              Data.Either.Left e1 -> ds3
-                              Data.Either.Right x1
-                              -> ((Main.main_k
-                                     `cast`
+                         -> ((Main.main15
+                                `cast`
+                              (Trans
+                                   (Web.Scotty.Internal.Types.N:ActionT[0]
+                                        <Data.Text.Internal.Lazy.Text>_N <GHC.Types.IO>_R <()>_N)
                                    (Trans
-                                        (Web.Scotty.Internal.Types.N:ActionT[0]
-                                             <Data.Text.Internal.Lazy.Text>_N
-                                             <GHC.Types.IO>_R <()>_N)
-                                        (Trans
-                                             (Control.Monad.Trans.Except.N:ExceptT[0]
-                                                  <Web.Scotty.Internal.Types.ActionError
-                                                     Data.Text.Internal.Lazy.Text>_N
-                                                  <Control.Monad.Trans.Reader.ReaderT
-                                                     Web.Scotty.Internal.Types.ActionEnv
-                                                     (Control.Monad.Trans.State.Lazy.StateT
-                                                        Web.Scotty.Internal.Types.ScottyResponse
-                                                        GHC.Types.IO)>_R
-                                                  <()>_N)
-                                             (Control.Monad.Trans.Reader.N:ReaderT[0]
-                                                  <*>_N
-                                                  <Web.Scotty.Internal.Types.ActionEnv>_R
-                                                  <Control.Monad.Trans.State.Lazy.StateT
-                                                     Web.Scotty.Internal.Types.ScottyResponse
-                                                     GHC.Types.IO>_R
-                                                  <Data.Either.Either
-                                                     (Web.Scotty.Internal.Types.ActionError
-                                                        Data.Text.Internal.Lazy.Text)
-                                                     ()>_N)))
-                                     w4)
-                                    `cast`
-                                  (Control.Monad.Trans.State.Lazy.N:StateT[0]
-                                       <Web.Scotty.Internal.Types.ScottyResponse>_N
-                                       <GHC.Types.IO>_R
-                                       <Data.Either.Either
-                                          (Web.Scotty.Internal.Types.ActionError
-                                             Data.Text.Internal.Lazy.Text)
-                                          ()>_N)
-                                    s'1)
-                                   `cast`
-                                 (GHC.Types.N:IO[0]
-                                      <(Data.Either.Either
-                                          (Web.Scotty.Internal.Types.ActionError
-                                             Data.Text.Internal.Lazy.Text)
-                                          (),
-                                        Web.Scotty.Internal.Types.ScottyResponse)>_R)
-                                   ipv2 } } }
+                                        (Control.Monad.Trans.Except.N:ExceptT[0]
+                                             <Web.Scotty.Internal.Types.ActionError
+                                                Data.Text.Internal.Lazy.Text>_N
+                                             <Control.Monad.Trans.Reader.ReaderT
+                                                Web.Scotty.Internal.Types.ActionEnv
+                                                (Control.Monad.Trans.State.Lazy.StateT
+                                                   Web.Scotty.Internal.Types.ScottyResponse
+                                                   GHC.Types.IO)>_R
+                                             <()>_N)
+                                        (Control.Monad.Trans.Reader.N:ReaderT[0]
+                                             <*>_N
+                                             <Web.Scotty.Internal.Types.ActionEnv>_R
+                                             <Control.Monad.Trans.State.Lazy.StateT
+                                                Web.Scotty.Internal.Types.ScottyResponse
+                                                GHC.Types.IO>_R
+                                             <Data.Either.Either
+                                                (Web.Scotty.Internal.Types.ActionError
+                                                   Data.Text.Internal.Lazy.Text)
+                                                ()>_N)))
+                                w4)
+                               `cast`
+                             (Control.Monad.Trans.State.Lazy.N:StateT[0]
+                                  <Web.Scotty.Internal.Types.ScottyResponse>_N
+                                  <GHC.Types.IO>_R
+                                  <Data.Either.Either
+                                     (Web.Scotty.Internal.Types.ActionError
+                                        Data.Text.Internal.Lazy.Text)
+                                     ()>_N)
+                               s')
+                              `cast`
+                            (GHC.Types.N:IO[0]
+                                 <(Data.Either.Either
+                                     (Web.Scotty.Internal.Types.ActionError
+                                        Data.Text.Internal.Lazy.Text)
+                                     (),
+                                   Web.Scotty.Internal.Types.ScottyResponse)>_R)
+                              ipv
                          Data.Either.Right ds2
-                         -> case ((Main.main15
-                                     `cast`
-                                   (Control.Monad.Trans.Reader.N:ReaderT[0]
-                                        <*>_N
-                                        <Web.Scotty.Internal.Types.ActionEnv>_R
-                                        <Control.Monad.Trans.State.Lazy.StateT
-                                           Web.Scotty.Internal.Types.ScottyResponse GHC.Types.IO>_R
-                                        <Data.Either.Either
-                                           (Web.Scotty.Internal.Types.ActionError
-                                              Data.Text.Internal.Lazy.Text)
-                                           ()>_N)
-                                     w4)
-                                    `cast`
-                                  (Control.Monad.Trans.State.Lazy.N:StateT[0]
-                                       <Web.Scotty.Internal.Types.ScottyResponse>_N
-                                       <GHC.Types.IO>_R
-                                       <Data.Either.Either
-                                          (Web.Scotty.Internal.Types.ActionError
-                                             Data.Text.Internal.Lazy.Text)
-                                          ()>_N)
-                                    s')
-                                   `cast`
-                                 (GHC.Types.N:IO[0]
-                                      <(Data.Either.Either
-                                          (Web.Scotty.Internal.Types.ActionError
-                                             Data.Text.Internal.Lazy.Text)
-                                          (),
-                                        Web.Scotty.Internal.Types.ScottyResponse)>_R)
-                                   ipv of ds3 { (#,#) ipv2 ipv3 ->
-                            case ipv3 of wild3 { (,) a2 s'1 ->
-                            case a2 of wild4 {
-                              Data.Either.Left e1 -> ds3
-                              Data.Either.Right x1
-                              -> (((Main.serveSvg
-                                      (Text.Blaze.Internal.AddAttribute
-                                         @ ()
-                                         Render.svgDoc155
-                                         Render.svgDoc151
-                                         Render.svgDoc149
-                                         (Text.Blaze.Internal.AddAttribute
-                                            @ ()
-                                            Render.svgDoc59
-                                            Render.svgDoc55
-                                            Render.svgDoc147
-                                            (Text.Blaze.Internal.AddAttribute
-                                               @ ()
-                                               Render.svgDoc49
-                                               Render.svgDoc45
-                                               Render.svgDoc147
-                                               (Text.Blaze.Internal.AddAttribute
-                                                  @ ()
-                                                  Render.svgDoc143
-                                                  Render.svgDoc139
-                                                  Render.svgDoc137
-                                                  (Text.Blaze.Internal.Append
-                                                     @ ()
-                                                     @ ()
-                                                     Text.Blaze.Svg11.docType
-                                                     (Text.Blaze.Internal.AddAttribute
-                                                        @ ()
-                                                        Render.createSvgFromDrawing13
-                                                        Render.createSvgFromDrawing11
-                                                        Render.svgDoc127
-                                                        (Text.Blaze.Internal.AddAttribute
-                                                           @ ()
-                                                           Render.createSvgFromDrawing9
-                                                           Render.createSvgFromDrawing7
-                                                           Render.svgDoc117
-                                                           (Text.Blaze.Internal.Parent
-                                                              @ ()
-                                                              Render.createSvgFromDrawing5
-                                                              Render.createSvgFromDrawing3
-                                                              Render.createSvgFromDrawing1
-                                                              (case Text.Read.readEither6
-                                                                      @ Shapes.Drawing
-                                                                      (Text.ParserCombinators.ReadP.run
-                                                                         @ Shapes.Drawing
-                                                                         Main.main14
-                                                                         (case ds2 of ww7 { Data.ByteString.Internal.PS ww8 ww9 ww10 ww11 ->
-                                                                          Data.ByteString.Internal.$wunpackAppendCharsLazy
-                                                                            ww8
-                                                                            ww9
-                                                                            ww10
-                                                                            ww11
-                                                                            (GHC.Types.[]
-                                                                               @ GHC.Types.Char) })) of wild5 {
-                                                                 []
-                                                                 -> case Main.main13
+                         -> (((Main.serveSvg
+                                 (Text.Blaze.Internal.AddAttribute
+                                    @ ()
+                                    Render.svgDoc155
+                                    Render.svgDoc151
+                                    Render.svgDoc149
+                                    (Text.Blaze.Internal.AddAttribute
+                                       @ ()
+                                       Render.svgDoc59
+                                       Render.svgDoc55
+                                       Render.svgDoc147
+                                       (Text.Blaze.Internal.AddAttribute
+                                          @ ()
+                                          Render.svgDoc49
+                                          Render.svgDoc45
+                                          Render.svgDoc147
+                                          (Text.Blaze.Internal.AddAttribute
+                                             @ ()
+                                             Render.svgDoc143
+                                             Render.svgDoc139
+                                             Render.svgDoc137
+                                             (Text.Blaze.Internal.Append
+                                                @ ()
+                                                @ ()
+                                                Text.Blaze.Svg11.docType
+                                                (Text.Blaze.Internal.AddAttribute
+                                                   @ ()
+                                                   Render.createSvgFromDrawing13
+                                                   Render.createSvgFromDrawing11
+                                                   Render.svgDoc127
+                                                   (Text.Blaze.Internal.AddAttribute
+                                                      @ ()
+                                                      Render.createSvgFromDrawing9
+                                                      Render.createSvgFromDrawing7
+                                                      Render.svgDoc117
+                                                      (Text.Blaze.Internal.Parent
+                                                         @ ()
+                                                         Render.createSvgFromDrawing5
+                                                         Render.createSvgFromDrawing3
+                                                         Render.createSvgFromDrawing1
+                                                         (case Text.Read.readEither6
+                                                                 @ Shapes.Drawing
+                                                                 (Text.ParserCombinators.ReadP.run
+                                                                    @ Shapes.Drawing
+                                                                    Main.main14
+                                                                    (case ds2 of ww7 { Data.ByteString.Internal.PS ww8 ww9 ww10 ww11 ->
+                                                                     Data.ByteString.Internal.$wunpackAppendCharsLazy
+                                                                       ww8
+                                                                       ww9
+                                                                       ww10
+                                                                       ww11
+                                                                       (GHC.Types.[]
+                                                                          @ GHC.Types.Char) })) of wild3 {
+                                                            []
+                                                            -> case Main.main13
+                                                               ret_ty (Text.Blaze.Internal.MarkupM
+                                                                         ())
+                                                               of {}
+                                                            : x1 ds
+                                                            -> case ds of wild4 {
+                                                                 [] -> Render.createSvgShapes x1
+                                                                 : ipv2 ipv3
+                                                                 -> case Main.main12
                                                                     ret_ty (Text.Blaze.Internal.MarkupM
                                                                               ())
-                                                                    of {}
-                                                                 : x2 ds
-                                                                 -> case ds of wild6 {
-                                                                      []
-                                                                      -> Render.createSvgShapes x2
-                                                                      : ipv4 ipv5
-                                                                      -> case Main.main12
-                                                                         ret_ty (Text.Blaze.Internal.MarkupM
-                                                                                   ())
-                                                                         of {} } }))))))))))
-                                     `cast`
+                                                                    of {} } }))))))))))
+                                `cast`
+                              (Trans
+                                   (Web.Scotty.Internal.Types.N:ActionT[0]
+                                        <Data.Text.Internal.Lazy.Text>_N <GHC.Types.IO>_R <()>_N)
                                    (Trans
-                                        (Web.Scotty.Internal.Types.N:ActionT[0]
-                                             <Data.Text.Internal.Lazy.Text>_N
-                                             <GHC.Types.IO>_R <()>_N)
-                                        (Trans
-                                             (Control.Monad.Trans.Except.N:ExceptT[0]
-                                                  <Web.Scotty.Internal.Types.ActionError
-                                                     Data.Text.Internal.Lazy.Text>_N
-                                                  <Control.Monad.Trans.Reader.ReaderT
-                                                     Web.Scotty.Internal.Types.ActionEnv
-                                                     (Control.Monad.Trans.State.Lazy.StateT
-                                                        Web.Scotty.Internal.Types.ScottyResponse
-                                                        GHC.Types.IO)>_R
-                                                  <()>_N)
-                                             (Control.Monad.Trans.Reader.N:ReaderT[0]
-                                                  <*>_N
-                                                  <Web.Scotty.Internal.Types.ActionEnv>_R
-                                                  <Control.Monad.Trans.State.Lazy.StateT
-                                                     Web.Scotty.Internal.Types.ScottyResponse
-                                                     GHC.Types.IO>_R
-                                                  <Data.Either.Either
-                                                     (Web.Scotty.Internal.Types.ActionError
-                                                        Data.Text.Internal.Lazy.Text)
-                                                     ()>_N)))
-                                     w4)
-                                    `cast`
-                                  (Control.Monad.Trans.State.Lazy.N:StateT[0]
-                                       <Web.Scotty.Internal.Types.ScottyResponse>_N
-                                       <GHC.Types.IO>_R
-                                       <Data.Either.Either
-                                          (Web.Scotty.Internal.Types.ActionError
-                                             Data.Text.Internal.Lazy.Text)
-                                          ()>_N)
-                                    s'1)
-                                   `cast`
-                                 (GHC.Types.N:IO[0]
-                                      <(Data.Either.Either
-                                          (Web.Scotty.Internal.Types.ActionError
-                                             Data.Text.Internal.Lazy.Text)
-                                          (),
-                                        Web.Scotty.Internal.Types.ScottyResponse)>_R)
-                                   ipv2 } } } } } } } })
+                                        (Control.Monad.Trans.Except.N:ExceptT[0]
+                                             <Web.Scotty.Internal.Types.ActionError
+                                                Data.Text.Internal.Lazy.Text>_N
+                                             <Control.Monad.Trans.Reader.ReaderT
+                                                Web.Scotty.Internal.Types.ActionEnv
+                                                (Control.Monad.Trans.State.Lazy.StateT
+                                                   Web.Scotty.Internal.Types.ScottyResponse
+                                                   GHC.Types.IO)>_R
+                                             <()>_N)
+                                        (Control.Monad.Trans.Reader.N:ReaderT[0]
+                                             <*>_N
+                                             <Web.Scotty.Internal.Types.ActionEnv>_R
+                                             <Control.Monad.Trans.State.Lazy.StateT
+                                                Web.Scotty.Internal.Types.ScottyResponse
+                                                GHC.Types.IO>_R
+                                             <Data.Either.Either
+                                                (Web.Scotty.Internal.Types.ActionError
+                                                   Data.Text.Internal.Lazy.Text)
+                                                ()>_N)))
+                                w4)
+                               `cast`
+                             (Control.Monad.Trans.State.Lazy.N:StateT[0]
+                                  <Web.Scotty.Internal.Types.ScottyResponse>_N
+                                  <GHC.Types.IO>_R
+                                  <Data.Either.Either
+                                     (Web.Scotty.Internal.Types.ActionError
+                                        Data.Text.Internal.Lazy.Text)
+                                     ()>_N)
+                               s')
+                              `cast`
+                            (GHC.Types.N:IO[0]
+                                 <(Data.Either.Either
+                                     (Web.Scotty.Internal.Types.ActionError
+                                        Data.Text.Internal.Lazy.Text)
+                                     (),
+                                   Web.Scotty.Internal.Types.ScottyResponse)>_R)
+                              ipv } } } } })
                    `cast`
                  (Trans
                       (<Web.Scotty.Internal.Types.ScottyResponse>_R
@@ -680,126 +610,84 @@ b83eaf12a707a91f742afd8abe2dc450
                    Text.ParserCombinators.ReadPrec.minPrec
                    @ Shapes.Drawing
                    (Text.Read.readEither5 @ Shapes.Drawing)) -}
-3396899d3d4840a5e5f278efb3a639fa
+d83947aa07dc9c9d37280e49e512c8f7
   main15 ::
-    Control.Monad.Trans.Reader.ReaderT
-      Web.Scotty.Internal.Types.ActionEnv
-      (Control.Monad.Trans.State.Lazy.StateT
-         Web.Scotty.Internal.Types.ScottyResponse GHC.Types.IO)
-      (Data.Either.Either
-         (Web.Scotty.Internal.Types.ActionError
-            Data.Text.Internal.Lazy.Text)
-         ())
-  {- Unfolding: (Web.Scotty.Internal.Types.$w$cliftIO
-                   @ Data.Text.Internal.Lazy.Text
-                   @ GHC.Types.IO
-                   Control.Monad.IO.Class.$fMonadIOIO
-                   @ ()
-                   Main.main16 `cast` (Sym (GHC.Types.N:IO[0] <()>_R))) -}
-5a19498597bd09957060c8459bfc16e8
-  main16 ::
-    GHC.Prim.State# GHC.Prim.RealWorld
-    -> (# GHC.Prim.State# GHC.Prim.RealWorld, () #)
-  {- Arity: 1,
-     Unfolding: (\ (eta :: GHC.Prim.State#
-                             GHC.Prim.RealWorld)[OneShot] ->
-                 GHC.IO.Handle.Text.hPutStr2
-                   GHC.IO.Handle.FD.stdout
-                   Main.main17
-                   GHC.Types.True
-                   eta) -}
-961a1afe9d0baf933b93efc4e4a2ede2
-  main17 :: [GHC.Types.Char]
-  {- Unfolding: (GHC.Types.:
-                   @ GHC.Types.Char
-                   GHC.Show.shows6
-                   Main.main18) -}
-dee71b655178e65c24fb525d2c46f7d3
-  main18 :: GHC.Base.String
-  {- Unfolding: (GHC.Show.showLitString Main.main20 Main.main19) -}
-f6525354e06dc8f7f01c8d3769e70d7e
-  main19 :: [GHC.Types.Char]
-  {- HasNoCafRefs,
-     Unfolding: (GHC.Types.:
-                   @ GHC.Types.Char
-                   GHC.Show.shows6
-                   (GHC.Types.[] @ GHC.Types.Char)) -}
-56cb9fcc38376655caa3ce83440bfe3d
-  main2 ::
     Web.Scotty.Internal.Types.ActionT
       Data.Text.Internal.Lazy.Text GHC.Types.IO ()
-  {- Unfolding: (Main.serveSvg Render.svgDoc) -}
-c06f9f3c3fad68fb97239e0dfb2247b8
-  main20 :: [GHC.Types.Char]
-  {- Unfolding: (GHC.CString.unpackCString# "correct"#) -}
-a0636841f1899da28a6d49ccc3ba67b6
-  main21 :: Text.Blaze.Internal.MarkupM ()
+  {- Unfolding: (Main.serveSvg Main.main16) -}
+0760fc1441cbdfb0ef1837445953260a
+  main16 :: Text.Blaze.Internal.MarkupM ()
   {- Unfolding: (Text.Blaze.Internal.AddAttribute
                    @ ()
                    Render.svgDoc155
                    Render.svgDoc151
                    Render.svgDoc149
-                   Main.main22) -}
-2e16054cdaee5396346a1a8e55f122d9
-  main22 :: Text.Blaze.Internal.MarkupM ()
+                   Main.main17) -}
+ed81a741fcc0d4b3c9b60968cb8e096a
+  main17 :: Text.Blaze.Internal.MarkupM ()
   {- Unfolding: (Text.Blaze.Internal.AddAttribute
                    @ ()
                    Render.svgDoc59
                    Render.svgDoc55
                    Render.svgDoc147
-                   Main.main23) -}
-be99a0d68214ffbd37000aa7072e1a80
-  main23 :: Text.Blaze.Internal.MarkupM ()
+                   Main.main18) -}
+fb0dcd1f910fa0c0028b399185cc926b
+  main18 :: Text.Blaze.Internal.MarkupM ()
   {- Unfolding: (Text.Blaze.Internal.AddAttribute
                    @ ()
                    Render.svgDoc49
                    Render.svgDoc45
                    Render.svgDoc147
-                   Main.main24) -}
-b3baa48ed73a2970d89a832e3844c1d6
-  main24 :: Text.Blaze.Internal.MarkupM ()
+                   Main.main19) -}
+c4ebc92668c8cea3cf48db0986e6a8a8
+  main19 :: Text.Blaze.Internal.MarkupM ()
   {- Unfolding: (Text.Blaze.Internal.AddAttribute
                    @ ()
                    Render.svgDoc143
                    Render.svgDoc139
                    Render.svgDoc137
-                   Main.main25) -}
-30e067648f2722de8db9ff6b12a74e76
-  main25 :: Text.Blaze.Internal.MarkupM ()
+                   Main.main20) -}
+56cb9fcc38376655caa3ce83440bfe3d
+  main2 ::
+    Web.Scotty.Internal.Types.ActionT
+      Data.Text.Internal.Lazy.Text GHC.Types.IO ()
+  {- Unfolding: (Main.serveSvg Render.svgDoc) -}
+d0d2b657e84d53c21bfa7f777b326b99
+  main20 :: Text.Blaze.Internal.MarkupM ()
   {- Unfolding: (Text.Blaze.Internal.Append
                    @ ()
                    @ ()
                    Text.Blaze.Svg11.docType
-                   Main.main26) -}
-b5a179d4b8f68de6e4db733e626c0a1f
-  main26 :: Text.Blaze.Internal.MarkupM ()
+                   Main.main21) -}
+605a532ad4243d0bd9e4145453e6125e
+  main21 :: Text.Blaze.Internal.MarkupM ()
   {- Unfolding: (Text.Blaze.Internal.AddAttribute
                    @ ()
                    Render.createSvgFromDrawing13
                    Render.createSvgFromDrawing11
                    Render.svgDoc127
-                   Main.main27) -}
-0bacd4629ac1b12b60206634674f1672
-  main27 :: Text.Blaze.Internal.MarkupM ()
+                   Main.main22) -}
+2a95d942a4704de62cedc6d892ca1613
+  main22 :: Text.Blaze.Internal.MarkupM ()
   {- Unfolding: (Text.Blaze.Internal.AddAttribute
                    @ ()
                    Render.createSvgFromDrawing9
                    Render.createSvgFromDrawing7
                    Render.svgDoc117
-                   Main.main28) -}
-ef94f866d362b6f423d2ab82f112ecac
-  main28 :: Text.Blaze.Internal.MarkupM ()
+                   Main.main23) -}
+29cd0517e007b3e73559bfcccb7ff584
+  main23 :: Text.Blaze.Internal.MarkupM ()
   {- Unfolding: (Text.Blaze.Internal.Parent
                    @ ()
                    Render.createSvgFromDrawing5
                    Render.createSvgFromDrawing3
                    Render.createSvgFromDrawing1
-                   Main.main29) -}
-1daaa09768e4c3d942b58d58dfd80ebc
-  main29 :: Text.Blaze.Internal.MarkupM ()
+                   Main.main24) -}
+3c24fb37d353f2a714a342be71ddb50e
+  main24 :: Text.Blaze.Internal.MarkupM ()
   {- Unfolding: (case Text.Read.readEither6
                         @ Shapes.Drawing
-                        Main.main30 of wild {
+                        Main.main25 of wild {
                    []
                    -> case GHC.Err.error
                              @ 'GHC.Types.PtrRepLifted
@@ -825,86 +713,38 @@ ef94f866d362b6f423d2ab82f112ecac
                                   Text.Read.readEither2
                            ret_ty (Text.Blaze.Internal.MarkupM ())
                            of {} } }) -}
-cebc4bb4f6a9c1ac02e463b470c50d3b
-  main3 :: Web.Scotty.Internal.Types.RoutePattern
-  {- Unfolding: (Web.Scotty.Internal.Types.Capture Main.main4) -}
-10cd5948f42aa718400a9d347860a596
-  main30 :: [(Shapes.Drawing, GHC.Base.String)]
+9f1316b7194145d8e7d7906a6148d00c
+  main25 :: [(Shapes.Drawing, GHC.Base.String)]
   {- Unfolding: (Text.ParserCombinators.ReadP.run
                    @ Shapes.Drawing
                    Main.main14
-                   Main.main31) -}
-40f127cae7a4c95170f44bde308e1ef8
-  main31 :: [GHC.Types.Char]
+                   Main.main26) -}
+67d864252cad88e5bdbe18b32aba96c7
+  main26 :: [GHC.Types.Char]
   {- Unfolding: (GHC.CString.unpackCString#
                    "[(Scale 5 6,Circle)]"#) -}
-f2fd197c98c22b3a74444938755490b8
-  main32 ::
-    Control.Monad.Trans.Reader.ReaderT
-      Web.Scotty.Internal.Types.ActionEnv
-      (Control.Monad.Trans.State.Lazy.StateT
-         Web.Scotty.Internal.Types.ScottyResponse GHC.Types.IO)
-      (Data.Either.Either
-         (Web.Scotty.Internal.Types.ActionError
-            Data.Text.Internal.Lazy.Text)
-         ())
-  {- Unfolding: (Web.Scotty.Internal.Types.$w$cliftIO
-                   @ Data.Text.Internal.Lazy.Text
-                   @ GHC.Types.IO
-                   Control.Monad.IO.Class.$fMonadIOIO
-                   @ ()
-                   Main.main33 `cast` (Sym (GHC.Types.N:IO[0] <()>_R))) -}
-dbef3e83169f86ccfcfb44eab1329be0
-  main33 ::
-    GHC.Prim.State# GHC.Prim.RealWorld
-    -> (# GHC.Prim.State# GHC.Prim.RealWorld, () #)
-  {- Arity: 1,
-     Unfolding: (\ (eta :: GHC.Prim.State#
-                             GHC.Prim.RealWorld)[OneShot] ->
-                 GHC.IO.Handle.Text.hPutStr2
-                   GHC.IO.Handle.FD.stdout
-                   Main.main34
-                   GHC.Types.True
-                   eta) -}
-a71f0049a5a9e1f2494ee5b943ab4bd8
-  main34 :: [GHC.Types.Char]
-  {- Unfolding: (GHC.Types.:
-                   @ GHC.Types.Char
-                   GHC.Show.shows6
-                   Main.main35) -}
-727abeec74611c38d4226e1e8d772e9d
-  main35 :: GHC.Base.String
-  {- Unfolding: (GHC.Show.showLitString Main.main36 Main.main19) -}
-b963f89d74f9acbe1605299c71d4f46d
-  main36 :: [GHC.Types.Char]
-  {- Unfolding: (GHC.CString.unpackCString# "help"#) -}
-65d334c9c6303f63f706ece2545c1790
-  main37 :: Data.Text.Internal.Lazy.Text
+1756a1260aa6601f64d4ba5cde9ab711
+  main27 :: Data.Text.Internal.Lazy.Text
   {- Unfolding: (Data.Text.Lazy.unpackCString# "base64-shapes"#) -}
-f97aaf32e51e81ca4c286b3e9ef0c9a8
-  main38 :: Web.Scotty.Internal.Types.RoutePattern
-  {- Unfolding: (Web.Scotty.Internal.Types.Capture Main.main39) -}
-fdd2df45f14034b866f46a67d6f6dd1b
-  main39 :: Data.Text.Internal.Lazy.Text
+9a8c1c258369e04b11d4c46649a0e62c
+  main28 :: Web.Scotty.Internal.Types.RoutePattern
+  {- Unfolding: (Web.Scotty.Internal.Types.Capture Main.main29) -}
+655f1c4e028d741eb8a75e8c38f4c684
+  main29 :: Data.Text.Internal.Lazy.Text
   {- Unfolding: (case GHC.Base.map
                         @ GHC.Types.Char
                         @ GHC.Types.Char
                         Data.Text.Internal.safe
-                        Main.main40 of dt { DEFAULT ->
+                        Main.main30 of dt { DEFAULT ->
                  Web.Scotty.Internal.Types.$fIsStringRoutePattern_outer dt }) -}
-28d83fd8a1fa060d78541d7d66df3839
-  main4 :: Data.Text.Internal.Lazy.Text
-  {- Unfolding: (case GHC.Base.map
-                        @ GHC.Types.Char
-                        @ GHC.Types.Char
-                        Data.Text.Internal.safe
-                        Main.main5 of dt { DEFAULT ->
-                 Web.Scotty.Internal.Types.$fIsStringRoutePattern_outer dt }) -}
-b84f30b721cdde1edae8ec6937c3a50f
-  main40 :: [GHC.Types.Char]
+cebc4bb4f6a9c1ac02e463b470c50d3b
+  main3 :: Web.Scotty.Internal.Types.RoutePattern
+  {- Unfolding: (Web.Scotty.Internal.Types.Capture Main.main4) -}
+abf5eef620de1bb79b03dba888417002
+  main30 :: [GHC.Types.Char]
   {- Unfolding: (GHC.CString.unpackCString# "/:base64-shapes"#) -}
-7f0cbe16660a50d0d05bf62140355830
-  main41 ::
+8fe4439a66167ff71ae0e04d2c6f4646
+  main31 ::
     Network.HTTP.Types.Method.StdMethod
     -> Web.Scotty.Internal.Types.RoutePattern
     -> Web.Scotty.Internal.Types.ActionT
@@ -916,15 +756,15 @@ b84f30b721cdde1edae8ec6937c3a50f
                    @ GHC.Types.IO
                    Web.Scotty.Internal.Types.$fScottyErrorText
                    Control.Monad.IO.Class.$fMonadIOIO) -}
-9d797b60a2154f74ae763ec0727012f1
-  main42 :: Web.Scotty.Internal.Types.Options
+ed1d27191efc4a0de6466f6adadf396b
+  main32 :: Web.Scotty.Internal.Types.Options
   {- Unfolding: (Web.Scotty.Internal.Types.Options
                    Web.Scotty.Internal.Types.$fDefaultOptions3
-                   Main.main43) -}
-be2cb95c62cbee9d250e892075887421
-  main43 :: Network.Wai.Handler.Warp.Settings.Settings
+                   Main.main33) -}
+373741764a46c9dabe0f27fe56981ca1
+  main33 :: Network.Wai.Handler.Warp.Settings.Settings
   {- Unfolding: (Network.Wai.Handler.Warp.Settings.Settings
-                   Main.main44
+                   Main.main34
                    Network.Wai.Handler.Warp.Settings.defaultSettings16
                    Network.Wai.Handler.Warp.Settings.defaultOnException1
                      `cast`
@@ -974,15 +814,23 @@ be2cb95c62cbee9d250e892075887421
                     ->_R <GHC.Integer.Type.Integer>_R
                     ->_R Sym (GHC.Types.N:IO[0] <()>_R))
                    (GHC.Base.Nothing @ GHC.Types.Int)) -}
-524ed086015a230efad7f5b7c35ae430
-  main44 :: GHC.Types.Int
+1fb31217eda8ff7ff02bfa077ed7bf0d
+  main34 :: GHC.Types.Int
   {- HasNoCafRefs, Unfolding: (GHC.Types.I# 3000#) -}
-62e68a6a571465b6704f3a242c9bc717
-  main45 ::
+f0bce3395edf2d4772aa914040145b92
+  main35 ::
     GHC.Prim.State# GHC.Prim.RealWorld
     -> (# GHC.Prim.State# GHC.Prim.RealWorld, () #)
   {- Arity: 1,
      Unfolding: (GHC.TopHandler.runMainIO1 @ () Main.main) -}
+28d83fd8a1fa060d78541d7d66df3839
+  main4 :: Data.Text.Internal.Lazy.Text
+  {- Unfolding: (case GHC.Base.map
+                        @ GHC.Types.Char
+                        @ GHC.Types.Char
+                        Data.Text.Internal.safe
+                        Main.main5 of dt { DEFAULT ->
+                 Web.Scotty.Internal.Types.$fIsStringRoutePattern_outer dt }) -}
 d35cea93b38e9d919fa3d9ab5738ef79
   main5 :: [GHC.Types.Char]
   {- Unfolding: (GHC.CString.unpackCString# "/not-using-rn"#) -}
@@ -1020,16 +868,11 @@ e413960c5d63964c8457506dbb98d81f
                         Data.Text.Internal.safe
                         Main.main10 of dt { DEFAULT ->
                  Web.Scotty.Internal.Types.$fIsStringRoutePattern_outer dt }) -}
-35e5b081fa80fd8a7c856c06128e6485
-  main_k ::
-    Web.Scotty.Internal.Types.ActionT
-      Data.Text.Internal.Lazy.Text GHC.Types.IO ()
-  {- Unfolding: (Main.serveSvg Main.main21) -}
 73d852be0a4034de624eb8954454ac3f
   main_w1 :: GHC.IO.FilePath
   {- Unfolding: (GHC.CString.unpackCString#
                    "static-files/index.html"#) -}
-278a13dbb9464a6d15a477d27739a831
+a165b07c9e4dbde57108c4d4360f1187
   main_w2 ::
     Web.Scotty.Internal.Types.ActionT
       Data.Text.Internal.Lazy.Text
@@ -1042,7 +885,7 @@ e413960c5d63964c8457506dbb98d81f
                    Web.Scotty.Action.$fParsableByteString0
                    Web.Scotty.Internal.Types.$fScottyErrorText
                    GHC.Base.$fMonadIO
-                   Main.main37) -}
+                   Main.main27) -}
 326f12c85c6f17892453d509bfefd561
   serveSvg ::
     Text.Blaze.Internal.Markup
