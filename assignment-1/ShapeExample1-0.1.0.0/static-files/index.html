@@ -107,12 +107,8 @@
 
     function renderSvg() {
       var input = document.getElementById("shapes-input").value; 
-      var postBody = {};
-      postBody.shapes = input;
-      console.log(JSON.stringify(postBody));
-      fetch("/"+input, {  
-          method: 'POST',  
-           body: JSON.stringify(postBody)
+      fetch("/"+btoa(input), {  
+          method: 'POST'
       })
       .then(function (data) {  
         console.log('Request success: ', data);
