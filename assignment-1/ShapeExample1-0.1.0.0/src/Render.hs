@@ -1,3 +1,11 @@
+{-
+Render.hs
+
+Created by Geoffrey Natin on 15/11/2017
+
+https://github.com/nating/interactive-shape-server/src/Render.hs
+-}
+
 {-# LANGUAGE OverloadedStrings #-}
 
 module Render where
@@ -5,7 +13,6 @@ module Render where
 import Shapes
 import Styles
 import Transforms
-
 import Text.Blaze.Svg11 
 import Text.Blaze.Svg11.Attributes
 
