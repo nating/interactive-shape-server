@@ -1,11 +1,11 @@
 
 ==================== FINAL INTERFACE ====================
-2017-11-24 23:10:27.556917 UTC
+2017-11-25 12:52:41.218749 UTC
 
 interface main@main:Shapes 8002
-  interface hash: e4171355ec6c2778ea0ac6d3ce5ac930
-  ABI hash: 3a8feec93b67ad90c91eaf6fcaba1366
-  export-list hash: 4f905d3e41fd44ae4fa1f9e9af2e39e6
+  interface hash: 4e054e7217c1ee9f15252b1fe0ad3c3f
+  ABI hash: eec71e1d9c1ac7be59ddf50b7f25e94a
+  export-list hash: 21d81ae265fb1f8dd34d0dc25a11169f
   orphan hash: 693e9af84d3dfcc71e640e005bdc5e2e
   flag hash: 52e25017ea2471189bd6f9d9f6dbdebf
   sig of: Nothing
@@ -19,13 +19,11 @@ exports:
   Shapes.rotate
   Shapes.scale
   Shapes.square
-  Shapes.testDrawing
   Shapes.transform
   Shapes.translate
-  Shapes.Drawing
   Shapes.Shape{Shapes.Circle Shapes.Empty Shapes.Square}
   Shapes.Transform{Shapes.Compose Shapes.Identity Shapes.Rotate Shapes.Scale Shapes.Translate}
-module dependencies:
+module dependencies: Color
 package dependencies: array-0.5.1.1@array-0.5.1.1 base-4.9.1.0
                       binary-0.8.3.0@binary-0.8.3.0
                       blaze-builder-0.4.0.2@blaze-builder-0.4.0.2-LxClHUTiKUUAxWtvJ5Oeoy
@@ -71,6 +69,8 @@ import  -/  blaze-svg-0.3.6.1@blaze-svg-0.3.6.1-E6CYGgfBIFH476loEvWeGj:Text.Blaz
 import  -/  blaze-svg-0.3.6.1@blaze-svg-0.3.6.1-E6CYGgfBIFH476loEvWeGj:Text.Blaze.Svg11 ffe4dbf1048c9a6d5d9dad94ecced8e8
 import  -/  blaze-svg-0.3.6.1@blaze-svg-0.3.6.1-E6CYGgfBIFH476loEvWeGj:Text.Blaze.Svg11.Attributes 2eac472bb3ab7f6d74496a530091d88d
 import  -/  ghc-prim-0.5.0.0:GHC.Classes 0bdf3d057a415ec1b84a7b1994efbe47
+import  -/  Color 2935b0eb0a35754b0cfb6f214fe514e1
+  exports: 7109e79c67e21887557bf29e62da926b
 a70891e3593f81ed111926db922174f5
   $fReadShape :: GHC.Read.Read Shapes.Shape
   DFunId
@@ -683,8 +683,6 @@ cc3fd576230b5086c84f1930b47db323
   (<+>) :: Shapes.Transform -> Shapes.Transform -> Shapes.Transform
   {- Arity: 2, HasNoCafRefs, Strictness: <L,U><L,U>m5,
      Unfolding: InlineRule (0, True, True) Shapes.Compose -}
-6ef68f64449d84a0854b524ff1c4ebc6
-  type Drawing = [(Shapes.Transform, Shapes.Shape)]
 a70891e3593f81ed111926db922174f5
   data Shape = Empty | Circle | Square
 8754b83c09e902e89ed57850b8c4e999
@@ -720,26 +718,6 @@ f2df5a9735d65df015755b11ae5c7455
   square :: Shapes.Shape
   {- HasNoCafRefs,
      Unfolding: InlineRule (0, True, True) Shapes.Square -}
-170aa4e4515c77417414ca1bad3d2c84
-  testDrawing :: [(Shapes.Transform, Shapes.Shape)]
-  {- HasNoCafRefs, Strictness: m2,
-     Unfolding: (GHC.Types.:
-                   @ (Shapes.Transform, Shapes.Shape)
-                   Shapes.testDrawing1
-                   (GHC.Types.[] @ (Shapes.Transform, Shapes.Shape))) -}
-d94f5a6e730d092b7fc14b58f09f2914
-  testDrawing1 :: (Shapes.Transform, Shapes.Shape)
-  {- HasNoCafRefs, Strictness: m,
-     Unfolding: ((Shapes.testDrawing2, Shapes.Circle)) -}
-1f338cd70f4f86fb9d42fd8e9d75736d
-  testDrawing2 :: Shapes.Transform
-  {- HasNoCafRefs, Strictness: m3,
-     Unfolding: (Shapes.Scale
-                   Shapes.testDrawing3
-                   Shapes.testDrawing3) -}
-449ac718b5f07171c6481a00fda545ef
-  testDrawing3 :: GHC.Types.Double
-  {- HasNoCafRefs, Strictness: m, Unfolding: (GHC.Types.D# 5.0##) -}
 58bb916b78a66f20d4321db474bc49a8
   transform ::
     Shapes.Transform -> [Text.Blaze.Internal.AttributeValue]

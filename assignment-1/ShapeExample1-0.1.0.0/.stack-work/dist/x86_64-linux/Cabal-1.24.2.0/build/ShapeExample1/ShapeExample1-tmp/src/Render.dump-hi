@@ -1,11 +1,11 @@
 
 ==================== FINAL INTERFACE ====================
-2017-11-24 20:39:14.429558 UTC
+2017-11-25 15:07:44.743455 UTC
 
 interface main@main:Render 8002
-  interface hash: 796b9da481e21edfca8264ef536653ee
-  ABI hash: dd994917a8a5a389c1356a6b47adbc1f
-  export-list hash: c39b0f0665791197d117570d5abc2fc3
+  interface hash: 8d7363be20f51338f7853606dc0bcbf9
+  ABI hash: 6863441aeca1dbdc666abf15c4b59ec9
+  export-list hash: cde5b6a753cf99b6ce224b0ef98917b7
   orphan hash: 693e9af84d3dfcc71e640e005bdc5e2e
   flag hash: 22f7c82bd23aef2fa9c2c09c28b5aebf
   sig of: Nothing
@@ -20,7 +20,9 @@ exports:
   Render.svgDoc
   Render.svgShape
   Render.svgTransform
-module dependencies: Shapes
+  Render.testDrawing
+  Render.Drawing
+module dependencies: Color Shapes Styles
 package dependencies: array-0.5.1.1@array-0.5.1.1 base-4.9.1.0
                       binary-0.8.3.0@binary-0.8.3.0
                       blaze-builder-0.4.0.2@blaze-builder-0.4.0.2-LxClHUTiKUUAxWtvJ5Oeoy
@@ -54,22 +56,29 @@ family instance modules: base-4.9.1.0:Control.Applicative
                          containers-0.5.7.1@containers-0.5.7.1:Data.Set.Base
                          text-1.2.2.2@text-1.2.2.2-9UQZjEJZQFSGMffj1Z5g00:Data.Text
                          text-1.2.2.2@text-1.2.2.2-9UQZjEJZQFSGMffj1Z5g00:Data.Text.Lazy
+import  -/  base-4.9.1.0:Data.Foldable 3e0b6967a1da89945d0e2d47266337a2
 import  -/  base-4.9.1.0:GHC.Base c4231c43c07e46080a26bf94094c7aa1
 import  -/  base-4.9.1.0:Prelude 22dd289b8469a8fa8dc81cab7b237771
+import  -/  base-4.9.1.0:Text.Read 75c59863e882ebaec4532e9465e2ee9b
 import  -/  blaze-markup-0.8.0.0@blaze-markup-0.8.0.0-GsxkVbRgODkgUQDmmDVob:Text.Blaze.Internal c1d6ebf18cc7de440fbc2d1a2a795843
 import  -/  blaze-svg-0.3.6.1@blaze-svg-0.3.6.1-E6CYGgfBIFH476loEvWeGj:Text.Blaze.Svg.Internal cffc7b1bca7b3586ae25aeb718abb55b
 import  -/  blaze-svg-0.3.6.1@blaze-svg-0.3.6.1-E6CYGgfBIFH476loEvWeGj:Text.Blaze.Svg.Renderer.Utf8 e2f4642473b16a8cdce3ca89f311d0be
 import  -/  blaze-svg-0.3.6.1@blaze-svg-0.3.6.1-E6CYGgfBIFH476loEvWeGj:Text.Blaze.Svg11 ffe4dbf1048c9a6d5d9dad94ecced8e8
 import  -/  blaze-svg-0.3.6.1@blaze-svg-0.3.6.1-E6CYGgfBIFH476loEvWeGj:Text.Blaze.Svg11.Attributes 2eac472bb3ab7f6d74496a530091d88d
-import  -/  Shapes 3a8feec93b67ad90c91eaf6fcaba1366
-  exports: 4f905d3e41fd44ae4fa1f9e9af2e39e6
+import  -/  Shapes eec71e1d9c1ac7be59ddf50b7f25e94a
+  exports: 21d81ae265fb1f8dd34d0dc25a11169f
   Circle ef370128977b48c940d4976d58540bbd
-  Drawing 6ef68f64449d84a0854b524ff1c4ebc6
   Empty e9d3b14509fb49ee1c949d975a6e03eb
+  Scale aa3de537137315fc03142f436888a467
   Shape a70891e3593f81ed111926db922174f5
   Square 6062414e1519074a837f122ff98cf04d
   Transform 8754b83c09e902e89ed57850b8c4e999
   transform 58bb916b78a66f20d4321db474bc49a8
+import  -/  Styles 898256fb6ff72c359ee57f17c33e3512
+  exports: 3058baed442d158859a4a89f66429a17
+  Fill 0b6ad29e98da364771c48dd368b2cd66
+  Style b504683295811bfa8dea5aa3e1f1859c
+  style 0076424df4d3671d1d7019670c46b108
 import  -/  text-1.2.2.2@text-1.2.2.2-9UQZjEJZQFSGMffj1Z5g00:Data.Text.Lazy 4a195553d37a128a5d875ddc86cf7a29
 d79bf5b8ea872edbdfb7a97765536866
   $trModule :: GHC.Types.Module
@@ -85,17 +94,19 @@ a23bdea1e978877fb95c469cf88dd537
   $trModule2 :: GHC.Types.TrName
   {- HasNoCafRefs, Strictness: m1,
      Unfolding: (GHC.Types.TrNameS "main"#) -}
+88bd705216a00fdf898f726dac849cf0
+  type Drawing = [(Shapes.Transform, Shapes.Shape, Styles.Style)]
 4e0a74df2bf2a4b717e782f026f89c40
   createSvg :: GHC.Base.String -> Text.Blaze.Svg.Internal.Svg
   {- Arity: 1, Strictness: <L,A>m8,
      Unfolding: InlineRule (1, True, True)
                 (\ (s :: GHC.Base.String) -> Render.svgDoc) -}
-6b7a380d8f5e88e3fa67585718655838
+5b79a939a15c26e1723b9d6bda385f33
   createSvgFromDrawing ::
-    Shapes.Drawing -> Text.Blaze.Svg.Internal.Svg
+    Render.Drawing -> Text.Blaze.Svg.Internal.Svg
   {- Arity: 1, Strictness: <L,1*U>m8, Inline: INLINE[0],
      Unfolding: InlineRule (1, True, False)
-                (\ (w :: Shapes.Drawing) ->
+                (\ (w :: Render.Drawing) ->
                  Text.Blaze.Internal.AddAttribute
                    @ ()
                    Render.svgDoc155
@@ -206,9 +217,10 @@ da2a45739e85012437af34e296956b51
                    Render.svgDoc126
                    Render.createSvgFromDrawing10
                    Render.svgDoc_t18) -}
-76c3db4cb87bdba807e1f2849d3712c7
+2734127b95f740e10fceed497d5c1183
   createSvgShapes ::
-    [(Shapes.Transform, Shapes.Shape)] -> Text.Blaze.Svg.Internal.Svg
+    [(Shapes.Transform, Shapes.Shape, Styles.Style)]
+    -> Text.Blaze.Svg.Internal.Svg
   {- Arity: 1, Strictness: <S,1*U> -}
 de4279cbefb4c581ebea9bbececaf741
   makePath :: Text.Blaze.Internal.AttributeValue
@@ -1524,7 +1536,7 @@ f6a1333f171a2d1795ea04f034219262
 2ed21d937d6dcc7bfe900aa08960e8f2
   svgDoc_x5 :: [GHC.Types.Char]
   {- Unfolding: (Text.Blaze.Svg.Internal.a_go Render.svgDoc24) -}
-cd5c0f8b56345ba8d842ce7107ab24eb
+ab8f6862c2c15bc074ec55432d5839b3
   svgShape :: Shapes.Shape -> Text.Blaze.Svg.Internal.Svg
   {- Arity: 1, Strictness: <S,1*U>,
      Unfolding: InlineRule (1, True, False)
@@ -1542,16 +1554,92 @@ dcb87233c22642fd8ca0a471002db92b
                    Render.svgDoc55
                    Render.svgDoc43
                    Render.svgDoc42) -}
-eb2338691067272121e1f1657aa5ded3
+3643ea543cf5d71ef3eb7891ba3d8082
+  svgShape10 :: [GHC.Types.Char] -> [GHC.Types.Char]
+  {- Arity: 1,
+     Unfolding: (GHC.Base.++ @ GHC.Types.Char Render.svgShape_w1) -}
+efd58888df60d43f4d295ce846b4f1ba
   svgShape2 :: Text.Blaze.Svg.Internal.Svg
   {- Strictness: m8,
      Unfolding: (Text.Blaze.Internal.AddAttribute
                    @ ()
-                   Render.svgDoc59
-                   Render.svgDoc55
+                   Render.svgShape7
+                   Render.svgShape3
                    Render.svgDoc43
-                   Render.svgDoc78) -}
-2a3d6193696818b1abb2f55a994722f6
+                   Text.Blaze.Svg11.circle) -}
+6c50a9e21ac91ea960bb682e0b0592f8
+  svgShape3 :: Text.Blaze.Internal.StaticString
+  {- Strictness: m,
+     Unfolding: (Text.Blaze.Internal.StaticString
+                   Render.svgShape6
+                   Render.svgShape5
+                   Render.svgShape_t1) -}
+a695e25aeb8006b67809cfec6b095633
+  svgShape4 ::
+    GHC.Prim.State# GHC.Prim.RealWorld
+    -> (# GHC.Prim.State# GHC.Prim.RealWorld,
+          Data.Text.Internal.Text #)
+  {- Arity: 1,
+     Unfolding: (\ (s1 :: GHC.Prim.State#
+                            GHC.Prim.RealWorld)[OneShot] ->
+                 case GHC.Prim.newByteArray#
+                        @ GHC.Prim.RealWorld
+                        10#
+                        s1 of ds1 { (#,#) ipv ipv1 ->
+                 Text.Blaze.Internal.$wouter ipv1 4# Render.svgShape_w 0# ipv }) -}
+5e86591fbd496434caae4fba7198b33b
+  svgShape5 :: Data.ByteString.Internal.ByteString
+  {- Unfolding: (case Render.svgShape_t1 of ww { Data.Text.Internal.Text ww1 ww2 ww3 ->
+                 Data.Text.Encoding.$wencodeUtf8 ww1 ww2 ww3 }) -}
+c6971a9b1487a3795d1860b905b11b34
+  svgShape6 :: [GHC.Types.Char] -> [GHC.Types.Char]
+  {- Arity: 1,
+     Unfolding: (GHC.Base.++ @ GHC.Types.Char Render.svgShape_w) -}
+2a5cf6574bb8dd980146af2342bae3ac
+  svgShape7 :: Text.Blaze.Internal.StaticString
+  {- Strictness: m,
+     Unfolding: (Text.Blaze.Internal.StaticString
+                   Render.svgShape10
+                   Render.svgShape9
+                   Render.svgShape_t2) -}
+4f51bcc8d5c76f97512f5f23e8e4bab0
+  svgShape8 ::
+    GHC.Prim.State# GHC.Prim.RealWorld
+    -> (# GHC.Prim.State# GHC.Prim.RealWorld,
+          Data.Text.Internal.Text #)
+  {- Arity: 1,
+     Unfolding: (\ (s1 :: GHC.Prim.State#
+                            GHC.Prim.RealWorld)[OneShot] ->
+                 case GHC.Prim.newByteArray#
+                        @ GHC.Prim.RealWorld
+                        10#
+                        s1 of ds1 { (#,#) ipv ipv1 ->
+                 Text.Blaze.Internal.$wouter ipv1 4# Render.svgShape_w1 0# ipv }) -}
+c06372eba245a49007f663a4067f25f7
+  svgShape9 :: Data.ByteString.Internal.ByteString
+  {- Unfolding: (case Render.svgShape_t2 of ww { Data.Text.Internal.Text ww1 ww2 ww3 ->
+                 Data.Text.Encoding.$wencodeUtf8 ww1 ww2 ww3 }) -}
+7d220eee333e8e169c5c5eefccb78e38
+  svgShape_t1 :: Data.Text.Internal.Text
+  {- Unfolding: (case GHC.Magic.runRW#
+                        @ 'GHC.Types.PtrRepLifted
+                        @ Data.Text.Internal.Text
+                        Render.svgShape4 of ds1 { (#,#) ipv ipv1 ->
+                 ipv1 }) -}
+88a3a9e4e980cf8ec7a2f30fa185a84a
+  svgShape_t2 :: Data.Text.Internal.Text
+  {- Unfolding: (case GHC.Magic.runRW#
+                        @ 'GHC.Types.PtrRepLifted
+                        @ Data.Text.Internal.Text
+                        Render.svgShape8 of ds1 { (#,#) ipv ipv1 ->
+                 ipv1 }) -}
+70ee10f6a21e896785c7dedca8bcc855
+  svgShape_w :: GHC.Base.String
+  {- Unfolding: (GHC.CString.unpackCString# " r=\""#) -}
+d4297524eade8b6c4fe69874d3414856
+  svgShape_w1 :: GHC.Base.String
+  {- Unfolding: (GHC.CString.unpackCString# "r"#) -}
+b88ff0d68da1e3dc399a9587f6921a2e
   svgTransform ::
     [Text.Blaze.Internal.AttributeValue]
     -> Text.Blaze.Internal.Attribute
@@ -1561,19 +1649,19 @@ eb2338691067272121e1f1657aa5ded3
                   `cast`
                 (<[Text.Blaze.Internal.AttributeValue]>_R
                  ->_R Sym (Text.Blaze.Internal.N:Attribute[0])) -}
-5478edb2a5e48151f0699f787be4f38d
+4dcead8f6de0fcb3ef014547337b0de1
   svgTransform1 ::
     [Text.Blaze.Internal.AttributeValue]
     -> forall a.
        Text.Blaze.Internal.MarkupM a -> Text.Blaze.Internal.MarkupM a
   {- Arity: 1, Strictness: <L,1*U>,
-     Unfolding: (\ (x :: [Text.Blaze.Internal.AttributeValue]) @ a ->
+     Unfolding: (\ (t :: [Text.Blaze.Internal.AttributeValue]) @ a ->
                  Text.Blaze.Internal.AddAttribute
                    @ a
                    Render.svgTransform4
                    Render.svgTransform2
                    (Text.Blaze.Internal.$fMonoidAttributeValue_go
-                      x `cast` ([Text.Blaze.Internal.N:AttributeValue[0]])_R)) -}
+                      t `cast` ([Text.Blaze.Internal.N:AttributeValue[0]])_R)) -}
 cd64f2820d9ce5ea738d9a092afbea54
   svgTransform2 :: Text.Blaze.Internal.StaticString
   {- Unfolding: (Text.Blaze.Internal.StaticString
@@ -1594,6 +1682,78 @@ cd64f2820d9ce5ea738d9a092afbea54
   svgTransform5 :: Data.ByteString.Internal.ByteString
   {- Unfolding: (case Render.svgDoc_t13 of ww { Data.Text.Internal.Text ww1 ww2 ww3 ->
                  Data.Text.Encoding.$wencodeUtf8 ww1 ww2 ww3 }) -}
+52328a50e1a56a392a0227e0d2c2ce76
+  testDrawing :: [(Shapes.Transform, Shapes.Shape, Styles.Style)]
+  {- Strictness: m2,
+     Unfolding: (GHC.Types.:
+                   @ (Shapes.Transform, Shapes.Shape, Styles.Style)
+                   Render.testDrawing1
+                   (GHC.Types.[] @ (Shapes.Transform, Shapes.Shape, Styles.Style))) -}
+62e1445e000282a4f1c92f8a26dc30e9
+  testDrawing1 :: (Shapes.Transform, Shapes.Shape, Styles.Style)
+  {- Strictness: m,
+     Unfolding: ((Render.testDrawing7, Shapes.Circle,
+                  Render.testDrawing2)) -}
+250ca2a41918fa6404a423385b2d6355
+  testDrawing2 :: Styles.Style
+  {- Strictness: m1, Unfolding: (Styles.Fill Render.testDrawing3) -}
+22910e3477e753a0f4cd83e0d637bf8e
+  testDrawing3 :: Color.Color
+  {- Unfolding: (case Text.Read.readEither6
+                        @ Color.Color
+                        Render.testDrawing4 of wild {
+                   []
+                   -> GHC.Err.error
+                        @ 'GHC.Types.PtrRepLifted
+                        @ Color.Color
+                        GHC.Err.errorWithoutStackTrace_wild1
+                          `cast`
+                        (Sym (GHC.Classes.N:IP[0]
+                                  <"callStack">_N <GHC.Stack.Types.CallStack>_N))
+                        Text.Read.readEither4
+                   : x ds
+                   -> case ds of wild1 {
+                        [] -> x
+                        : ipv ipv1
+                        -> GHC.Err.error
+                             @ 'GHC.Types.PtrRepLifted
+                             @ Color.Color
+                             GHC.Err.errorWithoutStackTrace_wild1
+                               `cast`
+                             (Sym (GHC.Classes.N:IP[0]
+                                       <"callStack">_N <GHC.Stack.Types.CallStack>_N))
+                             Text.Read.readEither2 } }) -}
+f597c2e6b6e572d627edeb46dffad83e
+  testDrawing4 :: [(Color.Color, GHC.Base.String)]
+  {- Unfolding: (Text.ParserCombinators.ReadP.run
+                   @ Color.Color
+                   Render.testDrawing6
+                   Render.testDrawing5) -}
+e1981c17f38c384f85ad7724787e4a7c
+  testDrawing5 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "Red"#) -}
+cc93874c6a8081473613542b4e9b1d13
+  testDrawing6 :: Text.ParserCombinators.ReadP.P Color.Color
+  {- Unfolding: ((GHC.Read.parens1
+                    @ Color.Color
+                    Color.$fReadColor3
+                      `cast`
+                    (Sym (Text.ParserCombinators.ReadPrec.N:ReadPrec[0]
+                              <Color.Color>_R))
+                    Text.ParserCombinators.ReadPrec.minPrec)
+                   `cast`
+                 (Text.ParserCombinators.ReadP.N:ReadP[0] <Color.Color>_R)
+                   @ Color.Color
+                   (Text.Read.readEither5 @ Color.Color)) -}
+2894a2e5cd16cd36f1f082a6f739c874
+  testDrawing7 :: Shapes.Transform
+  {- HasNoCafRefs, Strictness: m3,
+     Unfolding: (Shapes.Scale
+                   Render.testDrawing8
+                   Render.testDrawing8) -}
+ef8a732950cd07ab9fbeb1921297a464
+  testDrawing8 :: GHC.Types.Double
+  {- HasNoCafRefs, Strictness: m, Unfolding: (GHC.Types.D# 5.0##) -}
 vectorised variables:
 vectorised tycons:
 vectorised reused tycons:

@@ -1,0 +1,490 @@
+
+==================== FINAL INTERFACE ====================
+2017-11-25 13:07:42.883208 UTC
+
+interface main@main:Color 8002
+  interface hash: 8fdc34d07ce67e1578a7fd2c607c883e
+  ABI hash: 2935b0eb0a35754b0cfb6f214fe514e1
+  export-list hash: 7109e79c67e21887557bf29e62da926b
+  orphan hash: 693e9af84d3dfcc71e640e005bdc5e2e
+  flag hash: 52e25017ea2471189bd6f9d9f6dbdebf
+  sig of: Nothing
+  used TH splices: False
+  where
+exports:
+  Color.black
+  Color.blue
+  Color.green
+  Color.red
+  Color.white
+  Color.Color{Color.Black Color.Blue Color.Green Color.Red Color.White}
+module dependencies:
+package dependencies: base-4.9.1.0* ghc-prim-0.5.0.0
+                      integer-gmp-1.0.0.1
+orphans: base-4.9.1.0:GHC.Base base-4.9.1.0:GHC.Float
+family instance modules: base-4.9.1.0:Control.Applicative
+                         base-4.9.1.0:Data.Either base-4.9.1.0:Data.Functor.Const
+                         base-4.9.1.0:Data.Monoid base-4.9.1.0:Data.Type.Equality
+                         base-4.9.1.0:GHC.Generics base-4.9.1.0:GHC.IO.Exception
+                         base-4.9.1.0:GHC.TypeLits
+import  -/  base-4.9.1.0:GHC.Base c4231c43c07e46080a26bf94094c7aa1
+import  -/  base-4.9.1.0:GHC.Read b6821365d2d5fa2155c9e910160e7f57
+import  -/  base-4.9.1.0:GHC.Show a027f5ac24879eaba752f44aa90fe511
+import  -/  base-4.9.1.0:Prelude 22dd289b8469a8fa8dc81cab7b237771
+a20acb4243024fa85fb7a9389cdd11b4
+  $fReadColor :: GHC.Read.Read Color.Color
+  DFunId
+  {- Strictness: m, Inline: [ALWAYS] CONLIKE,
+     Unfolding: DFun:.
+                  @ Color.Color
+                  Color.$fReadColor_$creadsPrec
+                  Color.$fReadColor_$creadList
+                  Color.$fReadColor_$creadPrec
+                  Color.$fReadColor_$creadListPrec -}
+a20acb4243024fa85fb7a9389cdd11b4
+  $fReadColor1 ::
+    Text.ParserCombinators.ReadPrec.Prec
+    -> forall b.
+       ([Color.Color] -> Text.ParserCombinators.ReadP.P b)
+       -> Text.ParserCombinators.ReadP.P b
+  {- Arity: 2, Strictness: <L,U><L,U>,
+     Unfolding: InlineRule (2, True, False)
+                (\ (eta :: Text.ParserCombinators.ReadPrec.Prec)
+                   @ b
+                   (eta1 :: [Color.Color] -> Text.ParserCombinators.ReadP.P b) ->
+                 GHC.Read.list1
+                   @ Color.Color
+                   Color.$fReadColor2
+                     `cast`
+                   (Sym (Text.ParserCombinators.ReadPrec.N:ReadPrec[0]
+                             <Color.Color>_R))
+                   eta
+                   @ b
+                   eta1) -}
+a20acb4243024fa85fb7a9389cdd11b4
+  $fReadColor10 ::
+    Text.ParserCombinators.ReadPrec.Prec
+    -> forall b.
+       (Color.Color -> Text.ParserCombinators.ReadP.P b)
+       -> Text.ParserCombinators.ReadP.P b
+  {- Arity: 2, HasNoCafRefs, Strictness: <L,A><C(S),1*C1(U)>,
+     Unfolding: InlineRule (2, True, True)
+                (\ (ds :: Text.ParserCombinators.ReadPrec.Prec)
+                   @ b
+                   (eta :: Color.Color -> Text.ParserCombinators.ReadP.P b) ->
+                 eta Color.Red) -}
+2026d6cb1b366e424b0bbec217515242
+  $fReadColor11 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "Red"#) -}
+a20acb4243024fa85fb7a9389cdd11b4
+  $fReadColor12 ::
+    ([GHC.Types.Char],
+     Text.ParserCombinators.ReadPrec.ReadPrec Color.Color)
+  {- Strictness: m,
+     Unfolding: ((Color.$fReadColor14,
+                  Color.$fReadColor13
+                    `cast`
+                  (Trans
+                       (<Text.ParserCombinators.ReadPrec.Prec>_R
+                        ->_R Sym (Text.ParserCombinators.ReadP.N:ReadP[0] <Color.Color>_R))
+                       (Sym (Text.ParserCombinators.ReadPrec.N:ReadPrec[0]
+                                 <Color.Color>_R))))) -}
+a20acb4243024fa85fb7a9389cdd11b4
+  $fReadColor13 ::
+    Text.ParserCombinators.ReadPrec.Prec
+    -> forall b.
+       (Color.Color -> Text.ParserCombinators.ReadP.P b)
+       -> Text.ParserCombinators.ReadP.P b
+  {- Arity: 2, HasNoCafRefs, Strictness: <L,A><C(S),1*C1(U)>,
+     Unfolding: InlineRule (2, True, True)
+                (\ (ds :: Text.ParserCombinators.ReadPrec.Prec)
+                   @ b
+                   (eta :: Color.Color -> Text.ParserCombinators.ReadP.P b) ->
+                 eta Color.Green) -}
+342c77d328c7bfc1cf0622c1a1bbf25e
+  $fReadColor14 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "Green"#) -}
+a20acb4243024fa85fb7a9389cdd11b4
+  $fReadColor15 ::
+    ([GHC.Types.Char],
+     Text.ParserCombinators.ReadPrec.ReadPrec Color.Color)
+  {- Strictness: m,
+     Unfolding: ((Color.$fReadColor17,
+                  Color.$fReadColor16
+                    `cast`
+                  (Trans
+                       (<Text.ParserCombinators.ReadPrec.Prec>_R
+                        ->_R Sym (Text.ParserCombinators.ReadP.N:ReadP[0] <Color.Color>_R))
+                       (Sym (Text.ParserCombinators.ReadPrec.N:ReadPrec[0]
+                                 <Color.Color>_R))))) -}
+a20acb4243024fa85fb7a9389cdd11b4
+  $fReadColor16 ::
+    Text.ParserCombinators.ReadPrec.Prec
+    -> forall b.
+       (Color.Color -> Text.ParserCombinators.ReadP.P b)
+       -> Text.ParserCombinators.ReadP.P b
+  {- Arity: 2, HasNoCafRefs, Strictness: <L,A><C(S),1*C1(U)>,
+     Unfolding: InlineRule (2, True, True)
+                (\ (ds :: Text.ParserCombinators.ReadPrec.Prec)
+                   @ b
+                   (eta :: Color.Color -> Text.ParserCombinators.ReadP.P b) ->
+                 eta Color.Blue) -}
+54c84961b777dcfdd3c5e28f20d718df
+  $fReadColor17 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "Blue"#) -}
+a20acb4243024fa85fb7a9389cdd11b4
+  $fReadColor18 ::
+    ([GHC.Types.Char],
+     Text.ParserCombinators.ReadPrec.ReadPrec Color.Color)
+  {- Strictness: m,
+     Unfolding: ((Color.$fReadColor20,
+                  Color.$fReadColor19
+                    `cast`
+                  (Trans
+                       (<Text.ParserCombinators.ReadPrec.Prec>_R
+                        ->_R Sym (Text.ParserCombinators.ReadP.N:ReadP[0] <Color.Color>_R))
+                       (Sym (Text.ParserCombinators.ReadPrec.N:ReadPrec[0]
+                                 <Color.Color>_R))))) -}
+a20acb4243024fa85fb7a9389cdd11b4
+  $fReadColor19 ::
+    Text.ParserCombinators.ReadPrec.Prec
+    -> forall b.
+       (Color.Color -> Text.ParserCombinators.ReadP.P b)
+       -> Text.ParserCombinators.ReadP.P b
+  {- Arity: 2, HasNoCafRefs, Strictness: <L,A><C(S),1*C1(U)>,
+     Unfolding: InlineRule (2, True, True)
+                (\ (ds :: Text.ParserCombinators.ReadPrec.Prec)
+                   @ b
+                   (eta :: Color.Color -> Text.ParserCombinators.ReadP.P b) ->
+                 eta Color.White) -}
+a20acb4243024fa85fb7a9389cdd11b4
+  $fReadColor2 ::
+    Text.ParserCombinators.ReadPrec.Prec
+    -> Text.ParserCombinators.ReadP.ReadP Color.Color
+  {- Arity: 1,
+     Unfolding: (GHC.Read.parens1
+                   @ Color.Color
+                   Color.$fReadColor3
+                     `cast`
+                   (Sym (Text.ParserCombinators.ReadPrec.N:ReadPrec[0]
+                             <Color.Color>_R))) -}
+02577f9ea5bd6f101d25bc7fe91badad
+  $fReadColor20 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "White"#) -}
+a20acb4243024fa85fb7a9389cdd11b4
+  $fReadColor21 ::
+    ([GHC.Types.Char],
+     Text.ParserCombinators.ReadPrec.ReadPrec Color.Color)
+  {- Strictness: m,
+     Unfolding: ((Color.$fReadColor23,
+                  Color.$fReadColor22
+                    `cast`
+                  (Trans
+                       (<Text.ParserCombinators.ReadPrec.Prec>_R
+                        ->_R Sym (Text.ParserCombinators.ReadP.N:ReadP[0] <Color.Color>_R))
+                       (Sym (Text.ParserCombinators.ReadPrec.N:ReadPrec[0]
+                                 <Color.Color>_R))))) -}
+a20acb4243024fa85fb7a9389cdd11b4
+  $fReadColor22 ::
+    Text.ParserCombinators.ReadPrec.Prec
+    -> forall b.
+       (Color.Color -> Text.ParserCombinators.ReadP.P b)
+       -> Text.ParserCombinators.ReadP.P b
+  {- Arity: 2, HasNoCafRefs, Strictness: <L,A><C(S),1*C1(U)>,
+     Unfolding: InlineRule (2, True, True)
+                (\ (ds :: Text.ParserCombinators.ReadPrec.Prec)
+                   @ b
+                   (eta :: Color.Color -> Text.ParserCombinators.ReadP.P b) ->
+                 eta Color.Black) -}
+f8325fa1f7181097428ac9af4d4b2c89
+  $fReadColor23 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "Black"#) -}
+a20acb4243024fa85fb7a9389cdd11b4
+  $fReadColor24 :: Text.ParserCombinators.ReadP.P [Color.Color]
+  {- Unfolding: (GHC.Read.list1
+                   @ Color.Color
+                   Color.$fReadColor2
+                     `cast`
+                   (Sym (Text.ParserCombinators.ReadPrec.N:ReadPrec[0]
+                             <Color.Color>_R))
+                   GHC.Read.$fRead()5
+                   @ [Color.Color]
+                   (Text.ParserCombinators.ReadP.$fApplicativeP_$cpure
+                      @ [Color.Color])) -}
+a20acb4243024fa85fb7a9389cdd11b4
+  $fReadColor3 ::
+    Text.ParserCombinators.ReadPrec.Prec
+    -> Text.ParserCombinators.ReadP.ReadP Color.Color
+  {- Arity: 1, Strictness: <L,U>,
+     Unfolding: InlineRule (1, True, False)
+                (\ (eta :: Text.ParserCombinators.ReadPrec.Prec) ->
+                 GHC.Read.choose2 @ Color.Color Color.$fReadColor4 eta) -}
+a20acb4243024fa85fb7a9389cdd11b4
+  $fReadColor4 ::
+    [(GHC.Base.String,
+      Text.ParserCombinators.ReadPrec.ReadPrec Color.Color)]
+  {- Strictness: m2,
+     Unfolding: (GHC.Types.:
+                   @ (GHC.Base.String,
+                      Text.ParserCombinators.ReadPrec.ReadPrec Color.Color)
+                   Color.$fReadColor21
+                   Color.$fReadColor5) -}
+a20acb4243024fa85fb7a9389cdd11b4
+  $fReadColor5 ::
+    [(GHC.Base.String,
+      Text.ParserCombinators.ReadPrec.ReadPrec Color.Color)]
+  {- Strictness: m2,
+     Unfolding: (GHC.Types.:
+                   @ (GHC.Base.String,
+                      Text.ParserCombinators.ReadPrec.ReadPrec Color.Color)
+                   Color.$fReadColor18
+                   Color.$fReadColor6) -}
+a20acb4243024fa85fb7a9389cdd11b4
+  $fReadColor6 ::
+    [(GHC.Base.String,
+      Text.ParserCombinators.ReadPrec.ReadPrec Color.Color)]
+  {- Strictness: m2,
+     Unfolding: (GHC.Types.:
+                   @ (GHC.Base.String,
+                      Text.ParserCombinators.ReadPrec.ReadPrec Color.Color)
+                   Color.$fReadColor15
+                   Color.$fReadColor7) -}
+a20acb4243024fa85fb7a9389cdd11b4
+  $fReadColor7 ::
+    [(GHC.Base.String,
+      Text.ParserCombinators.ReadPrec.ReadPrec Color.Color)]
+  {- Strictness: m2,
+     Unfolding: (GHC.Types.:
+                   @ (GHC.Base.String,
+                      Text.ParserCombinators.ReadPrec.ReadPrec Color.Color)
+                   Color.$fReadColor12
+                   Color.$fReadColor8) -}
+a20acb4243024fa85fb7a9389cdd11b4
+  $fReadColor8 ::
+    [(GHC.Base.String,
+      Text.ParserCombinators.ReadPrec.ReadPrec Color.Color)]
+  {- Strictness: m2,
+     Unfolding: (GHC.Types.:
+                   @ (GHC.Base.String,
+                      Text.ParserCombinators.ReadPrec.ReadPrec Color.Color)
+                   Color.$fReadColor9
+                   (GHC.Types.[]
+                      @ (GHC.Base.String,
+                         Text.ParserCombinators.ReadPrec.ReadPrec Color.Color))) -}
+a20acb4243024fa85fb7a9389cdd11b4
+  $fReadColor9 ::
+    ([GHC.Types.Char],
+     Text.ParserCombinators.ReadPrec.ReadPrec Color.Color)
+  {- Strictness: m,
+     Unfolding: ((Color.$fReadColor11,
+                  Color.$fReadColor10
+                    `cast`
+                  (Trans
+                       (<Text.ParserCombinators.ReadPrec.Prec>_R
+                        ->_R Sym (Text.ParserCombinators.ReadP.N:ReadP[0] <Color.Color>_R))
+                       (Sym (Text.ParserCombinators.ReadPrec.N:ReadPrec[0]
+                                 <Color.Color>_R))))) -}
+a20acb4243024fa85fb7a9389cdd11b4
+  $fReadColor_$creadList ::
+    Text.ParserCombinators.ReadP.ReadS [Color.Color]
+  {- Arity: 1,
+     Unfolding: (Text.ParserCombinators.ReadP.run
+                   @ [Color.Color]
+                   Color.$fReadColor24) -}
+a20acb4243024fa85fb7a9389cdd11b4
+  $fReadColor_$creadListPrec ::
+    Text.ParserCombinators.ReadPrec.ReadPrec [Color.Color]
+  {- Arity: 2, Strictness: <L,U><L,U>,
+     Unfolding: InlineRule (0, True, True)
+                Color.$fReadColor1
+                  `cast`
+                (Trans
+                     (<Text.ParserCombinators.ReadPrec.Prec>_R
+                      ->_R Sym (Text.ParserCombinators.ReadP.N:ReadP[0]
+                                    <[Color.Color]>_R))
+                     (Sym (Text.ParserCombinators.ReadPrec.N:ReadPrec[0]
+                               <[Color.Color]>_R))) -}
+a20acb4243024fa85fb7a9389cdd11b4
+  $fReadColor_$creadPrec ::
+    Text.ParserCombinators.ReadPrec.ReadPrec Color.Color
+  {- Arity: 1,
+     Unfolding: InlineRule (0, True, True)
+                Color.$fReadColor2
+                  `cast`
+                (Sym (Text.ParserCombinators.ReadPrec.N:ReadPrec[0]
+                          <Color.Color>_R)) -}
+a20acb4243024fa85fb7a9389cdd11b4
+  $fReadColor_$creadsPrec ::
+    GHC.Types.Int -> Text.ParserCombinators.ReadP.ReadS Color.Color
+  {- Arity: 1, Strictness: <L,U>,
+     Unfolding: InlineRule (1, True, False)
+                (\ (eta :: GHC.Types.Int) ->
+                 Text.ParserCombinators.ReadP.run
+                   @ Color.Color
+                   ((GHC.Read.parens1
+                       @ Color.Color
+                       Color.$fReadColor3
+                         `cast`
+                       (Sym (Text.ParserCombinators.ReadPrec.N:ReadPrec[0]
+                                 <Color.Color>_R))
+                       eta)
+                      `cast`
+                    (Text.ParserCombinators.ReadP.N:ReadP[0] <Color.Color>_R)
+                      @ Color.Color
+                      (Text.ParserCombinators.ReadP.$fApplicativeP_$cpure
+                         @ Color.Color))) -}
+a20acb4243024fa85fb7a9389cdd11b4
+  $fShowColor :: GHC.Show.Show Color.Color
+  DFunId
+  {- Strictness: m, Inline: [ALWAYS] CONLIKE,
+     Unfolding: DFun:.
+                  @ Color.Color
+                  Color.$fShowColor_$cshowsPrec
+                  Color.$fShowColor_$cshow
+                  Color.$fShowColor_$cshowList -}
+a20acb4243024fa85fb7a9389cdd11b4
+  $fShowColor_$cshow :: Color.Color -> GHC.Base.String
+  {- Arity: 1, Strictness: <S,1*U>,
+     Unfolding: InlineRule (1, True, False)
+                (\ (x :: Color.Color) ->
+                 Color.$fShowColor_$cshowsPrec
+                   GHC.Show.shows22
+                   x
+                   (GHC.Types.[] @ GHC.Types.Char)) -}
+a20acb4243024fa85fb7a9389cdd11b4
+  $fShowColor_$cshowList :: [Color.Color] -> GHC.Show.ShowS
+  {- Arity: 2,
+     Unfolding: (GHC.Show.showList__
+                   @ Color.Color
+                   Color.$w$cshowsPrec) -}
+a20acb4243024fa85fb7a9389cdd11b4
+  $fShowColor_$cshowsPrec ::
+    GHC.Types.Int -> Color.Color -> GHC.Show.ShowS
+  {- Arity: 3, Strictness: <L,A><S,1*U><L,1*U>, Inline: INLINE[0],
+     Unfolding: InlineRule (3, True, True)
+                (\ (w :: GHC.Types.Int)
+                   (w1 :: Color.Color)
+                   (w2 :: GHC.Base.String) ->
+                 Color.$w$cshowsPrec w1 w2) -}
+21956270876cb4d0ef77c1b021cc8a42
+  $tc'Black :: GHC.Types.TyCon
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.TyCon
+                   261011455059421092##
+                   16290624527956819912##
+                   Color.$trModule
+                   Color.$tc'Black1) -}
+ae8c90b4d1caf5854a14bfea02210231
+  $tc'Black1 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS "'Black"#) -}
+9170db6250591a7724c129069bf523e8
+  $tc'Blue :: GHC.Types.TyCon
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.TyCon
+                   6652897647371586367##
+                   2865040846153354272##
+                   Color.$trModule
+                   Color.$tc'Blue1) -}
+507c093113bb3e4092a508bb2f3e6be7
+  $tc'Blue1 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS "'Blue"#) -}
+aa380e9acdd23ab5b7d78569cb4a305f
+  $tc'Green :: GHC.Types.TyCon
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.TyCon
+                   6583804813691368287##
+                   7914666859978658068##
+                   Color.$trModule
+                   Color.$tc'Green1) -}
+fec70083076a68f0a3590b009c63fac8
+  $tc'Green1 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS "'Green"#) -}
+dab076def15fb64f31d1e202f4f247c5
+  $tc'Red :: GHC.Types.TyCon
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.TyCon
+                   1552643549125841454##
+                   3871780623560823448##
+                   Color.$trModule
+                   Color.$tc'Red1) -}
+8affa11946a2848d4a13c382dcdad277
+  $tc'Red1 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS "'Red"#) -}
+5ce75ff73e9043711093e7be0012f1cf
+  $tc'White :: GHC.Types.TyCon
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.TyCon
+                   2434629397177845449##
+                   13141439480871167891##
+                   Color.$trModule
+                   Color.$tc'White1) -}
+51e9bec7c8df47a56e0225234365b7dc
+  $tc'White1 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS "'White"#) -}
+2c39e8ac0af3482cbd7c5968a59e4765
+  $tcColor :: GHC.Types.TyCon
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.TyCon
+                   12817098397924867810##
+                   561816679210185722##
+                   Color.$trModule
+                   Color.$trModule1) -}
+e687aee6b35c18103fd5323440a3956d
+  $trModule :: GHC.Types.Module
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.Module Color.$trModule2 Color.$trModule1) -}
+a2d7fa9603364d3a58424d3537fff98a
+  $trModule1 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS "Color"#) -}
+13283200009edba1bade18f5ce32dd79
+  $trModule2 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS "main"#) -}
+a20acb4243024fa85fb7a9389cdd11b4
+  $w$cshowsPrec :: Color.Color -> GHC.Base.String -> GHC.Base.String
+  {- Arity: 2, Strictness: <S,1*U><L,1*U>, Inline: [0],
+     Unfolding: (\ (w :: Color.Color) (w1 :: GHC.Base.String) ->
+                 case w of wild {
+                   Color.Black -> GHC.Base.++ @ GHC.Types.Char Color.$fReadColor23 w1
+                   Color.White -> GHC.Base.++ @ GHC.Types.Char Color.$fReadColor20 w1
+                   Color.Blue -> GHC.Base.++ @ GHC.Types.Char Color.$fReadColor17 w1
+                   Color.Green -> GHC.Base.++ @ GHC.Types.Char Color.$fReadColor14 w1
+                   Color.Red
+                   -> GHC.Base.++ @ GHC.Types.Char Color.$fReadColor11 w1 }) -}
+a20acb4243024fa85fb7a9389cdd11b4
+  data Color = Black | White | Blue | Green | Red
+01629e6fa2a8b0bf38aa3b013f6a0045
+  black :: Color.Color
+  {- HasNoCafRefs,
+     Unfolding: InlineRule (0, True, True) Color.Black -}
+16eaa539dbefa7b737531d762bd74dd3
+  blue :: Color.Color
+  {- HasNoCafRefs,
+     Unfolding: InlineRule (0, True, True) Color.Blue -}
+311a6b793b12883dce6f8b6f3473be20
+  green :: Color.Color
+  {- HasNoCafRefs,
+     Unfolding: InlineRule (0, True, True) Color.Green -}
+ec0ba1965db2fa5b51e6170644790061
+  red :: Color.Color
+  {- HasNoCafRefs, Unfolding: InlineRule (0, True, True) Color.Red -}
+f840e66384abd5ed466ab523c8955132
+  white :: Color.Color
+  {- HasNoCafRefs,
+     Unfolding: InlineRule (0, True, True) Color.White -}
+instance [safe] GHC.Read.Read [Color.Color] = Color.$fReadColor
+instance [safe] GHC.Show.Show [Color.Color] = Color.$fShowColor
+vectorised variables:
+vectorised tycons:
+vectorised reused tycons:
+parallel variables:
+parallel tycons:
+trusted: safe
+require own pkg trusted: False
+

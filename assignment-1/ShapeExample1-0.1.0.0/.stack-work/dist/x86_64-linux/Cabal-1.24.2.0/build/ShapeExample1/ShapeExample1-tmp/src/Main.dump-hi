@@ -1,10 +1,10 @@
 
 ==================== FINAL INTERFACE ====================
-2017-11-24 23:10:28.344729 UTC
+2017-11-25 14:52:29.281471 UTC
 
 interface main@main:Main 8002
-  interface hash: 30b58817153c67035ea71c3eec6923af
-  ABI hash: 3c543a5f560f0be5a10b280ed473ae77
+  interface hash: 5ac27738f17c8f67798ea4111c42f60e
+  ABI hash: 37dc875a457ec905d947d9d1f5be046e
   export-list hash: 76e70a94faf691b727f85415fcf07244
   orphan hash: 693e9af84d3dfcc71e640e005bdc5e2e
   flag hash: 37b872909b0cadba0bf7d0e95338298f
@@ -14,7 +14,7 @@ interface main@main:Main 8002
 exports:
   Main.main
   Main.serveSvg
-module dependencies: Render Shapes
+module dependencies: Color Render Shapes Styles
 package dependencies: MissingH-1.4.0.1@MissingH-1.4.0.1-4I5T4TbNA9RIo1FM0FgAP
                       aeson-1.1.2.0@aeson-1.1.2.0-7ssY6fy1GxZGXxTPcOtf2k
                       appar-0.1.4@appar-0.1.4-DGWHHt2WRn9FI49prcwO9
@@ -151,24 +151,26 @@ import  -/  blaze-svg-0.3.6.1@blaze-svg-0.3.6.1-E6CYGgfBIFH476loEvWeGj:Text.Blaz
 import  -/  blaze-svg-0.3.6.1@blaze-svg-0.3.6.1-E6CYGgfBIFH476loEvWeGj:Text.Blaze.Svg11.Attributes 2eac472bb3ab7f6d74496a530091d88d
 import  -/  bytestring-0.10.8.1@bytestring-0.10.8.1:Data.ByteString.Char8 64661030f691dd1495e363eeda7a5344
 import  -/  bytestring-0.10.8.1@bytestring-0.10.8.1:Data.ByteString.Lazy.Char8 de205e69483b559cc0a137c5f3e1ec20
-import  -/  Render dd994917a8a5a389c1356a6b47adbc1f
-  exports: c39b0f0665791197d117570d5abc2fc3
+import  -/  Render 3817afed3d93ba5b1bd77b893273fa91
+  exports: cde5b6a753cf99b6ce224b0ef98917b7
   createSvg 4e0a74df2bf2a4b717e782f026f89c40
-  createSvgFromDrawing 6b7a380d8f5e88e3fa67585718655838
+  createSvgFromDrawing 5b79a939a15c26e1723b9d6bda385f33
 import  -/  scotty-0.11.0@scotty-0.11.0-A0Fu08UQDtq1x6NLBiRRmh:Web.Scotty 9eff37751f8615ef023d45128bab86c8
-e612f30f00957f77785faacfa4c34f49
+e59258a6f563a4f4bd2bbaa7fbbd6ad4
   $s$fRead[]5 ::
     Text.ParserCombinators.ReadPrec.Prec
     -> forall b1.
-       ((Shapes.Transform, Shapes.Shape)
+       ((Shapes.Transform, Shapes.Shape, Styles.Style)
         -> Text.ParserCombinators.ReadP.P b1)
        -> Text.ParserCombinators.ReadP.P b1
   {- Arity: 2,
-     Unfolding: (GHC.Read.$fRead(,)2
+     Unfolding: (GHC.Read.$fRead(,,)2
                    @ Shapes.Transform
                    @ Shapes.Shape
+                   @ Styles.Style
                    Shapes.$fReadTransform
-                   Shapes.$fReadShape) -}
+                   Shapes.$fReadShape
+                   Styles.$fReadStyle) -}
 d6831ef04cb9301b090dfae6f7bb7ec7
   $trModule :: GHC.Types.Module
   {- HasNoCafRefs, Strictness: m,
@@ -181,7 +183,7 @@ d6831ef04cb9301b090dfae6f7bb7ec7
   $trModule2 :: GHC.Types.TrName
   {- HasNoCafRefs, Strictness: m1,
      Unfolding: (GHC.Types.TrNameS "main"#) -}
-924651bb12cdd1084a71beb0b9885188
+cbc92b0a040be23fbab5e456fe001e97
   main :: GHC.Types.IO ()
   {- Unfolding: (Web.Scotty.Trans.scottyOptsT
                    @ GHC.Types.IO
@@ -201,7 +203,7 @@ d6831ef04cb9301b090dfae6f7bb7ec7
                                   <()>_N))
                         (Sym (Web.Scotty.Internal.Types.N:ScottyT[0]
                                   <Data.Text.Internal.Lazy.Text>_N <GHC.Types.IO>_N) <()>_N))) -}
-e21df0dee831bc2ad06a2326f1c9e7aa
+f082968dae101690a94171d164d4b665
   main1 ::
     Web.Scotty.Internal.Types.ScottyState
       Data.Text.Internal.Lazy.Text GHC.Types.IO
@@ -336,7 +338,7 @@ e21df0dee831bc2ad06a2326f1c9e7aa
 56e276db61f0064ae68ef574dbbf6aae
   main10 :: [GHC.Types.Char]
   {- Unfolding: (GHC.CString.unpackCString# "/"#) -}
-51fd3286813bda2d40c447e2ef3cf466
+13662493acad2a995a20483ebafcbb5b
   main11 ::
     Web.Scotty.Internal.Types.ActionEnv
     -> Control.Monad.Trans.State.Lazy.StateT
@@ -506,9 +508,9 @@ e21df0dee831bc2ad06a2326f1c9e7aa
                                                          Render.createSvgFromDrawing3
                                                          Render.createSvgFromDrawing1
                                                          (case Text.Read.readEither6
-                                                                 @ Shapes.Drawing
+                                                                 @ Render.Drawing
                                                                  (Text.ParserCombinators.ReadP.run
-                                                                    @ Shapes.Drawing
+                                                                    @ Render.Drawing
                                                                     Main.main14
                                                                     (case ds2 of ww7 { Data.ByteString.Internal.PS ww8 ww9 ww10 ww11 ->
                                                                      Data.ByteString.Internal.$wunpackAppendCharsLazy
@@ -589,33 +591,33 @@ e21df0dee831bc2ad06a2326f1c9e7aa
                                    (Web.Scotty.Internal.Types.ActionError
                                       Data.Text.Internal.Lazy.Text)
                                    ()>_N)))) -}
-98eabd1bb3a04bbbb1c8c107200845f4
-  main12 :: Shapes.Drawing
+3247e7b53f262552d4318676ba6d4b73
+  main12 :: Render.Drawing
   {- Strictness: x -}
-b83eaf12a707a91f742afd8abe2dc450
-  main13 :: Shapes.Drawing
+1052b69bf260a8630af2473102cca82a
+  main13 :: Render.Drawing
   {- Strictness: x -}
-68562a2541a8eade90c0197da03b122d
-  main14 :: Text.ParserCombinators.ReadP.P Shapes.Drawing
+914d448e80cabe20e799ba501e46a166
+  main14 :: Text.ParserCombinators.ReadP.P Render.Drawing
   {- Unfolding: (GHC.Read.list1
-                   @ (Shapes.Transform, Shapes.Shape)
+                   @ (Shapes.Transform, Shapes.Shape, Styles.Style)
                    Main.$s$fRead[]5
                      `cast`
                    (Trans
                         (<Text.ParserCombinators.ReadPrec.Prec>_R
                          ->_R Sym (Text.ParserCombinators.ReadP.N:ReadP[0]
-                                       <(Shapes.Transform, Shapes.Shape)>_R))
+                                       <(Shapes.Transform, Shapes.Shape, Styles.Style)>_R))
                         (Sym (Text.ParserCombinators.ReadPrec.N:ReadPrec[0]
-                                  <(Shapes.Transform, Shapes.Shape)>_R)))
+                                  <(Shapes.Transform, Shapes.Shape, Styles.Style)>_R)))
                    Text.ParserCombinators.ReadPrec.minPrec
-                   @ Shapes.Drawing
-                   (Text.Read.readEither5 @ Shapes.Drawing)) -}
-d83947aa07dc9c9d37280e49e512c8f7
+                   @ Render.Drawing
+                   (Text.Read.readEither5 @ Render.Drawing)) -}
+00df0a9ca665b12f42a670e10ecd48cc
   main15 ::
     Web.Scotty.Internal.Types.ActionT
       Data.Text.Internal.Lazy.Text GHC.Types.IO ()
   {- Unfolding: (Main.serveSvg Main.main16) -}
-0760fc1441cbdfb0ef1837445953260a
+99e8123542e889ab15791a6efd6bacb8
   main16 :: Text.Blaze.Internal.MarkupM ()
   {- Unfolding: (Text.Blaze.Internal.AddAttribute
                    @ ()
@@ -623,7 +625,7 @@ d83947aa07dc9c9d37280e49e512c8f7
                    Render.svgDoc151
                    Render.svgDoc149
                    Main.main17) -}
-ed81a741fcc0d4b3c9b60968cb8e096a
+83f021d538fb54afdb9410c4d8e4e534
   main17 :: Text.Blaze.Internal.MarkupM ()
   {- Unfolding: (Text.Blaze.Internal.AddAttribute
                    @ ()
@@ -631,7 +633,7 @@ ed81a741fcc0d4b3c9b60968cb8e096a
                    Render.svgDoc55
                    Render.svgDoc147
                    Main.main18) -}
-fb0dcd1f910fa0c0028b399185cc926b
+67ab764f3b0b88b9b074161541e0bef0
   main18 :: Text.Blaze.Internal.MarkupM ()
   {- Unfolding: (Text.Blaze.Internal.AddAttribute
                    @ ()
@@ -639,7 +641,7 @@ fb0dcd1f910fa0c0028b399185cc926b
                    Render.svgDoc45
                    Render.svgDoc147
                    Main.main19) -}
-c4ebc92668c8cea3cf48db0986e6a8a8
+0025208fa8983b29050706bc9b202489
   main19 :: Text.Blaze.Internal.MarkupM ()
   {- Unfolding: (Text.Blaze.Internal.AddAttribute
                    @ ()
@@ -652,14 +654,14 @@ c4ebc92668c8cea3cf48db0986e6a8a8
     Web.Scotty.Internal.Types.ActionT
       Data.Text.Internal.Lazy.Text GHC.Types.IO ()
   {- Unfolding: (Main.serveSvg Render.svgDoc) -}
-d0d2b657e84d53c21bfa7f777b326b99
+16dd5cfea85a3bcfab3fa9488c5d4a7e
   main20 :: Text.Blaze.Internal.MarkupM ()
   {- Unfolding: (Text.Blaze.Internal.Append
                    @ ()
                    @ ()
                    Text.Blaze.Svg11.docType
                    Main.main21) -}
-605a532ad4243d0bd9e4145453e6125e
+76a6ba166caf4462cbf833c178d8a08f
   main21 :: Text.Blaze.Internal.MarkupM ()
   {- Unfolding: (Text.Blaze.Internal.AddAttribute
                    @ ()
@@ -667,7 +669,7 @@ d0d2b657e84d53c21bfa7f777b326b99
                    Render.createSvgFromDrawing11
                    Render.svgDoc127
                    Main.main22) -}
-2a95d942a4704de62cedc6d892ca1613
+aa29e13a2a10376992cf967e1298ccf6
   main22 :: Text.Blaze.Internal.MarkupM ()
   {- Unfolding: (Text.Blaze.Internal.AddAttribute
                    @ ()
@@ -675,7 +677,7 @@ d0d2b657e84d53c21bfa7f777b326b99
                    Render.createSvgFromDrawing7
                    Render.svgDoc117
                    Main.main23) -}
-29cd0517e007b3e73559bfcccb7ff584
+383d9877bc079b15a6a1bb4102dcdbad
   main23 :: Text.Blaze.Internal.MarkupM ()
   {- Unfolding: (Text.Blaze.Internal.Parent
                    @ ()
@@ -683,15 +685,15 @@ d0d2b657e84d53c21bfa7f777b326b99
                    Render.createSvgFromDrawing3
                    Render.createSvgFromDrawing1
                    Main.main24) -}
-3c24fb37d353f2a714a342be71ddb50e
+18acf4d567134ba74890b6d44f32d884
   main24 :: Text.Blaze.Internal.MarkupM ()
   {- Unfolding: (case Text.Read.readEither6
-                        @ Shapes.Drawing
+                        @ Render.Drawing
                         Main.main25 of wild {
                    []
                    -> case GHC.Err.error
                              @ 'GHC.Types.PtrRepLifted
-                             @ Shapes.Drawing
+                             @ Render.Drawing
                              GHC.Err.errorWithoutStackTrace_wild1
                                `cast`
                              (Sym (GHC.Classes.N:IP[0]
@@ -705,7 +707,7 @@ d0d2b657e84d53c21bfa7f777b326b99
                         : ipv ipv1
                         -> case GHC.Err.error
                                   @ 'GHC.Types.PtrRepLifted
-                                  @ Shapes.Drawing
+                                  @ Render.Drawing
                                   GHC.Err.errorWithoutStackTrace_wild1
                                     `cast`
                                   (Sym (GHC.Classes.N:IP[0]
@@ -713,10 +715,10 @@ d0d2b657e84d53c21bfa7f777b326b99
                                   Text.Read.readEither2
                            ret_ty (Text.Blaze.Internal.MarkupM ())
                            of {} } }) -}
-9f1316b7194145d8e7d7906a6148d00c
-  main25 :: [(Shapes.Drawing, GHC.Base.String)]
+4632898e1665caa7dea6099323412e1d
+  main25 :: [(Render.Drawing, GHC.Base.String)]
   {- Unfolding: (Text.ParserCombinators.ReadP.run
-                   @ Shapes.Drawing
+                   @ Render.Drawing
                    Main.main14
                    Main.main26) -}
 67d864252cad88e5bdbe18b32aba96c7
@@ -817,7 +819,7 @@ ed1d27191efc4a0de6466f6adadf396b
 1fb31217eda8ff7ff02bfa077ed7bf0d
   main34 :: GHC.Types.Int
   {- HasNoCafRefs, Unfolding: (GHC.Types.I# 3000#) -}
-f0bce3395edf2d4772aa914040145b92
+45d3a3fceb9c5d562cd43228d03026fe
   main35 ::
     GHC.Prim.State# GHC.Prim.RealWorld
     -> (# GHC.Prim.State# GHC.Prim.RealWorld, () #)

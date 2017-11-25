@@ -36,44 +36,8 @@ rotate angle = Rotate
 t0 <+> t1 = Compose t0 t1
 
 transform :: Transform -> [S.AttributeValue]
-transform Identity                 = [S.scale 1 1]
-transform (Translate tx ty)        = [S.translate tx ty]
-transform (Scale sx sy)            = [S.scale sx sy]
-transform (Rotate angle)           = [S.rotate angle]
-transform (Compose t1 t2)          = transform t2 ++ transform t1
-
-
-{-
-
------------Styles------------
---TODO: Add more AttributeValues 
--- https://hackage.haskell.org/package/blaze-svg-0.3.6.1/docs/Text-Blaze-Svg11-Attributes.html
-
-data Style = Fill Color
-           | FillOpacity Double
-           | Stroke Double
-           | StrokeColor Color
-           | StyleCompose Style Style
-             deriving (Show,Read)
-
-fill = Fill
-fillOpacity = FillOpacity
-stroke = Stroke
-strokeColor = StrokeColor
-s0 <-> s1 = StyleCompose s0 s1
-
-style :: Style -> [S.Attribute]
-style (Fill c)             = [A.fill c]
-style (FillOpacity d)      = [A.FillOpacity d]
-style (Stroke d)           = [A.Stroke d]
-style (StrokeColor c)      = [A.StrokeColor c]
-style (StyleCompose s0 s1) = style s0 ++ style s1
-
-
--}
-
--- Drawings
-
-type Drawing = [(Transform,Shape)]
-
-testDrawing = [(scale 5 5,circle)]
+transform Identity           = [S.scale 1 1]
+transform (Translate tx ty)  = [S.translate tx ty]
+transform (Scale sx sy)      = [S.scale sx sy]
+transform (Rotate angle)     = [S.rotate angle]
+transform (Compose t1 t2)    = transform t2 ++ transform t1
