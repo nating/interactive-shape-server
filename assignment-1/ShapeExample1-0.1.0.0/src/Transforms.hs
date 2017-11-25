@@ -2,10 +2,6 @@ module Transforms where
 
 import qualified Text.Blaze.Svg11 as S
 
------------Transformations------------
---TODO: Add more AttributeValues 
---http://support.hfm.io/1.5/api/blaze-svg-0.3.6.1/Text-Blaze-Svg.html
-
 data Transform = Identity
            | Translate Double Double
            | Scale Double Double
@@ -14,14 +10,6 @@ data Transform = Identity
            | SkewY Double
            | Compose Transform Transform
              deriving (Show,Read)
-
-identity = Identity
-translate = Translate
-scale = Scale
-rotate angle = Rotate
-skewX = SkewX
-skewY = SkewY
-t0 <+> t1 = Compose t0 t1
 
 transform :: Transform -> [S.AttributeValue]
 transform Identity           = [S.scale 1 1]

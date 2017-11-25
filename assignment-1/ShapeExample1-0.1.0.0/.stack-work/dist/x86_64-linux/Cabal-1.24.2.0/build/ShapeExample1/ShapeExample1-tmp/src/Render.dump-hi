@@ -1,11 +1,11 @@
 
 ==================== FINAL INTERFACE ====================
-2017-11-25 15:39:06.330805 UTC
+2017-11-25 17:27:12.604 UTC
 
 interface main@main:Render 8002
-  interface hash: ada52472b88d0481d81e0798c762f526
-  ABI hash: 834e6e0d1f219f2ad60842901e658616
-  export-list hash: f2c693d0a3b0e4c2adb1ad4782e1ae8a
+  interface hash: 628205b4978d15c3bc5c58bcb1fd17c4
+  ABI hash: 173deab302ee9627c6b22487990ed360
+  export-list hash: d3fb9b7a4767165211ebcd209d95d1f1
   orphan hash: 693e9af84d3dfcc71e640e005bdc5e2e
   flag hash: 22f7c82bd23aef2fa9c2c09c28b5aebf
   sig of: Nothing
@@ -16,7 +16,6 @@ exports:
   Render.createSvgShapes
   Render.svgShape
   Render.svgTransform
-  Render.testDrawing
   Render.Drawing
 module dependencies: Color Shapes Styles Transforms
 package dependencies: array-0.5.1.1@array-0.5.1.1 base-4.9.1.0
@@ -55,26 +54,23 @@ family instance modules: base-4.9.1.0:Control.Applicative
 import  -/  base-4.9.1.0:Data.Foldable 3e0b6967a1da89945d0e2d47266337a2
 import  -/  base-4.9.1.0:GHC.Base c4231c43c07e46080a26bf94094c7aa1
 import  -/  base-4.9.1.0:Prelude 22dd289b8469a8fa8dc81cab7b237771
-import  -/  base-4.9.1.0:Text.Read 75c59863e882ebaec4532e9465e2ee9b
 import  -/  blaze-markup-0.8.0.0@blaze-markup-0.8.0.0-GsxkVbRgODkgUQDmmDVob:Text.Blaze.Internal c1d6ebf18cc7de440fbc2d1a2a795843
 import  -/  blaze-svg-0.3.6.1@blaze-svg-0.3.6.1-E6CYGgfBIFH476loEvWeGj:Text.Blaze.Svg.Internal cffc7b1bca7b3586ae25aeb718abb55b
 import  -/  blaze-svg-0.3.6.1@blaze-svg-0.3.6.1-E6CYGgfBIFH476loEvWeGj:Text.Blaze.Svg.Renderer.Utf8 e2f4642473b16a8cdce3ca89f311d0be
 import  -/  blaze-svg-0.3.6.1@blaze-svg-0.3.6.1-E6CYGgfBIFH476loEvWeGj:Text.Blaze.Svg11 ffe4dbf1048c9a6d5d9dad94ecced8e8
 import  -/  blaze-svg-0.3.6.1@blaze-svg-0.3.6.1-E6CYGgfBIFH476loEvWeGj:Text.Blaze.Svg11.Attributes 2eac472bb3ab7f6d74496a530091d88d
-import  -/  Shapes ffc9ac8d962a412a2ce203f32cf649a5
-  exports: 070d2fc4bca490f912cd28abb8b71289
+import  -/  Shapes 9576589d5342d91c929eec106cef4bf1
+  exports: 409bd3ad84d0f03b355ec262ec78263e
   Circle ef370128977b48c940d4976d58540bbd
   Empty e9d3b14509fb49ee1c949d975a6e03eb
   Shape a70891e3593f81ed111926db922174f5
   Square 6062414e1519074a837f122ff98cf04d
-import  -/  Styles 898256fb6ff72c359ee57f17c33e3512
-  exports: 3058baed442d158859a4a89f66429a17
-  Fill 0b6ad29e98da364771c48dd368b2cd66
-  Style b504683295811bfa8dea5aa3e1f1859c
-  style 0076424df4d3671d1d7019670c46b108
-import  -/  Transforms 311bb696289916a1c46094e447592883
-  exports: 58a8a9d40e2a61427fd2453344649137
-  Scale 6a7fb52ade91b88d709dc10c60ef62ed
+import  -/  Styles 8cec7ac2127ebfe620e48e9aa55bdc59
+  exports: 3a79c50ceb5fb66695451baf1641da45
+  Style 232511e363327dcbad08cc3a16757394
+  style 50e5860f14326c3ca9761f34816c0281
+import  -/  Transforms 1863014713a64087af6bf599ea9d388d
+  exports: 59dc263e58cb335744207915f41af4b5
   Transform ab4213368e5e2fdf961cc864d25fb53d
   transform 5013d85750eeb3a66698d97a2e111d52
 import  -/  text-1.2.2.2@text-1.2.2.2-9UQZjEJZQFSGMffj1Z5g00:Data.Text.Lazy 4a195553d37a128a5d875ddc86cf7a29
@@ -92,9 +88,9 @@ a23bdea1e978877fb95c469cf88dd537
   $trModule2 :: GHC.Types.TrName
   {- HasNoCafRefs, Strictness: m1,
      Unfolding: (GHC.Types.TrNameS "main"#) -}
-5b92e6c5ef37d18fd04a558efe286738
+39e1d176e65e7b34510d938b8bff009c
   type Drawing = [(Transforms.Transform, Shapes.Shape, Styles.Style)]
-f1272a5710af0b736a4caa3210bc9082
+283f2513b6d1cceea24c4793e7f3e039
   createSvgFromDrawing ::
     Render.Drawing -> Text.Blaze.Svg.Internal.Svg
   {- Arity: 1, Strictness: <L,1*U>m8, Inline: INLINE[0],
@@ -848,7 +844,7 @@ c1e479b67eb3f15e7646bb47082ff0a8
 b5f74eeff7b9d471f8e4085d3765692f
   createSvgFromDrawing_w9 :: GHC.Base.String
   {- Unfolding: (GHC.CString.unpackCString# " width=\""#) -}
-94a450e311618fcfe1237ab67df132c9
+27378aa28a0a5303246adf5f17c5c4a3
   createSvgShapes ::
     [(Transforms.Transform, Shapes.Shape, Styles.Style)]
     -> Text.Blaze.Svg.Internal.Svg
@@ -1079,79 +1075,6 @@ b5dd04afe6f61d40b0dae821d9c71652
 210f2173a8d44afd442e8b5ac3beac3e
   svgTransform_w1 :: GHC.Base.String
   {- Unfolding: (GHC.CString.unpackCString# "transform"#) -}
-8d5d235964e65f76a3add5b4830798f7
-  testDrawing :: [(Transforms.Transform, Shapes.Shape, Styles.Style)]
-  {- Strictness: m2,
-     Unfolding: (GHC.Types.:
-                   @ (Transforms.Transform, Shapes.Shape, Styles.Style)
-                   Render.testDrawing1
-                   (GHC.Types.[]
-                      @ (Transforms.Transform, Shapes.Shape, Styles.Style))) -}
-5090a080bed50d4cab2d22ba5c86f750
-  testDrawing1 :: (Transforms.Transform, Shapes.Shape, Styles.Style)
-  {- Strictness: m,
-     Unfolding: ((Render.testDrawing7, Shapes.Circle,
-                  Render.testDrawing2)) -}
-250ca2a41918fa6404a423385b2d6355
-  testDrawing2 :: Styles.Style
-  {- Strictness: m1, Unfolding: (Styles.Fill Render.testDrawing3) -}
-22910e3477e753a0f4cd83e0d637bf8e
-  testDrawing3 :: Color.Color
-  {- Unfolding: (case Text.Read.readEither6
-                        @ Color.Color
-                        Render.testDrawing4 of wild {
-                   []
-                   -> GHC.Err.error
-                        @ 'GHC.Types.PtrRepLifted
-                        @ Color.Color
-                        GHC.Err.errorWithoutStackTrace_wild1
-                          `cast`
-                        (Sym (GHC.Classes.N:IP[0]
-                                  <"callStack">_N <GHC.Stack.Types.CallStack>_N))
-                        Text.Read.readEither4
-                   : x ds
-                   -> case ds of wild1 {
-                        [] -> x
-                        : ipv ipv1
-                        -> GHC.Err.error
-                             @ 'GHC.Types.PtrRepLifted
-                             @ Color.Color
-                             GHC.Err.errorWithoutStackTrace_wild1
-                               `cast`
-                             (Sym (GHC.Classes.N:IP[0]
-                                       <"callStack">_N <GHC.Stack.Types.CallStack>_N))
-                             Text.Read.readEither2 } }) -}
-f597c2e6b6e572d627edeb46dffad83e
-  testDrawing4 :: [(Color.Color, GHC.Base.String)]
-  {- Unfolding: (Text.ParserCombinators.ReadP.run
-                   @ Color.Color
-                   Render.testDrawing6
-                   Render.testDrawing5) -}
-e1981c17f38c384f85ad7724787e4a7c
-  testDrawing5 :: [GHC.Types.Char]
-  {- Unfolding: (GHC.CString.unpackCString# "Red"#) -}
-cc93874c6a8081473613542b4e9b1d13
-  testDrawing6 :: Text.ParserCombinators.ReadP.P Color.Color
-  {- Unfolding: ((GHC.Read.parens1
-                    @ Color.Color
-                    Color.$fReadColor3
-                      `cast`
-                    (Sym (Text.ParserCombinators.ReadPrec.N:ReadPrec[0]
-                              <Color.Color>_R))
-                    Text.ParserCombinators.ReadPrec.minPrec)
-                   `cast`
-                 (Text.ParserCombinators.ReadP.N:ReadP[0] <Color.Color>_R)
-                   @ Color.Color
-                   (Text.Read.readEither5 @ Color.Color)) -}
-07d0086a007cba42ef0b5d62306496c5
-  testDrawing7 :: Transforms.Transform
-  {- HasNoCafRefs, Strictness: m3,
-     Unfolding: (Transforms.Scale
-                   Render.testDrawing8
-                   Render.testDrawing8) -}
-ef8a732950cd07ab9fbeb1921297a464
-  testDrawing8 :: GHC.Types.Double
-  {- HasNoCafRefs, Strictness: m, Unfolding: (GHC.Types.D# 5.0##) -}
 vectorised variables:
 vectorised tycons:
 vectorised reused tycons:

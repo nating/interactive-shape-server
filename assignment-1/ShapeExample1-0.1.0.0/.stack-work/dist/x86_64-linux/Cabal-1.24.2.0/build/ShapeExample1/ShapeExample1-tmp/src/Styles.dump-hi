@@ -1,28 +1,22 @@
 
 ==================== FINAL INTERFACE ====================
-2017-11-25 15:31:52.370332 UTC
+2017-11-25 17:24:34.621066 UTC
 
 interface main@main:Styles 8002
-  interface hash: 1abd4eaa9b29b2a28f6c198901e017d5
-  ABI hash: 898256fb6ff72c359ee57f17c33e3512
-  export-list hash: 3058baed442d158859a4a89f66429a17
+  interface hash: 6185c4d5b9df946f92540f4f4308c18f
+  ABI hash: 8cec7ac2127ebfe620e48e9aa55bdc59
+  export-list hash: 3a79c50ceb5fb66695451baf1641da45
   orphan hash: 693e9af84d3dfcc71e640e005bdc5e2e
   flag hash: 52e25017ea2471189bd6f9d9f6dbdebf
   sig of: Nothing
   used TH splices: False
   where
 exports:
-  Styles.<->
-  Styles.fill
-  Styles.fillOpacity
-  Styles.strokeColor
-  Styles.strokeWidth
   Styles.style
   Styles.Style{Styles.Fill Styles.FillOpacity Styles.StrokeColor Styles.StrokeWidth Styles.StyleCompose}
 module dependencies: Color
 package dependencies: array-0.5.1.1@array-0.5.1.1 base-4.9.1.0
                       binary-0.8.3.0@binary-0.8.3.0
-                      blaze-builder-0.4.0.2@blaze-builder-0.4.0.2-LxClHUTiKUUAxWtvJ5Oeoy
                       blaze-markup-0.8.0.0@blaze-markup-0.8.0.0-GsxkVbRgODkgUQDmmDVob
                       blaze-svg-0.3.6.1@blaze-svg-0.3.6.1-E6CYGgfBIFH476loEvWeGj
                       bytestring-0.10.8.1@bytestring-0.10.8.1
@@ -60,14 +54,13 @@ import  -/  base-4.9.1.0:Prelude 22dd289b8469a8fa8dc81cab7b237771
 import  -/  base-4.9.1.0:Text.ParserCombinators.ReadPrec 5a182a8d6deb0f7d67aed5fab08a5cc0
 import  -/  base-4.9.1.0:Text.Read.Lex 16199fac3c6c2d64cc7c268f3c0d2269
 import  -/  blaze-markup-0.8.0.0@blaze-markup-0.8.0.0-GsxkVbRgODkgUQDmmDVob:Text.Blaze.Internal c1d6ebf18cc7de440fbc2d1a2a795843
-import  -/  blaze-svg-0.3.6.1@blaze-svg-0.3.6.1-E6CYGgfBIFH476loEvWeGj:Text.Blaze.Svg.Renderer.Utf8 e2f4642473b16a8cdce3ca89f311d0be
 import  -/  blaze-svg-0.3.6.1@blaze-svg-0.3.6.1-E6CYGgfBIFH476loEvWeGj:Text.Blaze.Svg11 ffe4dbf1048c9a6d5d9dad94ecced8e8
 import  -/  blaze-svg-0.3.6.1@blaze-svg-0.3.6.1-E6CYGgfBIFH476loEvWeGj:Text.Blaze.Svg11.Attributes 2eac472bb3ab7f6d74496a530091d88d
 import  -/  ghc-prim-0.5.0.0:GHC.Classes 0bdf3d057a415ec1b84a7b1994efbe47
-import  -/  Color 2935b0eb0a35754b0cfb6f214fe514e1
-  exports: 7109e79c67e21887557bf29e62da926b
-  Color a20acb4243024fa85fb7a9389cdd11b4
-b504683295811bfa8dea5aa3e1f1859c
+import  -/  Color bd32f3121349d66c9c31754da835d601
+  exports: 25265ba8e390b42d1d8320adf3db900d
+  Color 3cc0ed81786abcd9362c369036571693
+232511e363327dcbad08cc3a16757394
   $fReadStyle :: GHC.Read.Read Styles.Style
   DFunId
   {- Strictness: m, Inline: [ALWAYS] CONLIKE,
@@ -77,7 +70,7 @@ b504683295811bfa8dea5aa3e1f1859c
                   Styles.$fReadStyle_$creadList
                   Styles.$fReadStyle_$creadPrec
                   Styles.$fReadStyle_$creadListPrec -}
-b504683295811bfa8dea5aa3e1f1859c
+232511e363327dcbad08cc3a16757394
   $fReadStyle1 ::
     Text.ParserCombinators.ReadPrec.Prec
     -> forall b.
@@ -97,7 +90,7 @@ b504683295811bfa8dea5aa3e1f1859c
                    eta
                    @ b
                    eta1) -}
-b504683295811bfa8dea5aa3e1f1859c
+232511e363327dcbad08cc3a16757394
   $fReadStyle2 ::
     Text.ParserCombinators.ReadPrec.Prec
     -> Text.ParserCombinators.ReadP.ReadP Styles.Style
@@ -112,7 +105,7 @@ b504683295811bfa8dea5aa3e1f1859c
                                        <Styles.Style>_R))
                         (Sym (Text.ParserCombinators.ReadPrec.N:ReadPrec[0]
                                   <Styles.Style>_R)))) -}
-b504683295811bfa8dea5aa3e1f1859c
+232511e363327dcbad08cc3a16757394
   $fReadStyle3 ::
     Text.ParserCombinators.ReadPrec.Prec
     -> forall b.
@@ -125,7 +118,7 @@ b504683295811bfa8dea5aa3e1f1859c
                    (w9 :: Styles.Style -> Text.ParserCombinators.ReadP.P b) ->
                  case w8 of ww { GHC.Types.I# ww1 ->
                  Styles.$w$creadPrec ww1 @ b w9 }) -}
-b504683295811bfa8dea5aa3e1f1859c
+232511e363327dcbad08cc3a16757394
   $fReadStyle4 :: Text.ParserCombinators.ReadP.P [Styles.Style]
   {- Unfolding: (GHC.Read.list1
                    @ Styles.Style
@@ -137,14 +130,14 @@ b504683295811bfa8dea5aa3e1f1859c
                    @ [Styles.Style]
                    (Text.ParserCombinators.ReadP.$fApplicativeP_$cpure
                       @ [Styles.Style])) -}
-b504683295811bfa8dea5aa3e1f1859c
+232511e363327dcbad08cc3a16757394
   $fReadStyle_$creadList ::
     Text.ParserCombinators.ReadP.ReadS [Styles.Style]
   {- Arity: 1,
      Unfolding: (Text.ParserCombinators.ReadP.run
                    @ [Styles.Style]
                    Styles.$fReadStyle4) -}
-b504683295811bfa8dea5aa3e1f1859c
+232511e363327dcbad08cc3a16757394
   $fReadStyle_$creadListPrec ::
     Text.ParserCombinators.ReadPrec.ReadPrec [Styles.Style]
   {- Arity: 2, Strictness: <L,U><L,U>,
@@ -157,7 +150,7 @@ b504683295811bfa8dea5aa3e1f1859c
                                     <[Styles.Style]>_R))
                      (Sym (Text.ParserCombinators.ReadPrec.N:ReadPrec[0]
                                <[Styles.Style]>_R))) -}
-b504683295811bfa8dea5aa3e1f1859c
+232511e363327dcbad08cc3a16757394
   $fReadStyle_$creadPrec ::
     Text.ParserCombinators.ReadPrec.ReadPrec Styles.Style
   {- Arity: 1,
@@ -166,7 +159,7 @@ b504683295811bfa8dea5aa3e1f1859c
                   `cast`
                 (Sym (Text.ParserCombinators.ReadPrec.N:ReadPrec[0]
                           <Styles.Style>_R)) -}
-b504683295811bfa8dea5aa3e1f1859c
+232511e363327dcbad08cc3a16757394
   $fReadStyle_$creadsPrec ::
     GHC.Types.Int -> Text.ParserCombinators.ReadP.ReadS Styles.Style
   {- Arity: 1, Strictness: <L,U>,
@@ -190,7 +183,7 @@ b504683295811bfa8dea5aa3e1f1859c
                       @ Styles.Style
                       (Text.ParserCombinators.ReadP.$fApplicativeP_$cpure
                          @ Styles.Style))) -}
-b504683295811bfa8dea5aa3e1f1859c
+232511e363327dcbad08cc3a16757394
   $fShowStyle :: GHC.Show.Show Styles.Style
   DFunId
   {- Strictness: m, Inline: [ALWAYS] CONLIKE,
@@ -199,12 +192,12 @@ b504683295811bfa8dea5aa3e1f1859c
                   Styles.$fShowStyle_$cshowsPrec
                   Styles.$fShowStyle_$cshow
                   Styles.$fShowStyle_$cshowList -}
-b504683295811bfa8dea5aa3e1f1859c
+232511e363327dcbad08cc3a16757394
   $fShowStyle1 :: Styles.Style -> GHC.Show.ShowS
   {- Arity: 1,
      Unfolding: (\ (w8 :: Styles.Style) ->
                  Styles.$w$cshowsPrec 0# w8) -}
-b504683295811bfa8dea5aa3e1f1859c
+232511e363327dcbad08cc3a16757394
   $fShowStyle_$cshow :: Styles.Style -> GHC.Base.String
   {- Arity: 1, Strictness: <S,1*U>,
      Unfolding: InlineRule (1, True, False)
@@ -213,13 +206,13 @@ b504683295811bfa8dea5aa3e1f1859c
                    GHC.Show.shows22
                    x
                    (GHC.Types.[] @ GHC.Types.Char)) -}
-b504683295811bfa8dea5aa3e1f1859c
+232511e363327dcbad08cc3a16757394
   $fShowStyle_$cshowList :: [Styles.Style] -> GHC.Show.ShowS
   {- Arity: 2,
      Unfolding: (GHC.Show.showList__
                    @ Styles.Style
                    Styles.$fShowStyle1) -}
-b504683295811bfa8dea5aa3e1f1859c
+232511e363327dcbad08cc3a16757394
   $fShowStyle_$cshowsPrec ::
     GHC.Types.Int -> Styles.Style -> GHC.Show.ShowS
   {- Arity: 2, Strictness: <S(S),1*U(U)><S,1*U>, Inline: INLINE[0],
@@ -313,44 +306,24 @@ ad106efe0ddb3e9315f8d274a517c0fb
   $trModule2 :: GHC.Types.TrName
   {- HasNoCafRefs, Strictness: m1,
      Unfolding: (GHC.Types.TrNameS "main"#) -}
-b504683295811bfa8dea5aa3e1f1859c
+232511e363327dcbad08cc3a16757394
   $w$creadPrec ::
     GHC.Prim.Int#
     -> forall b.
        (Styles.Style -> Text.ParserCombinators.ReadP.P b)
        -> Text.ParserCombinators.ReadP.P b
   {- Arity: 2, Strictness: <S,U><L,C(U)>, Inline: [0] -}
-b504683295811bfa8dea5aa3e1f1859c
+232511e363327dcbad08cc3a16757394
   $w$cshowsPrec :: GHC.Prim.Int# -> Styles.Style -> GHC.Show.ShowS
   {- Arity: 2, Strictness: <S,U><S,1*U>, Inline: [0] -}
-33aac435abc59c9a889813eed2a18582
-  (<->) :: Styles.Style -> Styles.Style -> Styles.Style
-  {- Arity: 2, HasNoCafRefs, Strictness: <L,U><L,U>m5,
-     Unfolding: InlineRule (0, True, True) Styles.StyleCompose -}
-b504683295811bfa8dea5aa3e1f1859c
+232511e363327dcbad08cc3a16757394
   data Style
     = Fill Color.Color
     | FillOpacity GHC.Types.Double
     | StrokeWidth GHC.Types.Double
     | StrokeColor Color.Color
     | StyleCompose Styles.Style Styles.Style
-dcf1b8f79845ee82622a5a577a224287
-  fill :: Color.Color -> Styles.Style
-  {- Arity: 1, HasNoCafRefs, Strictness: <L,U>m1,
-     Unfolding: InlineRule (0, True, True) Styles.Fill -}
-14e993e65e1f082afefe5a1b6986f379
-  fillOpacity :: GHC.Types.Double -> Styles.Style
-  {- Arity: 1, HasNoCafRefs, Strictness: <L,U>m2,
-     Unfolding: InlineRule (0, True, True) Styles.FillOpacity -}
-430880bc57125908f4516e6b8957e520
-  strokeColor :: Color.Color -> Styles.Style
-  {- Arity: 1, HasNoCafRefs, Strictness: <L,U>m4,
-     Unfolding: InlineRule (0, True, True) Styles.StrokeColor -}
-8ae2c23d0ca0b0f17c418e3fc31c63ad
-  strokeWidth :: GHC.Types.Double -> Styles.Style
-  {- Arity: 1, HasNoCafRefs, Strictness: <L,U>m3,
-     Unfolding: InlineRule (0, True, True) Styles.StrokeWidth -}
-0076424df4d3671d1d7019670c46b108
+50e5860f14326c3ca9761f34816c0281
   style :: Styles.Style -> [Text.Blaze.Internal.Attribute]
   {- Arity: 1, Strictness: <S,1*U> -}
 instance GHC.Read.Read [Styles.Style] = Styles.$fReadStyle

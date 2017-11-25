@@ -1,20 +1,17 @@
 
 ==================== FINAL INTERFACE ====================
-2017-11-25 15:39:06.118249 UTC
+2017-11-25 17:24:34.343801 UTC
 
 interface main@main:Shapes 8002
-  interface hash: 57c69195272ac20e800e56ba0e78ceb3
-  ABI hash: ffc9ac8d962a412a2ce203f32cf649a5
-  export-list hash: 070d2fc4bca490f912cd28abb8b71289
+  interface hash: a242e607385696ad11765634523f2dec
+  ABI hash: 9576589d5342d91c929eec106cef4bf1
+  export-list hash: 409bd3ad84d0f03b355ec262ec78263e
   orphan hash: 693e9af84d3dfcc71e640e005bdc5e2e
   flag hash: 52e25017ea2471189bd6f9d9f6dbdebf
   sig of: Nothing
   used TH splices: False
   where
 exports:
-  Shapes.circle
-  Shapes.empty
-  Shapes.square
   Shapes.Shape{Shapes.Circle Shapes.Empty Shapes.Square}
 module dependencies:
 package dependencies: base-4.9.1.0* ghc-prim-0.5.0.0
@@ -366,18 +363,6 @@ a70891e3593f81ed111926db922174f5
                    -> GHC.Base.++ @ GHC.Types.Char Shapes.$fReadShape9 w1 }) -}
 a70891e3593f81ed111926db922174f5
   data Shape = Empty | Circle | Square
-e03983fe2fec3576eb31b5c32442e1f7
-  circle :: Shapes.Shape
-  {- HasNoCafRefs,
-     Unfolding: InlineRule (0, True, True) Shapes.Circle -}
-deedf100e9056fecc796f18a162977f5
-  empty :: Shapes.Shape
-  {- HasNoCafRefs,
-     Unfolding: InlineRule (0, True, True) Shapes.Empty -}
-07f892be1369cdc95a73732bc625b4c0
-  square :: Shapes.Shape
-  {- HasNoCafRefs,
-     Unfolding: InlineRule (0, True, True) Shapes.Square -}
 instance [safe] GHC.Read.Read [Shapes.Shape] = Shapes.$fReadShape
 instance [safe] GHC.Show.Show [Shapes.Shape] = Shapes.$fShowShape
 vectorised variables:

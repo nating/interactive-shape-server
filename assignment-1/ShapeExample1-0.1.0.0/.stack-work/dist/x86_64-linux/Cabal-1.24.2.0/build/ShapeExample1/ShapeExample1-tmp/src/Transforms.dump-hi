@@ -1,25 +1,18 @@
 
 ==================== FINAL INTERFACE ====================
-2017-11-25 15:39:05.927001 UTC
+2017-11-25 17:24:34.194438 UTC
 
 interface main@main:Transforms 8002
-  interface hash: 53f3ebf3819421b8ed436365ed85ff19
-  ABI hash: 311bb696289916a1c46094e447592883
-  export-list hash: 58a8a9d40e2a61427fd2453344649137
+  interface hash: 064c910120f1bb77aec9e8b7a1f19dc7
+  ABI hash: 1863014713a64087af6bf599ea9d388d
+  export-list hash: 59dc263e58cb335744207915f41af4b5
   orphan hash: 693e9af84d3dfcc71e640e005bdc5e2e
   flag hash: 52e25017ea2471189bd6f9d9f6dbdebf
   sig of: Nothing
   used TH splices: False
   where
 exports:
-  Transforms.<+>
-  Transforms.identity
-  Transforms.rotate
-  Transforms.scale
-  Transforms.skewX
-  Transforms.skewY
   Transforms.transform
-  Transforms.translate
   Transforms.Transform{Transforms.Compose Transforms.Identity Transforms.Rotate Transforms.Scale Transforms.SkewX Transforms.SkewY Transforms.Translate}
 module dependencies:
 package dependencies: array-0.5.1.1@array-0.5.1.1 base-4.9.1.0
@@ -378,12 +371,6 @@ ab4213368e5e2fdf961cc864d25fb53d
        (Transforms.Transform -> Text.ParserCombinators.ReadP.P b)
        -> Text.ParserCombinators.ReadP.P b
   {- Arity: 2, Strictness: <S,U><L,C(U)>, Inline: [0] -}
-3a25b6996f971a23df6b4c203efc2069
-  (<+>) ::
-    Transforms.Transform
-    -> Transforms.Transform -> Transforms.Transform
-  {- Arity: 2, HasNoCafRefs, Strictness: <L,U><L,U>m7,
-     Unfolding: InlineRule (0, True, True) Transforms.Compose -}
 ab4213368e5e2fdf961cc864d25fb53d
   data Transform
     = Identity
@@ -393,38 +380,10 @@ ab4213368e5e2fdf961cc864d25fb53d
     | SkewX GHC.Types.Double
     | SkewY GHC.Types.Double
     | Compose Transforms.Transform Transforms.Transform
-7867c2a4ca0d50e845167ae90587c867
-  identity :: Transforms.Transform
-  {- HasNoCafRefs,
-     Unfolding: InlineRule (0, True, True) Transforms.Identity -}
-1a4c1978d6e675fd5b422a37b6bc1559
-  rotate :: t -> GHC.Types.Double -> Transforms.Transform
-  {- Arity: 2, HasNoCafRefs, Strictness: <L,A>,
-     Unfolding: InlineRule (1, True, True)
-                (\ @ t (angle :: t) (eta :: GHC.Types.Double) ->
-                 Transforms.Rotate eta) -}
-0cd70ef9e51e180342ec502b05ae71d9
-  scale ::
-    GHC.Types.Double -> GHC.Types.Double -> Transforms.Transform
-  {- Arity: 2, HasNoCafRefs, Strictness: <L,U><L,U>m3,
-     Unfolding: InlineRule (0, True, True) Transforms.Scale -}
-450fa04cd14c1a0a08c013d0dc2c5da1
-  skewX :: GHC.Types.Double -> Transforms.Transform
-  {- Arity: 1, HasNoCafRefs, Strictness: <L,U>m5,
-     Unfolding: InlineRule (0, True, True) Transforms.SkewX -}
-09708761beded3c178923fbbf5418566
-  skewY :: GHC.Types.Double -> Transforms.Transform
-  {- Arity: 1, HasNoCafRefs, Strictness: <L,U>m6,
-     Unfolding: InlineRule (0, True, True) Transforms.SkewY -}
 5013d85750eeb3a66698d97a2e111d52
   transform ::
     Transforms.Transform -> [Text.Blaze.Internal.AttributeValue]
   {- Arity: 1, Strictness: <S,1*U> -}
-403b97b09038baa701e72c47a676ccb7
-  translate ::
-    GHC.Types.Double -> GHC.Types.Double -> Transforms.Transform
-  {- Arity: 2, HasNoCafRefs, Strictness: <L,U><L,U>m2,
-     Unfolding: InlineRule (0, True, True) Transforms.Translate -}
 instance GHC.Read.Read [Transforms.Transform]
   = Transforms.$fReadTransform
 instance GHC.Show.Show [Transforms.Transform]

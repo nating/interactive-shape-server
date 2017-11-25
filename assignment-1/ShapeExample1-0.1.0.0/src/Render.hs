@@ -28,9 +28,4 @@ svgShape Square = S.rect ! A.width "1" ! A.height "1"
 svgTransform :: [S.AttributeValue] -> S.Attribute
 svgTransform t = A.transform $ mconcat $ t
 
-
 type Drawing = [(Transform,Shape,Style)]
-testDrawing = [(Scale 5 5,Circle,Fill (read "Red"))]
-
-
---TODO: maybe take the original rendering of their input and add to it when they put more input in?
