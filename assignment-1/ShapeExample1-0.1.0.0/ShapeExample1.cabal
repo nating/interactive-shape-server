@@ -1,13 +1,13 @@
 name:                ShapeExample1
 version:             0.1.0.0
-synopsis:            Simple shape example for CS4012
-description:         Simple shape example for CS4012
-homepage:            https://github.com/g-d-strong/ShapeExample1#readme
+synopsis:            An Interactive Shape Server
+description:         An interactive svg shape server
+homepage:            https://github.com/nating/functional/assignment-1
 license:             BSD3
 license-file:        LICENSE
-author:              Glenn Strong
-maintainer:          Glenn.Strong@scss.tcd.ie
-copyright:           2017 Glenn Strong
+author:              Geoffrey Natin
+maintainer:          nating@tcd.ie
+copyright:           2017 Geoffrey Natin
 category:            Web
 build-type:          Simple
 cabal-version:       >=1.10

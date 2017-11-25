@@ -6,26 +6,23 @@ import Shapes
 import Styles
 import Transforms
 
-import Text.Blaze.Svg11 ((!), mkPath, rotate, l, m)
-import qualified Text.Blaze.Svg11 as S
-import qualified Text.Blaze.Svg11.Attributes as A
-import Text.Blaze.Svg.Renderer.Utf8 (renderSvg)
-import Data.Text.Lazy
+import Text.Blaze.Svg11 
+import Text.Blaze.Svg11.Attributes
 
-createSvgFromDrawing :: Drawing -> S.Svg
-createSvgFromDrawing x = S.docTypeSvg ! A.version "1.1" ! A.width "500" ! A.height "500" ! A.viewbox "0 0 50 50" $ do
+createSvgFromDrawing :: Drawing -> Svg
+createSvgFromDrawing x = docTypeSvg ! version "1.1" ! width "500" ! height "500" ! viewbox "0 0 50 50" $ do
       createSvgShapes x
 
-createSvgShapes :: [(Transform,Shape,Style)] -> S.Svg
-createSvgShapes [(tr,sh,st)] = Prelude.foldl (!) (svgShape sh) ( (svgTransform (Transforms.transform tr)) : (Styles.style st) )
+createSvgShapes :: [(Transform,Shape,Style)] -> Svg
+createSvgShapes [(tr,sh,st)] = Prelude.foldl (!) (svgShape sh) ( (svgTransform (transformToAttributes tr)) : (Styles.style st) )
 createSvgShapes (x:xs) = ( createSvgShapes [x] ) >> ( createSvgShapes xs )
 
-svgShape :: Shape -> S.Svg
-svgShape Empty = S.rect
-svgShape Circle = S.circle ! A.r "1"
-svgShape Square = S.rect ! A.width "1" ! A.height "1"
+svgShape :: Shape -> Svg
+svgShape Empty = rect
+svgShape Circle = circle ! r "1"
+svgShape Square = rect ! width "1" ! height "1"
 
-svgTransform :: [S.AttributeValue] -> S.Attribute
-svgTransform t = A.transform $ mconcat $ t
+svgTransform :: [AttributeValue] -> Attribute
+svgTransform t = transform $ mconcat $ t
 
 type Drawing = [(Transform,Shape,Style)]

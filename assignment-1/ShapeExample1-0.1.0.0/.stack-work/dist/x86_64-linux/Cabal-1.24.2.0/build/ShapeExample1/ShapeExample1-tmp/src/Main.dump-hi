@@ -1,10 +1,10 @@
 
 ==================== FINAL INTERFACE ====================
-2017-11-25 17:27:13.383074 UTC
+2017-11-25 17:34:02.472508 UTC
 
 interface main@main:Main 8002
-  interface hash: 52293a2319cea96d01e3681fe4dd62b3
-  ABI hash: 8c19b9bae3f60790a51cc26574ae414f
+  interface hash: 65766d596d9ac76519db33ad9746185d
+  ABI hash: 7d933dca6fb052676cbc553a9ab8ae72
   export-list hash: 76e70a94faf691b727f85415fcf07244
   orphan hash: 693e9af84d3dfcc71e640e005bdc5e2e
   flag hash: 37b872909b0cadba0bf7d0e95338298f
@@ -147,8 +147,8 @@ import  -/  base-4.9.1.0:Text.Read 75c59863e882ebaec4532e9465e2ee9b
 import  -/  base64-bytestring-1.0.0.1@base64-bytestring-1.0.0.1-4O9TExPPz6eI82Yj7L4SIj:Data.ByteString.Base64 a45a83e3500838257fcfde8fa8197052
 import  -/  blaze-svg-0.3.6.1@blaze-svg-0.3.6.1-E6CYGgfBIFH476loEvWeGj:Text.Blaze.Svg.Renderer.Utf8 e2f4642473b16a8cdce3ca89f311d0be
 import  -/  bytestring-0.10.8.1@bytestring-0.10.8.1:Data.ByteString.Char8 64661030f691dd1495e363eeda7a5344
-import  -/  Render 173deab302ee9627c6b22487990ed360
-  exports: d3fb9b7a4767165211ebcd209d95d1f1
+import  -/  Render 602d2c531febe7cfbbed3bcebcbcbba3
+  exports: b01d05719f05d5e348f4bfec7bd3a65f
   createSvgFromDrawing 283f2513b6d1cceea24c4793e7f3e039
 import  -/  scotty-0.11.0@scotty-0.11.0-A0Fu08UQDtq1x6NLBiRRmh:Web.Scotty 9eff37751f8615ef023d45128bab86c8
 e774eae3f6447f4cb7a1f2b2ff21d108
@@ -178,7 +178,7 @@ d6831ef04cb9301b090dfae6f7bb7ec7
   $trModule2 :: GHC.Types.TrName
   {- HasNoCafRefs, Strictness: m1,
      Unfolding: (GHC.Types.TrNameS "main"#) -}
-24cf684249d09265d0c93283425d6504
+92154862d90195f3ebcf823ee31937d2
   main :: GHC.Types.IO ()
   {- Unfolding: (Web.Scotty.Trans.scottyOptsT
                    @ GHC.Types.IO
@@ -198,7 +198,7 @@ d6831ef04cb9301b090dfae6f7bb7ec7
                                   <()>_N))
                         (Sym (Web.Scotty.Internal.Types.N:ScottyT[0]
                                   <Data.Text.Internal.Lazy.Text>_N <GHC.Types.IO>_N) <()>_N))) -}
-d99eea4b6f0c53f6f99e41ecad548cc7
+7660ac8a776c664b103cc29ed4d69b5b
   main1 ::
     Web.Scotty.Internal.Types.ScottyState
       Data.Text.Internal.Lazy.Text GHC.Types.IO
@@ -327,14 +327,13 @@ d99eea4b6f0c53f6f99e41ecad548cc7
                    Text.ParserCombinators.ReadPrec.minPrec
                    @ Render.Drawing
                    (Text.Read.readEither5 @ Render.Drawing)) -}
-ea2568538fe5d3cb4776c50728c0855c
+3923722f3c8d0ed4b825aaed8c71e39f
   main12 :: Data.Text.Internal.Lazy.Text
-  {- Unfolding: (Data.Text.Lazy.unpackCString#
-                   "shape-input-encoded-using-base-64"#) -}
-ddd61bcdaac3678d15ba5d7e868eec58
+  {- Unfolding: (Data.Text.Lazy.unpackCString# "base64-shapes"#) -}
+2c7147b7fc8f1aa2cee44b3614e2fffc
   main13 :: Web.Scotty.Internal.Types.RoutePattern
   {- Unfolding: (Web.Scotty.Internal.Types.Capture Main.main14) -}
-08f6b930e48e65922e7e176a213e6e9e
+4f6e999c8399af77e296f7dd312235b0
   main14 :: Data.Text.Internal.Lazy.Text
   {- Unfolding: (case GHC.Base.map
                         @ GHC.Types.Char
@@ -342,10 +341,9 @@ ddd61bcdaac3678d15ba5d7e868eec58
                         Data.Text.Internal.safe
                         Main.main15 of dt { DEFAULT ->
                  Web.Scotty.Internal.Types.$fIsStringRoutePattern_outer dt }) -}
-3241cce9fe23029d676781980aa90e2e
+8ac861454a0d9f74520120b111d5682f
   main15 :: [GHC.Types.Char]
-  {- Unfolding: (GHC.CString.unpackCString#
-                   "/:shape-input-encoded-using-base64"#) -}
+  {- Unfolding: (GHC.CString.unpackCString# "/:base64-shapes"#) -}
 1d77eb58e4e1586b3e5ffbdb88e41887
   main16 ::
     Network.HTTP.Types.Method.StdMethod
@@ -359,12 +357,12 @@ ddd61bcdaac3678d15ba5d7e868eec58
                    @ GHC.Types.IO
                    Web.Scotty.Internal.Types.$fScottyErrorText
                    Control.Monad.IO.Class.$fMonadIOIO) -}
-886b16b0d6c3d3b2480c5ab9867936f1
+4ea14662880dd37cf1b5b2a21fb67f43
   main17 :: Web.Scotty.Internal.Types.Options
   {- Unfolding: (Web.Scotty.Internal.Types.Options
                    Web.Scotty.Internal.Types.$fDefaultOptions3
                    Main.main18) -}
-b41214ab56b8f7dbbf0ed980e8ec0bd3
+f0aba02f2855a1073d6ca06ba0a3def3
   main18 :: Network.Wai.Handler.Warp.Settings.Settings
   {- Unfolding: (Network.Wai.Handler.Warp.Settings.Settings
                    Main.main19
@@ -417,9 +415,9 @@ b41214ab56b8f7dbbf0ed980e8ec0bd3
                     ->_R <GHC.Integer.Type.Integer>_R
                     ->_R Sym (GHC.Types.N:IO[0] <()>_R))
                    (GHC.Base.Nothing @ GHC.Types.Int)) -}
-13905443902778098cdc4090b90c8e41
+c0b28ed393660c0bfcc0d3ce91745f1f
   main19 :: GHC.Types.Int
-  {- HasNoCafRefs, Unfolding: (GHC.Types.I# 3000#) -}
+  {- HasNoCafRefs, Unfolding: (GHC.Types.I# 3001#) -}
 ff5f15a7456eebe778599a45e800c0e5
   main2 ::
     Web.Scotty.Internal.Types.ActionEnv
@@ -439,7 +437,7 @@ ff5f15a7456eebe778599a45e800c0e5
                     (Main.main4,
                      case w3 of wild { Web.Scotty.Internal.Types.SR ds ds1 ds2 ->
                      Web.Scotty.Internal.Types.SR ds ds1 Main.main3 }) #)) -}
-3442d93b486b0bb9833a08a7dcd33079
+8203a3a70b9abd236dbaadcad05fdef6
   main20 ::
     GHC.Prim.State# GHC.Prim.RealWorld
     -> (# GHC.Prim.State# GHC.Prim.RealWorld, () #)
@@ -475,7 +473,7 @@ b638c2015e4678b1894d83f2e777a33a
 9783e1de6d6bed9a35beee8f25ec0b31
   main7 :: [GHC.Types.Char]
   {- Unfolding: (GHC.CString.unpackCString# "/"#) -}
-1f050ee402fe2acfdaae16c339848cb7
+735cf10f88cc8ae7baa7845811d7dd87
   main8 ::
     Web.Scotty.Internal.Types.ActionEnv
     -> Control.Monad.Trans.State.Lazy.StateT
@@ -692,7 +690,7 @@ b638c2015e4678b1894d83f2e777a33a
   main_w1 :: GHC.IO.FilePath
   {- Unfolding: (GHC.CString.unpackCString#
                    "static-files/index.html"#) -}
-b1148b79f3537b0461c03325a55c01fe
+95877b385098ea0cf201f2b5df451a50
   main_w2 ::
     Web.Scotty.Internal.Types.ActionT
       Data.Text.Internal.Lazy.Text

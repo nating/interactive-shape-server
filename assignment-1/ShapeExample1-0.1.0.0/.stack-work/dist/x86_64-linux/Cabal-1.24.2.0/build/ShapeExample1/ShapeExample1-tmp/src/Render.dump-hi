@@ -1,11 +1,11 @@
 
 ==================== FINAL INTERFACE ====================
-2017-11-25 17:27:12.604 UTC
+2017-11-25 18:58:12.550103 UTC
 
 interface main@main:Render 8002
-  interface hash: 628205b4978d15c3bc5c58bcb1fd17c4
-  ABI hash: 173deab302ee9627c6b22487990ed360
-  export-list hash: d3fb9b7a4767165211ebcd209d95d1f1
+  interface hash: aa57844df4739b0e121c3a42bb853489
+  ABI hash: 602d2c531febe7cfbbed3bcebcbcbba3
+  export-list hash: b01d05719f05d5e348f4bfec7bd3a65f
   orphan hash: 693e9af84d3dfcc71e640e005bdc5e2e
   flag hash: 22f7c82bd23aef2fa9c2c09c28b5aebf
   sig of: Nothing
@@ -20,7 +20,6 @@ exports:
 module dependencies: Color Shapes Styles Transforms
 package dependencies: array-0.5.1.1@array-0.5.1.1 base-4.9.1.0
                       binary-0.8.3.0@binary-0.8.3.0
-                      blaze-builder-0.4.0.2@blaze-builder-0.4.0.2-LxClHUTiKUUAxWtvJ5Oeoy
                       blaze-markup-0.8.0.0@blaze-markup-0.8.0.0-GsxkVbRgODkgUQDmmDVob
                       blaze-svg-0.3.6.1@blaze-svg-0.3.6.1-E6CYGgfBIFH476loEvWeGj
                       bytestring-0.10.8.1@bytestring-0.10.8.1
@@ -56,7 +55,6 @@ import  -/  base-4.9.1.0:GHC.Base c4231c43c07e46080a26bf94094c7aa1
 import  -/  base-4.9.1.0:Prelude 22dd289b8469a8fa8dc81cab7b237771
 import  -/  blaze-markup-0.8.0.0@blaze-markup-0.8.0.0-GsxkVbRgODkgUQDmmDVob:Text.Blaze.Internal c1d6ebf18cc7de440fbc2d1a2a795843
 import  -/  blaze-svg-0.3.6.1@blaze-svg-0.3.6.1-E6CYGgfBIFH476loEvWeGj:Text.Blaze.Svg.Internal cffc7b1bca7b3586ae25aeb718abb55b
-import  -/  blaze-svg-0.3.6.1@blaze-svg-0.3.6.1-E6CYGgfBIFH476loEvWeGj:Text.Blaze.Svg.Renderer.Utf8 e2f4642473b16a8cdce3ca89f311d0be
 import  -/  blaze-svg-0.3.6.1@blaze-svg-0.3.6.1-E6CYGgfBIFH476loEvWeGj:Text.Blaze.Svg11 ffe4dbf1048c9a6d5d9dad94ecced8e8
 import  -/  blaze-svg-0.3.6.1@blaze-svg-0.3.6.1-E6CYGgfBIFH476loEvWeGj:Text.Blaze.Svg11.Attributes 2eac472bb3ab7f6d74496a530091d88d
 import  -/  Shapes 9576589d5342d91c929eec106cef4bf1
@@ -69,11 +67,10 @@ import  -/  Styles 8cec7ac2127ebfe620e48e9aa55bdc59
   exports: 3a79c50ceb5fb66695451baf1641da45
   Style 232511e363327dcbad08cc3a16757394
   style 50e5860f14326c3ca9761f34816c0281
-import  -/  Transforms 1863014713a64087af6bf599ea9d388d
-  exports: 59dc263e58cb335744207915f41af4b5
+import  -/  Transforms 166e3493eda92a0b50755202ffa0aa09
+  exports: b5821b88cc6c29e0825dca7cd5bcb9f9
   Transform ab4213368e5e2fdf961cc864d25fb53d
-  transform 5013d85750eeb3a66698d97a2e111d52
-import  -/  text-1.2.2.2@text-1.2.2.2-9UQZjEJZQFSGMffj1Z5g00:Data.Text.Lazy 4a195553d37a128a5d875ddc86cf7a29
+  transformToAttributes 96d8c13eabaea88e45aaf9c372ce8492
 d79bf5b8ea872edbdfb7a97765536866
   $trModule :: GHC.Types.Module
   {- HasNoCafRefs, Strictness: m,

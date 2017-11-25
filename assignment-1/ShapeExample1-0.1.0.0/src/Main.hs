@@ -16,10 +16,10 @@ serveSvg svg = do
     setHeader "Vary" "Accept Encoding"
     raw $ renderSvg svg
 
-main = scotty 3000 $ do
+main = scotty 3001 $ do
   get "/" $ file "static-files/index.html"
-  post "/:shape-input-encoded-using-base64" $ do
-    base64Shapes <- param "shape-input-encoded-using-base-64"
+  post "/:base64-shapes" $ do
+    base64Shapes <- param "base64-shapes"
     case isRight $ Base64.decode base64Shapes of
         True ->  do
             serveSvg $ createSvgFromDrawing $ read $ ByteStringChar8.unpack $ fromRight $ Base64.decode base64Shapes

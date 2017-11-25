@@ -11,11 +11,11 @@ data Transform = Identity
            | Compose Transform Transform
              deriving (Show,Read)
 
-transform :: Transform -> [S.AttributeValue]
-transform Identity           = [S.scale 1 1]
-transform (Translate tx ty)  = [S.translate tx ty]
-transform (Scale sx sy)      = [S.scale sx sy]
-transform (Rotate angle)     = [S.rotate angle]
-transform (SkewX d)          = [S.skewX d]
-transform (SkewY d)          = [S.skewY d]
-transform (Compose t1 t2)    = transform t2 ++ transform t1
+transformToAttributes :: Transform -> [S.AttributeValue]
+transformToAttributes Identity           = [S.scale 1 1]
+transformToAttributes (Translate tx ty)  = [S.translate tx ty]
+transformToAttributes (Scale sx sy)      = [S.scale sx sy]
+transformToAttributes (Rotate angle)     = [S.rotate angle]
+transformToAttributes (SkewX d)          = [S.skewX d]
+transformToAttributes (SkewY d)          = [S.skewY d]
+transformToAttributes (Compose t1 t2)    = transformToAttributes t2 ++ transformToAttributes t1

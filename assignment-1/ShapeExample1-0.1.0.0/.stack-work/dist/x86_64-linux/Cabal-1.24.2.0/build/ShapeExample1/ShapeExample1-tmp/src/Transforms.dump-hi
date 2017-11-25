@@ -1,18 +1,18 @@
 
 ==================== FINAL INTERFACE ====================
-2017-11-25 17:24:34.194438 UTC
+2017-11-25 17:37:40.559839 UTC
 
 interface main@main:Transforms 8002
-  interface hash: 064c910120f1bb77aec9e8b7a1f19dc7
-  ABI hash: 1863014713a64087af6bf599ea9d388d
-  export-list hash: 59dc263e58cb335744207915f41af4b5
+  interface hash: 5509a44e8ac7ac62cac5bae5ba2e2d9b
+  ABI hash: 166e3493eda92a0b50755202ffa0aa09
+  export-list hash: b5821b88cc6c29e0825dca7cd5bcb9f9
   orphan hash: 693e9af84d3dfcc71e640e005bdc5e2e
   flag hash: 52e25017ea2471189bd6f9d9f6dbdebf
   sig of: Nothing
   used TH splices: False
   where
 exports:
-  Transforms.transform
+  Transforms.transformToAttributes
   Transforms.Transform{Transforms.Compose Transforms.Identity Transforms.Rotate Transforms.Scale Transforms.SkewX Transforms.SkewY Transforms.Translate}
 module dependencies:
 package dependencies: array-0.5.1.1@array-0.5.1.1 base-4.9.1.0
@@ -380,8 +380,8 @@ ab4213368e5e2fdf961cc864d25fb53d
     | SkewX GHC.Types.Double
     | SkewY GHC.Types.Double
     | Compose Transforms.Transform Transforms.Transform
-5013d85750eeb3a66698d97a2e111d52
-  transform ::
+96d8c13eabaea88e45aaf9c372ce8492
+  transformToAttributes ::
     Transforms.Transform -> [Text.Blaze.Internal.AttributeValue]
   {- Arity: 1, Strictness: <S,1*U> -}
 instance GHC.Read.Read [Transforms.Transform]
