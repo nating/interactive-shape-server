@@ -24,6 +24,8 @@
 
   <body style="background-color: black;">
 
+    <div style="background-color: black;">
+
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-light bg-faded py-lg-4">
       <div class="container">
@@ -66,16 +68,20 @@
             <strong>By Geoffrey Natin</strong>
           </div>
         </div>
-        <div id="svgBox">
-          <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="700" height="500" viewBox="0 0 100 100">
-            <g transform="rotate(50)">
-              <circle cy="2" cx="2" r="40" stroke="black" stroke-width="3" fill="red"/>
-              <rect width="20" height="20" fill="blue"/>
-              <rect width="10" height="20" fill="green"/>
-              <path d="L 2,3 M 4,5 "/>
-            </g>
-          </svg>
-        </div>
+        <div id="svgBox" style="display:block;margin:auto;text-align:center;justify-content: center; flex-direction: row;align-content: center;align-items: center;"><!--?xml version="1.0" encoding="UTF-8"?-->
+        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="500" height="500" viewBox="0 0 50 50">
+          <rect width="1" height="1" transform="skewX(0.0)scale(50.0 50.0)translate(0.0 0.0)" fill="Black" stroke="Red" stroke-width="0.1" fill-opacity="0.8"></rect>
+          <circle r="1" transform="skewX(0.0)scale(25.0 25.0)translate(1.0 1.0)" fill="Black" fill-opacity="0.8"></circle>
+          <rect width="1" height="1" transform="skewX(30.0)scale(5.0 20.0)translate(2.25 0.75)" fill="Green"></rect>
+          <rect width="1" height="1" transform="skewX(30.0)scale(5.0 10.0)translate(1.0 1.5)" fill="Blue"></rect>
+          <rect width="1" height="1" transform="skewX(-30.0)scale(5.0 10.0)translate(6.75 2.5)" fill="Blue"></rect>
+          <rect width="1" height="1" transform="skewX(-30.0)scale(5.0 10.0)translate(8.0 2.5)" fill="Green"></rect>
+          <rect width="1" height="1" transform="skewY(0.0)scale(8.0 4.0)translate(4.25 5.3)" fill="Red"></rect>
+          <rect width="1" height="1" transform="skewY(0.0)scale(6.0 4.0)translate(6.0 6.6)" fill="Red"></rect>
+          <rect width="1" height="1" transform="skewX(30.0)scale(4.0 4.0)translate(4.5 6.6)" fill="Red"></rect>
+          <rect width="1" height="1" transform="skewX(30.0)scale(4.0 4.0)translate(4.5 5.3)" fill="Red"></rect>
+        </svg>
+      </div>
       </div>
 
     </div>
@@ -87,7 +93,20 @@
         </h2>
         <hr class="divider">
         <div class="form-group">
-          <textarea class="form-control" rows="5" id="shapes-input"></textarea>
+          <textarea class="form-control" rows="12" id="shapes-input">
+            [
+            (Compose (Compose (Translate 0 0) (Scale 50 50)) (SkewX 0),Square,StyleCompose (StyleCompose (StyleCompose (Fill Black) (StrokeColor Red)) (StrokeWidth 0.1)) (FillOpacity 0.8)),
+            (Compose (Compose (Translate 1 1) (Scale 25 25)) (SkewX 0),Circle,StyleCompose (Fill Black) (FillOpacity 0.8)),
+            (Compose (Compose (Translate 2.25 0.75) (Scale 5 20)) (SkewX 30),Square,Fill Green),
+            (Compose (Compose (Translate 1 1.5) (Scale 5 10)) (SkewX 30),Square,Fill Blue),
+            (Compose (Compose (Translate 6.75 2.5) (Scale 5 10)) (SkewX -30),Square,Fill Blue),
+            (Compose (Compose (Translate 8 2.5) (Scale 5 10)) (SkewX -30),Square,Fill Green),
+            (Compose (Compose (Translate 4.25 5.3) (Scale 8 4)) (SkewY 0),Square,Fill Red),
+            (Compose (Compose (Translate 6 6.6) (Scale 6 4)) (SkewY 0),Square,Fill Red),
+            (Compose (Compose (Translate 4.5 6.6) (Scale 4 4)) (SkewX 30),Square,Fill Red),
+            (Compose (Compose (Translate 4.5 5.3) (Scale 4 4)) (SkewX 30),Square,Fill Red)
+            ]
+          </textarea>
         </div>
           <button onclick="renderSvg()" id="button" class="text-center btn btn-primary">Render my Shapes</button>
       </div>
@@ -99,6 +118,8 @@
         <p class="m-0">Copyright &copy; Geoffrey Natin 2017</p>
       </div>
     </footer>
+
+    </div>
 
   </body>
   <script>

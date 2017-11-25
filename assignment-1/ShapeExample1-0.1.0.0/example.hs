@@ -1,0 +1,1 @@
+[(Compose (Compose (Translate 4.5 0) (Scale 5 20)) (SkewX 30),Square,Fill Blue),(Compose (Compose (Translate 3 0) (Scale 5 10)) (SkewX 30),Square,Fill Blue),(Compose (Compose (Translate 5.3 1) (Scale 5 10)) (SkewX -30),Square,Fill Blue),(Compose (Compose (Translate 6.8 1) (Scale 5 10)) (SkewX -30),Square,Fill Blue)]

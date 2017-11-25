@@ -4,6 +4,7 @@ module Render where
 
 import Shapes
 import Styles
+import Transforms
 
 import Text.Blaze.Svg11 ((!), mkPath, rotate, l, m)
 import qualified Text.Blaze.Svg11 as S
@@ -11,16 +12,12 @@ import qualified Text.Blaze.Svg11.Attributes as A
 import Text.Blaze.Svg.Renderer.Utf8 (renderSvg)
 import Data.Text.Lazy
 
--- render a drawing into a window
-createSvg :: String -> S.Svg
-createSvg s = svgDoc--createSvgFromDrawing testDrawing
-
 createSvgFromDrawing :: Drawing -> S.Svg
 createSvgFromDrawing x = S.docTypeSvg ! A.version "1.1" ! A.width "500" ! A.height "500" ! A.viewbox "0 0 50 50" $ do
       createSvgShapes x
 
 createSvgShapes :: [(Transform,Shape,Style)] -> S.Svg
-createSvgShapes [(tr,sh,st)] = Prelude.foldl (!) (svgShape sh) ( (svgTransform (Shapes.transform tr)) : (Styles.style st) )
+createSvgShapes [(tr,sh,st)] = Prelude.foldl (!) (svgShape sh) ( (svgTransform (Transforms.transform tr)) : (Styles.style st) )
 createSvgShapes (x:xs) = ( createSvgShapes [x] ) >> ( createSvgShapes xs )
 
 svgShape :: Shape -> S.Svg

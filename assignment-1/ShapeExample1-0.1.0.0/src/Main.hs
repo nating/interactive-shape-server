@@ -24,7 +24,7 @@ serveSvg svg = do
 
 main = scotty 3000 $ do
   get "/not-using-rn" $ do
-    serveSvg $ createSvg "lnakwn"
+    serveSvg $ createSvgFromDrawing $ read $ "[(Scale 5 5,Circle,Fill Red)]"
   get "/" $ file "static-files/index.html"
   post "/:base64-shapes" $ do
     base64Shapes <- param "base64-shapes"
@@ -32,4 +32,4 @@ main = scotty 3000 $ do
         True ->  do
             serveSvg $ createSvgFromDrawing $ read $ B.unpack $ fromRight $ BS.decode base64Shapes
         False ->  do
-            serveSvg $ createSvgFromDrawing $ read $ "[(Scale 5 6,Circle)]"
+            serveSvg $ createSvgFromDrawing $ read $ "[(Scale 5 5,Circle,Fill Red)]"
