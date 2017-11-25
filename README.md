@@ -1,6 +1,8 @@
 # Interactive Shape Server
 
-An Interactive SVG Shape Server written in Haskell using the [Scotty](https://hackage.haskell.org/package/scotty) & [Blaze-SVG](https://hackage.haskell.org/package/blaze-svg) Web eDSL languages.
+An Interactive SVG Shape Server written in Haskell using the [Scotty](https://hackage.haskell.org/package/scotty) & [Blaze-SVG](https://hackage.haskell.org/package/blaze-svg) Web eDSL languages.  
+
+<img src="/assets/screenshot.png" />
 
 ## Requirements
 This project requires the [Haskell Tool Stack](https://docs.haskellstack.org/en/stable/README/) to run.  
