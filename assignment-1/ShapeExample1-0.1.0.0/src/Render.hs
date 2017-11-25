@@ -41,8 +41,8 @@ BlazeSVGs and their Transforms and Styles to Blaze-SVG Attributes
 and combines the lists of Attributes with their shape using the (!) 
 operator.
 -}
-createSvgShapes :: [(Transform,Shape,Style)] -> Svg
-createSvgShapes [(tr,sh,st)] = Prelude.foldl (!) (svgShape sh) ( (svgTransform (transformToAttributes tr)) : (Styles.style st) )
+createSvgShapes :: [(Shape,Transform,Style)] -> Svg
+createSvgShapes [(sh,tr,st)] = Prelude.foldl (!) (svgShape sh) ( (svgTransform (transformToAttributes tr)) : (Styles.style st) )
 createSvgShapes (x:xs) = ( createSvgShapes [x] ) >> ( createSvgShapes xs )
 
 {-
@@ -66,4 +66,4 @@ svgTransform t = transform $ mconcat $ t
 {-
 A Drawing is a list of (Transform,Shape,Style) tuples.
 -}
-type Drawing = [(Transform,Shape,Style)]
+type Drawing = [(Shape,Transform,Style)]

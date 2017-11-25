@@ -43,8 +43,8 @@ as if it is Base64. If the URL is successfully decoded, the server will attempt
 to read the decoded URL in as a `Drawing` (see Render.hs) and create an SVG to
 send back in the HTTP response.
 -}
-main = scotty 3001 $ do
-  get "/" $ file "static-files/index.html"
+main = scotty 3000 $ do
+  get "/" $ file "static/index.html"
   post "/:base64-shapes" $ do
     base64Shapes <- param "base64-shapes"
     case isRight $ Base64.decode base64Shapes of

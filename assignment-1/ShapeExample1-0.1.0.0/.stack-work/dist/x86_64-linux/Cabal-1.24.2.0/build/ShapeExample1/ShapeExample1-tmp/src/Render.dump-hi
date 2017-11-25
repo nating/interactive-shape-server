@@ -1,10 +1,10 @@
 
 ==================== FINAL INTERFACE ====================
-2017-11-25 18:58:12.550103 UTC
+2017-11-25 21:15:25.376832 UTC
 
 interface main@main:Render 8002
-  interface hash: aa57844df4739b0e121c3a42bb853489
-  ABI hash: 602d2c531febe7cfbbed3bcebcbcbba3
+  interface hash: 9ec52dc5a871ef80cadf8ed3afcd6a51
+  ABI hash: 204e7a0f972582029c5b4b2d1021b1e7
   export-list hash: b01d05719f05d5e348f4bfec7bd3a65f
   orphan hash: 693e9af84d3dfcc71e640e005bdc5e2e
   flag hash: 22f7c82bd23aef2fa9c2c09c28b5aebf
@@ -85,9 +85,9 @@ a23bdea1e978877fb95c469cf88dd537
   $trModule2 :: GHC.Types.TrName
   {- HasNoCafRefs, Strictness: m1,
      Unfolding: (GHC.Types.TrNameS "main"#) -}
-39e1d176e65e7b34510d938b8bff009c
-  type Drawing = [(Transforms.Transform, Shapes.Shape, Styles.Style)]
-283f2513b6d1cceea24c4793e7f3e039
+dd930333d2c96f5543ea0bb7b8bbc376
+  type Drawing = [(Shapes.Shape, Transforms.Transform, Styles.Style)]
+db7f05d910dd4fbf1345e625403d227f
   createSvgFromDrawing ::
     Render.Drawing -> Text.Blaze.Svg.Internal.Svg
   {- Arity: 1, Strictness: <L,1*U>m8, Inline: INLINE[0],
@@ -841,9 +841,9 @@ c1e479b67eb3f15e7646bb47082ff0a8
 b5f74eeff7b9d471f8e4085d3765692f
   createSvgFromDrawing_w9 :: GHC.Base.String
   {- Unfolding: (GHC.CString.unpackCString# " width=\""#) -}
-27378aa28a0a5303246adf5f17c5c4a3
+51f7472351bc6f0955fbcc2a4034a8a1
   createSvgShapes ::
-    [(Transforms.Transform, Shapes.Shape, Styles.Style)]
+    [(Shapes.Shape, Transforms.Transform, Styles.Style)]
     -> Text.Blaze.Svg.Internal.Svg
   {- Arity: 1, Strictness: <S,1*U> -}
 0b7817b7861602835cea33b0d75bb94c
