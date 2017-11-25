@@ -8,8 +8,9 @@ https://github.com/nating/interactive-shape-server/src/Color.hs
 
 module Color where
 
--- Supporting the 16 Color Names from the HTML 4.01 specification from 1999
-
+{-
+The 16 Color Names from the HTML 4.01 specification from 1999 are supported.
+-}
 data Color = Black
            | White
            | Blue
