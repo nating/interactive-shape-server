@@ -2,7 +2,7 @@ name:                interactive-shape-server
 version:             0.1.0.0
 synopsis:            An Interactive Shape Server
 description:         An interactive svg shape server
-homepage:            https://github.com/nating/functional/assignment-1
+homepage:            https://github.com/nating/interactive-shape-server
 license:             BSD3
 license-file:        LICENSE
 author:              Geoffrey Natin
